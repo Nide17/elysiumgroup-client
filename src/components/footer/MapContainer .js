@@ -8,15 +8,6 @@ const mapStyles = {
 
 const MapContainer = (props) => {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-
-  //   }
-  // }
-
-  // render() {
-
   return (
     <Map
       google={props.google}
@@ -27,7 +18,6 @@ const MapContainer = (props) => {
     </Map>
   );
 }
-// }
 
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyAuhqQ9VOsgbn3FrydS5H7DyBgPO07dWwg'
