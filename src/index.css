@@ -1344,9 +1344,10 @@ h1.elysium-title {
     display: none;
   }
 
-  ul li {
+  .contacts ul li {
     text-align: center;
     display: list-item;
+    margin-top: 5px;
   }
 
   .three-dots {

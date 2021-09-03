@@ -20,7 +20,7 @@ const Footer = (props) => {
     return (
 
         <footer className="footer">
-            <div className="footer-container p-2 p-lg-4">
+            <div className="footer-container px-2 py-4 p-lg-4">
 
                 <div className="row footer-menu">
                     <div className="col-12 col-sm-6 col-xl-3" id="reach-us">
@@ -36,7 +36,7 @@ const Footer = (props) => {
                         </ul>
                     </div>
 
-                    <div className="col-12 col-sm-6 col-xl-3 p-1">
+                    <div className="col-12 col-sm-6 col-xl-3 p-1 contacts">
                         <h4 className="d-none d-lg-block">Contacts</h4>
                         <ul>
                             <li><i className="fa fa-phone fa-lg"></i>&nbsp;(+250)788623823</li>
