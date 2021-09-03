@@ -60,9 +60,9 @@ const Members = ({ setMembers, members }) => {
 
                     <h6>{member.designation}</h6>
                     <p className="d-none d-lg-block m-0"><i className="member-phone">{member.memberEducation}</i></p>
-                    <p className="font-weight-bolder m-0 mt-0 mb-lg-1">
+                    {/* <p className="font-weight-bolder m-0 mt-0 mb-lg-1">
                         <span><i class="fa fa-mobile-phone mr-2"></i>
-                            <strong className="member-phone">{member.memberPhone}</strong></span></p>
+                            <strong className="member-phone">{member.memberPhone}</strong></span></p> */}
 
                     <div id="accordionElysium" className="details mt-1 mt-lg-2">
                         <div className="card">

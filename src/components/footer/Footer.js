@@ -40,7 +40,7 @@ const Footer = (props) => {
                         <h4>Contacts</h4>
                         <ul>
                             <li><i className="fa fa-phone fa-lg"></i>&nbsp;(+250)788623823</li>
-                            <li><i className="fa fa-envelope fa-md"></i>&nbsp;<small>elysiumgroup@gmail.com</small></li>
+                            <li><i className="fa fa-envelope fa-md"></i>&nbsp;<small>elysiumgroupltd19@gmail.com</small></li>
                             <li><i className="fa fa-map-marker"></i>&nbsp;<small>KK 40 St, Kigali</small></li>
                         </ul>
                     </div>
@@ -73,7 +73,7 @@ const Footer = (props) => {
             <div className="row copyright">
                 <div className="col-12">
                     <p className="text-center mb-0">
-                        <strong>© 2021 Elysium Group - All Rights Reserved</strong>
+                        <strong>© 2021 Elysium Group Ltd - All Rights Reserved</strong>
                     </p>
                 </div>
             </div>
