@@ -818,7 +818,7 @@ h1.elysium-title {
 }
 
 .services-section .card {
-  height: 400px;
+  height: 100%;
   background-color: #eef6ff;
   border: .2px solid #037ec0;
   border-width: .1px;
