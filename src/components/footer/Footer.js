@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import MapContainer from './MapContainer '
+import MapContainer from './MapContainer '
 import Social from './Social'
 
 import { useEffect } from "react";
@@ -23,7 +23,7 @@ const Footer = (props) => {
             <div className="footer-container px-2 py-4 p-lg-4">
 
                 <div className="row footer-menu">
-                    <div className="col-12 col-sm-6 col-xl-3" id="reach-us">
+                    <div className="col-12 col-sm-6 col-xl-2" id="reach-us">
 
                         <h4 className="text-center">Get in touch</h4>
                         <ul className="social-buttons d-lg-flex justify-content-center mt-lg-4">
@@ -36,7 +36,7 @@ const Footer = (props) => {
                         </ul>
                     </div>
 
-                    <div className="col-12 col-sm-6 col-xl-3 p-1 contacts">
+                    <div className="col-12 col-sm-6 col-xl-2 p-1 contacts d-flex justify-content-center d-lg-block">
                         <h4 className="d-none d-lg-block">Contacts</h4>
                         <ul>
                             <li><i className="fa fa-phone fa-lg"></i>&nbsp;(+250)788623823</li>
@@ -45,11 +45,11 @@ const Footer = (props) => {
                         </ul>
                     </div>
 
-                    {/* <div className="col-6 col-sm-6 col-xl-5 p-1">
+                    <div className="col-12 col-sm-6 col-xl-5 p-1 map">
                         <MapContainer />
-                    </div> */}
+                    </div>
 
-                    <div className="col-7 col-sm-3 col-xl-3 mt-3 mt-lg-0">
+                    <div className="col-7 col-sm-3 col-xl-2 mt-3 mt-lg-0">
                         <h4>Business Hours</h4>
                         <ul className="list-unstyled d-flex flex-column justify-content-end">
                             <li><Link to="/#">Monday - Friday : 8am - 5pm</Link></li>
@@ -58,7 +58,7 @@ const Footer = (props) => {
                         </ul>
                     </div>
 
-                    <div className="col-5 col-sm-3 col-xl-3 mt-3 mt-lg-0">
+                    <div className="col-5 col-sm-3 col-xl-1 mt-3 mt-lg-0">
                         <h4>Explore</h4>
                         <ul className="list-unstyled d-flex flex-column justify-content-start">
                             <li><a href="/#services">Expertise</a></li>

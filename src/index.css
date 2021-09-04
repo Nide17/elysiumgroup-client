@@ -723,6 +723,11 @@ img.zoom:hover {
   padding-left: 0;
 }
 
+  .footer .map {
+      box-shadow: 0 3px 5px -2px #000,
+      -15px -3px 15px -10px rgb(22 193 59 / 7%);
+  }
+
 ul.social-buttons li {
   padding: .4em;
   display: inline;
@@ -1346,7 +1351,6 @@ h1.elysium-title {
   }
 
   .contacts ul li {
-    text-align: center;
     display: list-item;
     margin-top: 5px;
   }
@@ -1545,6 +1549,10 @@ h1.elysium-title {
 
   .footer .footer-menu #reach-us ul {
     margin-bottom: 8px;
+  }
+
+  .footer .map {
+    height: 200px;
   }
 
   /* About */
