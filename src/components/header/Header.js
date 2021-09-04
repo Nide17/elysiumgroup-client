@@ -120,7 +120,6 @@ const Header = (props) => {
                             <li>
                                 <a href="/services"
                                 className={menuServicesLinkClassName} 
-
                                     style={{ borderBottom: location.pathname === "/services" ? "2px solid #f0ad4e" : null }}>
                                     Expertise
                                 </a>
@@ -155,9 +154,8 @@ const Header = (props) => {
                             </li>
 
                             <li>
-                                <a href="/" 
+                                <a href="/projects"
                                 className={menuProjectsLinkClassName} 
-                                onClick={props.showProjects}
                                     style={{ borderBottom: location.pathname === "/projects" ? "2px solid #f0ad4e" : null }}>
                                     Portfolio
                                 </a>
