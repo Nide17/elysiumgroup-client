@@ -1,309 +1,367 @@
-// PROFILE
-import eap from '../../images/eap.jpg'
-import noah from '../../images/noah2.jpg'
-import villa from '../../images/villa3.jpg'
-import placide from '../../images/Placide7.jpg'
-import nyaruteja from '../../images/nyaruteja1.JPG'
-import miterrand from '../../images/mitterand2.jpg'
-import thierry from '../../images/thierry10.jpg'
-import egide from '../../images/egide1.jpg'
-import sumeet from '../../images/sumeet3.jpg'
-import gervais from '../../images/gervais4.png'
-import john from '../../images/john2.jpg'
-import rushaki from '../../images/rushaki2.jpg'
-import rwamiko from '../../images/rwamiko6.jpg'
-import venny from '../../images/venny1.jpg'
-
 // GALLERY
-import egide1 from '../../images/gallery/egide/egide1.jpg'
-import egide2 from '../../images/gallery/egide/egide2.jpg'
-import egide3 from '../../images/gallery/egide/egide3.jpg'
-import egide4 from '../../images/gallery/egide/egide4.jpg'
-
-import noah1 from '../../images/gallery/noah/noah1.jpg'
-import noah2 from '../../images/gallery/noah/noah2.jpg'
-import noah3 from '../../images/gallery/noah/noah3.jpg'
-import noah4 from '../../images/gallery/noah/noah4.jpg'
-import noah5 from '../../images/gallery/noah/noah5.jpg'
-import noah6 from '../../images/gallery/noah/noah6.jpg'
-import noah7 from '../../images/gallery/noah/noah7.jpg'
-import noah8 from '../../images/gallery/noah/noah8.jpg'
-import noah9 from '../../images/gallery/noah/noah9.jpg'
-import noah10 from '../../images/gallery/noah/noah10.jpg'
-
-import eap1 from '../../images/gallery/eap/eap.jpg'
-
-import villa1 from '../../images/gallery/villa/villa1.jpg'
-import villa2 from '../../images/gallery/villa/villa2.jpg'
-import villa3 from '../../images/gallery/villa/villa3.jpg'
-
-import placide1 from '../../images/gallery/placide/Placide1.jpg'
-import placide2 from '../../images/gallery/placide/Placide2.jpg'
-import placide5 from '../../images/gallery/placide/Placide5.jpg'
-import placide6 from '../../images/gallery/placide/Placide6.jpg'
-import placide7 from '../../images/gallery/placide/Placide7.jpg'
-import placide8 from '../../images/gallery/placide/Placide8.jpg'
-import placide9 from '../../images/gallery/placide/Placide9.jpg'
-
-import nyaruteja1 from '../../images/gallery/nyaruteja/nyaruteja1.JPG'
-import nyaruteja2 from '../../images/gallery/nyaruteja/nyaruteja2.JPG'
-import nyaruteja3 from '../../images/gallery/nyaruteja/nyaruteja3.JPG'
-
-import mitterand1 from '../../images/gallery/mitterand/mitterand1.jpg'
-import mitterand2 from '../../images/gallery/mitterand/mitterand2.jpg'
-import mitterand3 from '../../images/gallery/mitterand/mitterand3.jpg'
-
-import thierry2 from '../../images/gallery/thierry/thierry2.jpg'
-import thierry3 from '../../images/gallery/thierry/thierry3.jpg'
-import thierry4 from '../../images/gallery/thierry/thierry4.jpg'
-import thierry5 from '../../images/gallery/thierry/thierry5.jpg'
-import thierry6 from '../../images/gallery/thierry/thierry6.jpg'
-import thierry7 from '../../images/gallery/thierry/thierry7.jpg'
-import thierry8 from '../../images/gallery/thierry/thierry8.jpg'
-import thierry9 from '../../images/gallery/thierry/thierry9.jpg'
-import thierry10 from '../../images/gallery/thierry/thierry10.jpg'
-
-import sumeet1 from '../../images/gallery/sumeet/sumeet1.jpg'
-import sumeet2 from '../../images/gallery/sumeet/sumeet2.jpg'
-import sumeet3 from '../../images/gallery/sumeet/sumeet3.jpg'
-import sumeet4 from '../../images/gallery/sumeet/sumeet4.jpg'
-import sumeet5 from '../../images/gallery/sumeet/sumeet5.jpg'
-import sumeet6 from '../../images/gallery/sumeet/sumeet6.jpg'
-import sumeet7 from '../../images/gallery/sumeet/sumeet7.jpg'
-
-import gervais1 from '../../images/gallery/gervais/gervais1.png'
-import gervais2 from '../../images/gallery/gervais/gervais2.png'
-import gervais3 from '../../images/gallery/gervais/gervais3.png'
-import gervais4 from '../../images/gallery/gervais/gervais4.png'
-import gervais5 from '../../images/gallery/gervais/gervais5.png'
-import gervais6 from '../../images/gallery/gervais/gervais6.png'
-
-import john1 from '../../images/gallery/john/john1.jpg'
-import john2 from '../../images/gallery/john/john2.jpg'
-import john3 from '../../images/gallery/john/john3.jpg'
-import john4 from '../../images/gallery/john/john4.jpg'
-import john5 from '../../images/gallery/john/john5.jpg'
-import john6 from '../../images/gallery/john/john6.jpg'
-
-import rushaki1 from '../../images/gallery/rushaki/rushaki1.jpg'
-import rushaki2 from '../../images/gallery/rushaki/rushaki2.jpg'
-import rushaki3 from '../../images/gallery/rushaki/rushaki3.jpg'
-import rushaki4 from '../../images/gallery/rushaki/rushaki4.jpg'
-import rushaki5 from '../../images/gallery/rushaki/rushaki5.jpg'
-import rushaki6 from '../../images/gallery/rushaki/rushaki6.jpg'
-
-import rwamiko1 from '../../images/gallery/rwamiko/rwamiko1.jpg'
-import rwamiko2 from '../../images/gallery/rwamiko/rwamiko2.jpg'
-import rwamiko3 from '../../images/gallery/rwamiko/rwamiko3.jpg'
-import rwamiko4 from '../../images/gallery/rwamiko/rwamiko4.jpg'
-import rwamiko5 from '../../images/gallery/rwamiko/rwamiko5.jpg'
-import rwamiko6 from '../../images/gallery/rwamiko/rwamiko6.jpg'
-import rwamiko7 from '../../images/gallery/rwamiko/rwamiko7.jpg'
-import rwamiko8 from '../../images/gallery/rwamiko/rwamiko8.jpg'
-
-import venny1 from '../../images/gallery/venny/venny1.jpg'
-import venny2 from '../../images/gallery/venny/venny2.jpg'
-import venny3 from '../../images/gallery/venny/venny3.jpg'
-
+import bikesha_bugesera1 from '../../images/gallery/bikesha_bugesera/bikesha_bugesera1.jpg'
+import bikesha_bugesera2 from '../../images/gallery/bikesha_bugesera/bikesha_bugesera2.jpg'
+import lizinde_kagarama1 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama1.jpg'
+import lizinde_kagarama2 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama2.jpg'
+import kalimunda_kagarama1 from '../../images/gallery/kalimunda_kagarama/kalimunda_kagarama1.jpg'
+import kalimunda_kagarama2 from '../../images/gallery/kalimunda_kagarama/kalimunda_kagarama2.jpg'
+import katusiime_ndera1 from '../../images/gallery/katusiime_ndera/katusiime_ndera1.jpg'
+import katusiime_ndera2 from '../../images/gallery/katusiime_ndera/katusiime_ndera2.jpg'
+import ebarchitects_kabeza20211 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20211.jpg'
+import ebarchitects_kabeza20212 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20212.jpg'
+import zaakfield_kimihurura1 from '../../images/gallery/zaakfield_kimihurura/zaakfield_kimihurura1.jpg'
+import zaakfield_kimihurura2 from '../../images/gallery/zaakfield_kimihurura/zaakfield_kimihurura2.jpg'
+import zaakfield_kimihurura3 from '../../images/gallery/zaakfield_kimihurura/zaakfield_kimihurura3.jpg'
+import zaakfield_kimihurura4 from '../../images/gallery/zaakfield_kimihurura/zaakfield_kimihurura4.jpg'
+import zaakfield_kimihurura5 from '../../images/gallery/zaakfield_kimihurura/zaakfield_kimihurura5.jpg'
+import phd_ndera1 from '../../images/gallery/phd_ndera/phd_ndera1.jpg'
+import phd_kagarama1 from '../../images/gallery/phd_kagarama/phd_kagarama1.jpg'
+import phd_kagarama2 from '../../images/gallery/phd_kagarama/phd_kagarama2.jpg'
+import phd_gatenga1 from '../../images/gallery/phd_gatenga/phd_gatenga1.jpg'
+import phd_gatenga2 from '../../images/gallery/phd_gatenga/phd_gatenga2.jpg'
+import axiom_kanombe1 from '../../images/gallery/axiom_kanombe/axiom_kanombe1.jpg'
+import axiom_kanombe2 from '../../images/gallery/axiom_kanombe/axiom_kanombe2.jpg'
+import kwihangana_ntarama1 from '../../images/gallery/kwihangana_ntarama/kwihangana_ntarama1.jpg'
+import kwihangana_ntarama2 from '../../images/gallery/kwihangana_ntarama/kwihangana_ntarama2.jpg'
+import kwihangana_ntarama3 from '../../images/gallery/kwihangana_ntarama/kwihangana_ntarama3.jpg'
+import kwihangana_ntarama4 from '../../images/gallery/kwihangana_ntarama/kwihangana_ntarama4.jpg'
+import kwihangana_ntarama5 from '../../images/gallery/kwihangana_ntarama/kwihangana_ntarama5.jpg'
+import kwihangana_ntarama6 from '../../images/gallery/kwihangana_ntarama/kwihangana_ntarama6.jpg'
+import kwihangana_ntarama7 from '../../images/gallery/kwihangana_ntarama/kwihangana_ntarama1.jpg'
+import mushoma_gisozi1 from '../../images/gallery/mushoma_gisozi/mushoma_gisozi1.jpg'
+import ebarchitects_catering1 from '../../images/gallery/ebarchitects_catering/ebarchitects_catering1.jpg'
+import ebarchitects_catering2 from '../../images/gallery/ebarchitects_catering/ebarchitects_catering2.jpg'
+import ebarchitects_kabeza20201 from '../../images/gallery/ebarchitects_kabeza2020/ebarchitects_kabeza20201.jpg'
+import ebarchitects_kabeza20202 from '../../images/gallery/ebarchitects_kabeza2020/ebarchitects_kabeza20202.jpg'
+import nyirigira_kicukiro1 from '../../images/gallery/nyirigira_kicukiro/nyirigira_kicukiro1.jpg'
+import nyirigira_kicukiro2 from '../../images/gallery/nyirigira_kicukiro/nyirigira_kicukiro2.jpg'
+import nyirigira_kicukiro3 from '../../images/gallery/nyirigira_kicukiro/nyirigira_kicukiro3.jpg'
+import nyirigira_kicukiro4 from '../../images/gallery/nyirigira_kicukiro/nyirigira_kicukiro4.jpg'
+import nyirigira_kicukiro5 from '../../images/gallery/nyirigira_kicukiro/nyirigira_kicukiro5.jpg'
+import nyirigira_kicukiro6 from '../../images/gallery/nyirigira_kicukiro/nyirigira_kicukiro6.jpg'
+import ntakirutimana_masaka1 from '../../images/gallery/ntakirutimana_masaka/ntakirutimana_masaka1.png'
+import ntakirutimana_masaka2 from '../../images/gallery/ntakirutimana_masaka/ntakirutimana_masaka2.png'
+import ntakirutimana_masaka3 from '../../images/gallery/ntakirutimana_masaka/ntakirutimana_masaka3.png'
+import ntakirutimana_masaka4 from '../../images/gallery/ntakirutimana_masaka/ntakirutimana_masaka4.png'
+import ntakirutimana_masaka5 from '../../images/gallery/ntakirutimana_masaka/ntakirutimana_masaka5.png'
+import ntakirutimana_masaka6 from '../../images/gallery/ntakirutimana_masaka/ntakirutimana_masaka6.png'
+import archibeau_gisenyi1 from '../../images/gallery/archibeau_gisenyi/archibeau_gisenyi1.jpg'
+import archibeau_gisenyi2 from '../../images/gallery/archibeau_gisenyi/archibeau_gisenyi2.jpg'
+import archibeau_gisenyi3 from '../../images/gallery/archibeau_gisenyi/archibeau_gisenyi3.jpg'
+import bavugamenshi_kinyinya1 from '../../images/gallery/bavugamenshi_kinyinya/bavugamenshi_kinyinya1.jpg'
+import bavugamenshi_kinyinya2 from '../../images/gallery/bavugamenshi_kinyinya/bavugamenshi_kinyinya2.jpg'
+import bavugamenshi_kinyinya3 from '../../images/gallery/bavugamenshi_kinyinya/bavugamenshi_kinyinya3.jpg'
+import niyitanga_rushaki1 from '../../images/gallery/niyitanga_rushaki/niyitanga_rushaki1.jpg'
+import niyitanga_rushaki2 from '../../images/gallery/niyitanga_rushaki/niyitanga_rushaki2.jpg'
+import niyitanga_rushaki3 from '../../images/gallery/niyitanga_rushaki/niyitanga_rushaki3.jpg'
+import niyitanga_rushaki4 from '../../images/gallery/niyitanga_rushaki/niyitanga_rushaki4.jpg'
+import niyitanga_rushaki5 from '../../images/gallery/niyitanga_rushaki/niyitanga_rushaki5.jpg'
+import niyitanga_rushaki6 from '../../images/gallery/niyitanga_rushaki/niyitanga_rushaki6.jpg'
+import rurangwa_warehouse1 from '../../images/gallery/rurangwa_warehouse/rurangwa_warehouse1.jpg'
+import rurangwa_warehouse2 from '../../images/gallery/rurangwa_warehouse/rurangwa_warehouse2.jpg'
+import kozamgi_rwamiko1 from '../../images/gallery/kozamgi_rwamiko/kozamgi_rwamiko1.jpg'
+import kozamgi_rwamiko2 from '../../images/gallery/kozamgi_rwamiko/kozamgi_rwamiko2.jpg'
+import kozamgi_rwamiko3 from '../../images/gallery/kozamgi_rwamiko/kozamgi_rwamiko3.jpg'
+import kozamgi_rwamiko4 from '../../images/gallery/kozamgi_rwamiko/kozamgi_rwamiko4.jpg'
+import kozamgi_rwamiko5 from '../../images/gallery/kozamgi_rwamiko/kozamgi_rwamiko5.jpg'
+import kozamgi_rwamiko6 from '../../images/gallery/kozamgi_rwamiko/kozamgi_rwamiko6.jpg'
+import kozamgi_rwamiko7 from '../../images/gallery/kozamgi_rwamiko/kozamgi_rwamiko7.jpg'
+import kozamgi_rwamiko8 from '../../images/gallery/kozamgi_rwamiko/kozamgi_rwamiko8.jpg'
+import sumeet_barhona1 from '../../images/gallery/sumeet_barhona/sumeet_barhona1.jpg'
+import sumeet_barhona2 from '../../images/gallery/sumeet_barhona/sumeet_barhona2.jpg'
+import sumeet_barhona3 from '../../images/gallery/sumeet_barhona/sumeet_barhona3.jpg'
+import sumeet_barhona4 from '../../images/gallery/sumeet_barhona/sumeet_barhona4.jpg'
+import sumeet_barhona5 from '../../images/gallery/sumeet_barhona/sumeet_barhona5.jpg'
+import sumeet_barhona6 from '../../images/gallery/sumeet_barhona/sumeet_barhona6.jpg'
+import sumeet_barhona7 from '../../images/gallery/sumeet_barhona/sumeet_barhona7.jpg'
+import thierry_kibagabaga1 from '../../images/gallery/thierry_kibagabaga/thierry_kibagabaga1.jpg'
+import thierry_kibagabaga2 from '../../images/gallery/thierry_kibagabaga/thierry_kibagabaga2.jpg'
+import thierry_kibagabaga3 from '../../images/gallery/thierry_kibagabaga/thierry_kibagabaga3.jpg'
+import thierry_kibagabaga4 from '../../images/gallery/thierry_kibagabaga/thierry_kibagabaga4.jpg'
+import thierry_kibagabaga5 from '../../images/gallery/thierry_kibagabaga/thierry_kibagabaga5.jpg'
+import thierry_kibagabaga6 from '../../images/gallery/thierry_kibagabaga/thierry_kibagabaga6.jpg'
+import thierry_kibagabaga7 from '../../images/gallery/thierry_kibagabaga/thierry_kibagabaga7.jpg'
+import thierry_kibagabaga8 from '../../images/gallery/thierry_kibagabaga/thierry_kibagabaga8.jpg'
+import thierry_kibagabaga9 from '../../images/gallery/thierry_kibagabaga/thierry_kibagabaga9.jpg'
+import zind_rugarama1 from '../../images/gallery/zind_rugarama/zind_rugarama1.jpg'
+import zind_rugarama2 from '../../images/gallery/zind_rugarama/zind_rugarama2.jpg'
+import zind_nyamirambo1 from '../../images/gallery/zind_nyamirambo/zind_nyamirambo1.jpg'
+import zind_nyamirambo2 from '../../images/gallery/zind_nyamirambo/zind_nyamirambo2.jpg'
+import zind_karembure1 from '../../images/gallery/zind_karembure/zind_karembure1.jpg'
+import zind_karembure2 from '../../images/gallery/zind_karembure/zind_karembure2.jpg'
+import zind_kanyinya1 from '../../images/gallery/zind_kanyinya/zind_kanyinya1.jpg'
+import zind_kanyinya2 from '../../images/gallery/zind_kanyinya/zind_kanyinya2.jpg'
 
 const projData = [
     {
         id: 0,
-        pName: 'Design of Noah Residential Building',
-        pKey: "noah",
-        pSrc: noah,
-        pClient: 'Noah NAMBALE',
-        pDate: 'Feb-2020',
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'BIKESHA',
+        pDate: '2021',
         finished: true,
-        pLocation: 'Kicukiro-Karembure',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            noah1, noah2, noah3, noah4, noah5, noah6, noah7, noah8, noah9, noah10
-        ]
+        pLocation: 'NYAMATA-BUGESERA',
+        pDescription: '',
+        pGallery: [bikesha_bugesera1, bikesha_bugesera2]
     },
     {
         id: 1,
-        pName: 'Design of EAP Kigali Project Building',
-        pKey: "eap",
-        pSrc: eap,
-        pClient: 'EAP Kigali',
-        pDate: 'Feb-2020',
-        finished: false,
-        pLocation: 'Kigali-Rwanda',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            eap1
-        ]
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'LIZINDE Malik Shaffy',
+        pDate: '2021',
+        finished: true,
+        pLocation: 'KAGARAMA-KICUKIRO',
+        pDescription: '',
+        pGallery: [lizinde_kagarama1, lizinde_kagarama2]
     },
     {
         id: 2,
-        pName: 'Design of Gaming Villa Entertainments',
-        pKey: "butera",
-        pSrc: villa,
-        pClient: 'Elly BUTERA',
-        pDate: 'Feb-2020',
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'KALIMUNDA Rene',
+        pDate: '2021',
         finished: true,
-        pLocation: 'Kicukiro-Kabeza',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            villa1, villa2, villa3
-        ]
+        pLocation: 'KAGARAMA-KICUKIRO-KIGALI',
+        pDescription: '',
+        pGallery: [kalimunda_kagarama1, kalimunda_kagarama2]
     },
     {
         id: 3,
-        pName: 'Design of Placide Residential Building',
-        pKey: "placide",
-        pSrc: placide,
-        pClient: 'Placide NDUWAYO',
-        pDate: 'May-2020',
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'KATUSIIME Hellen',
+        pDate: '2021',
         finished: true,
-        pLocation: 'Nyarugenge-Kanyinya',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            placide1, placide2, placide5, placide6, placide7, placide8, placide9
-        ]
+        pLocation: 'Ndera-Gasabo-Kigali',
+        pDescription: '',
+        pGallery: [katusiime_ndera1, katusiime_ndera2]
     },
     {
         id: 4,
-        pName: 'Construction of NYARUTEJA ECD Pre-school',
-        pKey: "nyaruteja",
-        pSrc: nyaruteja,
-        pClient: 'NYARUTEJA Pre-School',
-        pDate: '',
-        finished: false,
-        pLocation: 'Gisagara-Rwanda',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            nyaruteja1, nyaruteja2, nyaruteja3
-        ]
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'EB-ARCHITECTS',
+        pDate: '2021',
+        finished: true,
+        pLocation: 'Kabeza-Kicukiro-Kigali',
+        pDescription: '',
+        pGallery: [ebarchitects_kabeza20211, ebarchitects_kabeza20212]
     },
     {
         id: 5,
-        pName: 'Design of Mitterrand Apartments',
-        pKey: "mitterand",
-        pSrc: miterrand,
-        pClient: 'Mitterrand',
-        pDate: '28-March-2020',
-        finished: true,
-        pLocation: 'Rubavu-Gisenyi',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            mitterand1, mitterand2, mitterand3
-        ]
+        pName: 'Structural Design Development of Kimihurura Apartment',
+        pClient: 'ZAAKFIELD GROUP',
+        pDate: '2021',
+        finished: false,
+        pLocation: 'Kimihurura–Gasabo-Kigali',
+        pDescription: '',
+        pGallery: [zaakfield_kimihurura1, zaakfield_kimihurura2, zaakfield_kimihurura3, zaakfield_kimihurura4, zaakfield_kimihurura5]
     },
     {
         id: 6,
-        pName: 'Design of Thierry Residential House',
-        pKey: "thierry",
-        pSrc: thierry,
-        pClient: 'Thierry NZAMURAMBAHO',
-        pDate: 'May-2020',
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'Peoples Heritage Design & Consultancy studio (PHD)',
+        pDate: '2021',
         finished: true,
-        pLocation: 'Gasabo-Kibagabaga',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            thierry2, thierry3, thierry4, thierry5, thierry6, thierry7, thierry8, thierry9, thierry10
-        ]
+        pLocation: 'Ndera-Gasabo',
+        pDescription: '',
+        pGallery: [phd_ndera1]
     },
     {
         id: 7,
-        pName: 'Preparation of tender documents',
-        pKey: "sumeet",
-        pSrc: sumeet,
-        pClient: 'Sumeet',
-        pDate: '',
-        finished: false,
-        pLocation: 'India-Jharkhand',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            sumeet1, sumeet2, sumeet3, sumeet4, sumeet5, sumeet6, sumeet7
-        ]
+        pName: 'Structural Design Development of Ndahiro’s Motel',
+        pClient: 'Peoples Heritage Design & Consultancy studio (PHD)',
+        pDate: '2021',
+        finished: true,
+        pLocation: 'Kagarama-Kicukiro',
+        pDescription: '',
+        pGallery: [phd_kagarama1, phd_kagarama2]
     },
     {
         id: 8,
-        pName: 'Design of Egide Residential House',
-        pKey: "egide",
-        pSrc: egide,
-        pClient: 'Egide SHYAKA',
-        pDate: '',
-        finished: false,
-        pLocation: 'Kigali-Rwanda',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            egide1, egide2, egide3, egide4
-        ]
+        pName: 'Structural Design Development of Ndahiro’s Motel',
+        pClient: 'Peoples Heritage Design & Consultancy studio (PHD)',
+        pDate: '2021',
+        finished: true,
+        pLocation: 'Gatenga-Kicukiro',
+        pDescription: '',
+        pGallery: [phd_gatenga1, phd_gatenga2]
     },
     {
         id: 9,
-        pName: 'Design of Gervais Residential House',
-        pKey: "gervais",
-        pSrc: gervais,
-        pClient: 'Gervais',
-        pDate: '',
-        finished: false,
-        pLocation: 'Kigali-Rwanda',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            gervais1, gervais2, gervais3, gervais4, gervais5, gervais6
-        ]
+        pName: 'Structural Design Development of Kanombe Apartment',
+        pClient: 'Axiom',
+        pDate: '2021',
+        finished: true,
+        pLocation: 'Kanombe–Kicukiro-Kigali',
+        pDescription: '',
+        pGallery: [axiom_kanombe1, axiom_kanombe2]
     },
     {
         id: 10,
-        pName: 'Design of john Residential House',
-        pKey: "john",
-        pSrc: john,
-        pClient: 'john',
-        pDate: '',
+        pName: 'Design and Build of Residential Villa',
+        pClient: 'Irene KWIHANGANA',
+        pDate: '2021',
         finished: false,
-        pLocation: 'KANOMBE-Kigali',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            john1, john2, john3, john4, john5, john6
-        ]
+        pLocation: 'Ntarama-Bugesera',
+        pDescription: '',
+        pGallery: [kwihangana_ntarama1, kwihangana_ntarama2, kwihangana_ntarama3, kwihangana_ntarama4, kwihangana_ntarama5, kwihangana_ntarama6, kwihangana_ntarama7]
     },
     {
         id: 11,
-        pName: 'Design of Rushaki Muslim School',
-        pKey: "rushaki",
-        pSrc: rushaki,
-        pClient: 'Rushaki Muslim School',
-        pDate: '',
-        finished: false,
-        pLocation: 'Kigali-Rwanda',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            rushaki1, rushaki2, rushaki3, rushaki4, rushaki5, rushaki6 
-        ]
+        pName: 'Structural Design Development of Gisozi Commercial Building',
+        pClient: 'MUSHOMA Joseph',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Gisozi-Gasabo-Kigali',
+        pDescription: '',
+        pGallery: [mushoma_gisozi1]
     },
     {
         id: 12,
-        pName: 'proposal construction of KOZAMGI Diary',
-        pKey: "rwamiko",
-        pSrc: rwamiko,
-        pClient: 'KOZAMGI Cooperative',
-        pDate: '',
-        finished: false,
-        pLocation: 'GICUMBI-RWAMIKO',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            rwamiko1, rwamiko2, rwamiko3, rwamiko4, rwamiko5, rwamiko6, rwamiko7, rwamiko8
-        ]
+        pName: 'Structural Design Development of Kigali Catering Center',
+        pClient: 'EB-ARCHITECTS',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'KAGARAMA-KICUKIRO-KIGALI',
+        pDescription: '',
+        pGallery: [ebarchitects_catering1, ebarchitects_catering2]
     },
     {
         id: 13,
-        pName: 'Design of Venny Residential House',
-        pKey: "venny",
-        pSrc: venny,
-        pClient: 'Venny',
-        pDate: '',
-        finished: false,
-        pLocation: 'Kigali-Rwanda',
-        pDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eveniet, provident expedita unde reprehenderit, laborum error, atque dolore iure laboriosam eius cupiditate perferendis magni adipisci velit ex illum sequi ad fugiat obcaecati? Temporibus nostrum placeat quis expedita, dicta odio soluta iste quae. Magnam deserunt velit nulla commodi? At, suscipit ex?',
-        pGallery: [
-            venny1, venny2, venny3
-        ]
-    }
-
-]
+        pName: 'Structural Design Development for Gaming Villa Entertainment Center',
+        pClient: 'EB-ARCHITECTS',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Kabeza-Kicukiro',
+        pDescription: '',
+        pGallery: [ebarchitects_kabeza20201, ebarchitects_kabeza20202]
+    },
+    {
+        id: 14,
+        pName: 'Structural Design Development of Residential Villa(Village)',
+        pClient: 'NYIRIGIRA John',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Kicukiro-Kigali',
+        pDescription: '',
+        pGallery: [nyirigira_kicukiro1, nyirigira_kicukiro2, nyirigira_kicukiro3, nyirigira_kicukiro4, nyirigira_kicukiro5, nyirigira_kicukiro6]
+    },
+    {
+        id: 15,
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'NTAKIRUTIMANA Gervais',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Masaka-Kicukiro',
+        pDescription: '',
+        pGallery: [ntakirutimana_masaka1, ntakirutimana_masaka2, ntakirutimana_masaka3, ntakirutimana_masaka4, ntakirutimana_masaka5, ntakirutimana_masaka6]
+    },
+    {
+        id: 16,
+        pName: 'Structural Design Development of Mitterrand Apartment',
+        pClient: 'ARCHIBEAU',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Gisenyi-Rubavu',
+        pDescription: '',
+        pGallery: [archibeau_gisenyi1, archibeau_gisenyi2, archibeau_gisenyi3]
+    },
+    {
+        id: 17,
+        pName: 'Structural Design Development and Supervison of Residential Villa',
+        pClient: 'BAVUGAMENSHI Theobald',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Kinyinya-Gasabo-Kicukiro',
+        pDescription: '',
+        pGallery: [bavugamenshi_kinyinya1, bavugamenshi_kinyinya2, bavugamenshi_kinyinya3]
+    },
+    {
+        id: 18,
+        pName: 'Structural Design Development and tender document Elaboration of Rushaki Muslim School',
+        pClient: 'NIYITANAGA Djamid',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Rushaki-Gicumbi',
+        pDescription: '',
+        pGallery: [niyitanga_rushaki1, niyitanga_rushaki2, niyitanga_rushaki3, niyitanga_rushaki4, niyitanga_rushaki5, niyitanga_rushaki6]
+    },
+    {
+        id: 19,
+        pName: 'Structural Design Development of Warehouse',
+        pClient: 'RURANGWA Alexis',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Nyabugogo-Kigali',
+        pDescription: '',
+        pGallery: [rurangwa_warehouse1, rurangwa_warehouse2]
+    },
+    {
+        id: 20,
+        pName: 'Civil/Structural Design Development of Rwamiko Diary',
+        pClient: 'KOZAMGI Cooperative',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Rwamiko-Gicumbi',
+        pDescription: '',
+        pGallery: [kozamgi_rwamiko1, kozamgi_rwamiko2, kozamgi_rwamiko3, kozamgi_rwamiko4, kozamgi_rwamiko5, kozamgi_rwamiko6, kozamgi_rwamiko7, kozamgi_rwamiko8]
+    },
+    {
+        id: 21,
+        pName: 'Civil/Structural Design Development of Residential Villa',
+        pClient: 'SUMEET',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'BARHONA-GODDA-JHARKHAND-India',
+        pDescription: '',
+        pGallery: [sumeet_barhona1, sumeet_barhona2, sumeet_barhona3, sumeet_barhona4, sumeet_barhona5, sumeet_barhona6, sumeet_barhona7]
+    },
+    {
+        id: 22,
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'NZAMURAMBAHO Thierry',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Kibagabaga-Gasabo-Kigali',
+        pDescription: '',
+        pGallery: [thierry_kibagabaga1, thierry_kibagabaga2, thierry_kibagabaga3, thierry_kibagabaga4, thierry_kibagabaga5, thierry_kibagabaga6, thierry_kibagabaga7, thierry_kibagabaga8, thierry_kibagabaga9]
+    },
+    {
+        id: 23,
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'Zind Architects',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Rugarama-Kicukiro-Kigali',
+        pDescription: '',
+        pGallery: [zind_rugarama1, zind_rugarama2]
+    },
+    {
+        id: 24,
+        pName: 'Civil/Structural Design Development of Residential Villa',
+        pClient: 'Zind Architects',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Nyamirambo-Nyarugenge-Kicukiro-Kigali',
+        pDescription: '',
+        pGallery: [zind_nyamirambo1, zind_nyamirambo2]
+    },
+    {
+        id: 25,
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'Zind Architects',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Karembure-Kicukiro-Kigali',
+        pDescription: '',
+        pGallery: [zind_karembure1, zind_karembure2]
+    },
+    {
+        id: 26,
+        pName: 'Structural Design Development of Residential Villa',
+        pClient: 'Zind Architects',
+        pDate: '2020',
+        finished: true,
+        pLocation: 'Kanyinya-Nyarugenge-Kigali',
+        pDescription: '',
+        pGallery: [zind_kanyinya1, zind_kanyinya2]
+    }]
 
 export default projData;

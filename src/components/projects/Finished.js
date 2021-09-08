@@ -9,7 +9,7 @@ const Finished = (props) => {
   });
 
   const projectsFinshed = props.projects.map((proj) => {
-    const { id, pName, pSrc, pLocation, pKey, pDescription, pGallery, finished } = proj;
+    const { id, pName, pLocation, pKey, pDescription, pGallery, finished } = proj;
 
     return finished ? (
 
@@ -17,8 +17,8 @@ const Finished = (props) => {
         <div className="card card-body bg-light" id={pKey}>
           <img
             className="card-img-top img-thumbnail rounded"
-            src={pSrc}
-            alt="Card image1 cap"
+            src={pGallery[0]}
+            alt="Elysium Group Ltd"
           />
 
           <div

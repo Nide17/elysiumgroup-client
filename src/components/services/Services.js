@@ -34,7 +34,7 @@ const Services = ({ setServices, services }) => {
             className="card-img-overlay"
           >
             <button type="button" className="btn btn-outline-warning btn-sm text-uppercase font-weight-bolder">
-              <a href="/#" className="text-warning">View details</a>
+              <a href="#/" className="text-warning">View details</a>
             </button>
           </div>
 
@@ -50,8 +50,7 @@ const Services = ({ setServices, services }) => {
 
         </div>
 
-      </div>
-    );
+      </div>);
   });
 
   return (
