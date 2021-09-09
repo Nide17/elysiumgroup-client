@@ -18,14 +18,14 @@ const Finished = ({ projects, setProjects }) => {
           proj.finished ? (
 
             <div className="col-12 col-sm-6 col-lg-3 mb-3" key={proj.id}>
-              <div className="card card-body bg-light" id={proj.pClient.split(' ').join('-') + proj.id}>
+              <div className="card card-body bg-light" id={proj.pClient.split(' ').join('-').replace(/[^a-zA-Z0-9]/g, '-') + proj.id}>
                 <img
                   className="card-img-top img-thumbnail rounded"
                   src={proj.pGallery[0]}
                   alt="Elysium Group Ltd" />
 
                 <div className="card-img-overlay">
-                  <button type="button" className="btn btn-outline-warning btn-sm" data-toggle="modal" data-target={`.finished${proj.pClient.split(' ').join('-') + proj.id}`}>
+                  <button type="button" className="btn btn-outline-warning btn-sm" data-toggle="modal" data-target={`.finished${proj.pClient.split(' ').join('-').replace(/[^a-zA-Z0-9]/g, '-') + proj.id}`}>
                     View more ...
                   </button>
                 </div>
@@ -37,7 +37,7 @@ const Finished = ({ projects, setProjects }) => {
               </div>
 
               {/* MODAL */}
-              <div className={`modal fade finished${proj.pClient.split(' ').join('-') + proj.id}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+              <div className={`modal fade finished${proj.pClient.split(' ').join('-').replace(/[^a-zA-Z0-9]/g, '-') + proj.id}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 
                 <div className="modal-dialog modal-xl">
                   <div className="modal-content">
