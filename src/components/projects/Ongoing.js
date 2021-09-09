@@ -2,88 +2,84 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { setProjects } from "../../redux/projects/projects.actions";
 
-const Ongoing = (props) => {
+const Ongoing = ({ projects, setProjects }) => {
   useEffect(() => {
     // Inside this callback function we perform our side effects.
-    props.setProjects();
+    setProjects();
   });
 
-  const onGoing = props.projects.map((proj) => {
-    const { id, pName, pLocation, pKey, pDescription, pGallery, finished } = proj;
+  return <div className="row">
+    {
+      projects.map((proj) => {
 
-    return !finished ? (
-      // , pClient, pDate, pLocation, pDescription
-      <div className="col-12 col-sm-6 col-lg-3 mb-3" key={id}>
-        <div className="card card-body bg-light" id={pKey}>
-          <img
-            className="card-img-top img-thumbnail rounded"
-            src={pGallery[0]}
-            alt="Elysium Group Ltd"
-          />
+        return !proj.finished ? (
 
-          <div
-            className="card-img-overlay"
-          >
-            <button type="button" className="btn btn-outline-warning btn-sm" data-toggle="modal" data-target={`.ongoing${pKey}`}>
-              View more ...
-            </button>
-          </div>
+          <div className="col-12 col-sm-6 col-lg-3 mb-3" key={proj.id}>
+            <div className="card card-body bg-light" id={proj.pClient.split(' ').join('-') + proj.id}>
+              <img
+                className="card-img-top img-thumbnail rounded"
+                src={proj.pGallery[0]}
+                alt="Elysium Group Ltd"
+              />
 
-          <div className="project-info p-2 text-center text-uppercase">
-            <h6>{pName}</h6>
-            <p>{pLocation}</p>
-          </div>
-        </div>
+              <div
+                className="card-img-overlay"
+              >
+                <button type="button" className="btn btn-outline-warning btn-sm" data-toggle="modal" data-target={`.ongoing${proj.pClient.split(' ').join('-') + proj.id}`}>
+                  View more ...
+                </button>
+              </div>
 
-        {/* MODAL */}
-        <div className={`modal fade ongoing${pKey}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+              <div className="project-info p-2 text-center text-uppercase">
+                <h6>{proj.pName}</h6>
+                <p>{proj.pLocation}</p>
+              </div>
+            </div>
 
-          <div className="modal-dialog modal-xl">
-            <div className="modal-content">
+            {/* MODAL */}
+            <div className={`modal fade ongoing${proj.pClient.split(' ').join('-') + proj.id}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 
-              <div className="container page-top">
+              <div className="modal-dialog modal-xl">
+                <div className="modal-content">
 
-                <div className="row img-row">
+                  <div className="container page-top">
 
-                  {/* iteration */}
-                  {pGallery.map(pImage => {
+                    <div className="row img-row">
 
-                    return (
-                      <div className="col-lg-3 col-md-4 col-xs-6 thumb" key={pImage} onClick={(e) => e.preventDefault()}>
-                        <a href={pImage} className="fancybox" id="fancybox" rel="ligthbox">
-                          <img src={pImage} className="zoom img-fluid" alt="" />
-                        </a>
+                      {/* iteration */}
+                      {proj.pGallery.map(pImage => {
+
+                        return (
+                          <div className="col-lg-3 col-md-4 col-xs-6 thumb" key={pImage} onClick={(e) => e.preventDefault()}>
+                            <a href={pImage} className="fancybox" id="fancybox" rel="ligthbox">
+                              <img src={pImage} className="zoom img-fluid" alt="" />
+                            </a>
+                          </div>
+                        )
+
+                      })}
+
+                    </div>
+
+                    <div className="row desc">
+
+                      <div className="col-12 text-center">
+                        <h2>{proj.pName}</h2>
+                        {proj.pDescription}
                       </div>
-                    )
 
-                  })}
+                    </div>
 
-                </div>
-
-                <div className="row desc">
-
-                  <div className="col-12 text-center">
-                    <h2>{pName}</h2>
-                    {pDescription}
                   </div>
 
                 </div>
-
               </div>
 
             </div>
-          </div>
 
-        </div>
-
-      </div>
-    ) : (
-        ""
-      );
-  });
-
-  return <div className="row">{onGoing}</div>;
-};
+          </div>) : ("")
+      })}</div>
+}
 
 const mapStateToProps = (state) => {
   return {
