@@ -7,10 +7,8 @@ const Team = () => {
             <div className="container about-container">
 
                 <div className="row">
-                    <div className="row">
-                        <div className="col-12">
-                            <h2 className="text-center py-3 font-weight-bolder w-100">Our Team</h2>
-                        </div>
+                    <div className="col-12">
+                        <h2 className="text-center py-3 font-weight-bolder w-100">Our Team</h2>
                     </div>
 
                     <div className="col-12 mt-2 members" style={{ display: "flex", justifyContent: "center" }}>
