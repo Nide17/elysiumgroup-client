@@ -1,8 +1,16 @@
+@import url(//db.onlinewebfonts.com/c/9b62dc86f936227b3f7b367bd0b6c05e?family=Tw+Cen+MT);
+
+@font-face {
+  font-family: "Tw Cen MT";
+  src: url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.eot");
+  src: url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.woff") format("woff"), url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.svg#Tw Cen MT") format("svg");
+}
+
 body {
   /* reset */
   margin: 0;
   padding: 0;
-  font-family: 'Amiri', Helvetica, "Trebuchet MS", sans-serif;
+  font-family: 'Tw Cen MT', 'Amiri', Helvetica, "Trebuchet MS", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
