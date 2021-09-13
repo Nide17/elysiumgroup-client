@@ -768,15 +768,15 @@ ul.social-buttons li {
   border-bottom: 1px solid rgba(201, 5, 5, 0.125);
 }
 
-.about-section #accordionElysium {
+.about-section #viewBio {
   border: 1px solid rgb(240, 173, 78);
 }
 
-.about-section #accordionElysium .btn-link .fa {
+.about-section #viewBio .btn-link .fa {
   color: rgb(240, 173, 78);
 }
 
-.about-section #accordionElysium .btn-link {
+.about-section #viewBio .btn-link {
   color: #037ec0;
   font-weight: 900;
 }
@@ -1622,7 +1622,7 @@ h1.elysium-title {
     color: #037ec0;
   }
 
-  .about-section #accordionElysium .btn-link {
+  .about-section #viewBio .btn-link {
     font-size: .7rem;
     line-height: .6;
   }

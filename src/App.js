@@ -3,6 +3,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import About from "./components/about/About";
 import Team from "./components/team/Team.js";
+import ViewBio from "./components/team/ViewBio.js";
 import Contact from "./components/Contact";
 import Login from './components/admin/Login';
 import Register from './components/admin/Register';
@@ -55,11 +56,12 @@ const App = (props) => {
             )}
           />
 
-          <Route path="/services" component={Services} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/about" component={About} />
-          <Route path="/team" component={Team} />
-          <Route path="/contact" component={Contact} />
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/projects" component={Projects} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/team" component={Team} />
+          <Route exact path="/view-bio/:memberId" component={ViewBio} />
+          <Route exact path="/contact" component={Contact} />
         </Switch>
         <Footer />
       </BrowserRouter>
