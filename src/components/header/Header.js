@@ -187,6 +187,14 @@ const Header = (props) => {
                             </li>
 
                             <li>
+                                <a href="/team"
+                                    className={menuProjectsLinkClassName}
+                                    style={{ borderBottom: location.pathname === "/team" ? "2px solid #f0ad4e" : null }}>
+                                    Our Team
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="/contact" 
                                 className="main-link"
                                     style={{ borderBottom: location.pathname === "/contact" ? "2px solid #f0ad4e" : null }}>

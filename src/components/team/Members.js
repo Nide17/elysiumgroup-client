@@ -44,7 +44,7 @@ const Members = ({ setMembers, members }) => {
                 <div className="card-body"><p>{memberDescription}</p></div>
             </div>)
     }
-    
+
 
     if (members != null) {
         const membersAll = members.map(member =>

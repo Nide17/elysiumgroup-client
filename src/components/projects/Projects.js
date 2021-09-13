@@ -4,13 +4,14 @@ import Ongoing from "./Ongoing";
 import Finished from "./Finished";
 
 const Projects = () => {
-  
+
   return (
-    <section className="projects-section" id="projects">
+    <section className="projects-section py-0 py-lg-4" id="projects">
       <div className="projects-container container">
+
         <div className="row">
           <div className="col-12">
-            <h2 className="text-center py-3">Projects</h2>
+            <h2 className="text-center py-3 font-weight-bolder">Projects</h2>
           </div>
         </div>
 
