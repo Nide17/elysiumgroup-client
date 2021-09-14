@@ -812,6 +812,14 @@ ul.social-buttons li {
   margin-bottom: 0px;
 }
 
+.memberImg img {
+  border: 2px solid #009cde;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px 0px rgba(61, 70, 164, 0.75);
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(61, 70, 164, 0.75);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(61, 70, 164, 0.75);
+}
+
 .elysium-title-wrapper {
   display: flex;
   flex-direction: column;
