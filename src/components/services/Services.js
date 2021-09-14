@@ -5,9 +5,8 @@ import { setServices } from "../../redux/services/services.actions";
 const Services = ({ setServices, services }) => {
 
   useEffect(() => {
-    // Inside this callback function we perform our side effects.
     setServices();
-  });
+  }, [setServices]);
 
   const allServices = services.map((service) => {
 
