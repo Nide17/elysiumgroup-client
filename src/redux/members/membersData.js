@@ -7,7 +7,7 @@ import ephremImg from '../../images/ephrem.jpg'
 const membersData = [
     {
         id: 0,
-        memberName: 'Eng. Ntizanyibagirwa Obed',
+        memberName: 'Eng. NTIZANYIBAGIRWA Obed',
         designation: 'Chief Executive Officer (CEO)',
         memberEducation: "BSc. Civil Engineering",
         memberImage: obedImg,
@@ -16,12 +16,12 @@ const membersData = [
     },
     {
         id: 1,
-        memberName: 'Eng. Ephrem NDAYISABA',
+        memberName: 'Eng. NDAYISABA Ephrem',
         designation: 'Chief Operating Officer (COO)',
         memberImage: ephremImg,
         memberEducation: "BSc. Civil Engineering",
         memberPhone: '0783016252',
-        memberDescription: 'Eng. Ephrem NDAYISABA is a civil engineer with a bachelor’s degree, certified as a professional engineer authorized by Institution of Engineers Rwanda(IER). He has a strong passion for engineering works and knowledge in buildings and roads construction and very committed in structural analysis, reinforced concrete designing and Transportation Engineering. He is interested in civil engineering works because looking around in the world there is a development of infrastructures which requires a lot of civil engineering works, therefore he has passion to be part of engineers who are ready to contribute in that development. His professional experience embraces in various construction projects and he participated in preliminary feasibility studies, reviewing the accuracy of the generated designs, construction and repair of the buildings, roads, wastewaterdisposal system, detailed analysis and the production of structural drawings and ensuring their timely submittal. Supervising and coordinating the construction works and ensuring that executed works are to the required specifications. Reviewing of all site design reports and drawing for accuracy and comprehensiveness, attending site meetings, briefing of clients and project managers on site progress and performance.'
+        memberDescription: 'Eng. NDAYISABA Ephrem is a civil engineer with a bachelor’s degree, certified as a professional engineer authorized by Institution of Engineers Rwanda(IER). He has a strong passion for engineering works and knowledge in buildings and roads construction and very committed in structural analysis, reinforced concrete designing and Transportation Engineering. He is interested in civil engineering works because looking around in the world there is a development of infrastructures which requires a lot of civil engineering works, therefore he has passion to be part of engineers who are ready to contribute in that development. His professional experience embraces in various construction projects and he participated in preliminary feasibility studies, reviewing the accuracy of the generated designs, construction and repair of the buildings, roads, wastewaterdisposal system, detailed analysis and the production of structural drawings and ensuring their timely submittal. Supervising and coordinating the construction works and ensuring that executed works are to the required specifications. Reviewing of all site design reports and drawing for accuracy and comprehensiveness, attending site meetings, briefing of clients and project managers on site progress and performance.'
     },
     {
         id: 2,
