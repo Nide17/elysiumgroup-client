@@ -11,8 +11,8 @@ const AccordionItem = ({ typesOfProject, projects, active, onToggle }) => {
     return (
         <li className={`accordion_item ${active ? "active" : ""}`}>
 
-            <div className="title" onClick={onToggle}>
-                <p className="m-0">{typesOfProject.projectType}</p>
+            <div className="title font-weight-bolder" onClick={onToggle}>
+                <h5 className="m-0">{typesOfProject.projectType}</h5>
                 <span className="control">{active ? "-" : "+"} </span>
             </div>
 

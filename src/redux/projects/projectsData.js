@@ -220,7 +220,7 @@ const projData = [
         pClient: 'MUSHOMA Joseph',
         pDate: '2020',
         pType: 'Commercial Project',
-        finished: true,
+        finished: false,
         pLocation: 'Gisozi-Gasabo-Kigali',
         pDescription: '',
         pGallery: [mushoma_gisozi1]
