@@ -6,6 +6,8 @@ import Finished from "./Finished";
 const AccordionItem = ({ typesOfProject, projects, active, onToggle }) => {
 
     const proj = projects.filter(proje => proje.pType === typesOfProject.projectType)
+    const completedProj = projects.filter(proje => (proje.pType === typesOfProject.projectType && proje.finished))
+    const ongoingProj = projects.filter(proje => (proje.pType === typesOfProject.projectType && !proje.finished))
 
     return (
         <li className={`accordion_item ${active ? "active" : ""}`}>
@@ -47,11 +49,11 @@ const AccordionItem = ({ typesOfProject, projects, active, onToggle }) => {
                         </div>
 
                         <div className="tab-pane fade" id="v-pills-completed" role="tabpanel" aria-labelledby="v-pills-completed-tab" >
-                            <Finished projects={proj && proj} />
+                            <Finished projects={completedProj && completedProj} />
                         </div>
 
                         <div className="tab-pane fade" id="v-pills-ongoing" role="tabpanel" aria-labelledby="v-pills-ongoing-tab">
-                            <Ongoing projects={proj && proj} />
+                            <Ongoing projects={ongoingProj && ongoingProj} />
                         </div>
                     </div>
                 </div>

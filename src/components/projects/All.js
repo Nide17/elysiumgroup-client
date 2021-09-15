@@ -34,14 +34,14 @@ const All = ({ projects }) => {
                 <div className="container page-top">
 
                   <div className="row img-row">
-                    {/* iteration */}
-                    {proj.pGallery.map(pImage => (
+
+                    {proj.pGallery.map(pImage =>
+                    
                       <div className="col-lg-3 col-md-4 col-xs-6 thumb" key={uuidv4()} onClick={(e) => e.preventDefault()}>
                         <a href={pImage} className="fancybox" id="fancybox" rel="ligthbox">
                           <img src={pImage} className="zoom img-fluid" alt="" />
                         </a>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
 
                   <div className="row desc">

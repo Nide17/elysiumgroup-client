@@ -10,7 +10,7 @@ const Finished = ({ projects }) => {
       {
         projects && projects.map((proj) =>
 
-          proj.finished ? (
+          proj.finished ?
 
             <div className="col-12 col-sm-6 col-lg-3 mb-3" key={uuidv4()}>
               <div className="card card-body bg-light" id={proj.pClient.split(' ').join('-').replace(/[^a-zA-Z0-9]/g, '-') + proj.id}>
@@ -31,7 +31,6 @@ const Finished = ({ projects }) => {
                 </div>
               </div>
 
-              {/* MODAL */}
               <div className={`modal fade finished${proj.pClient.split(' ').join('-').replace(/[^a-zA-Z0-9]/g, '-') + proj.id}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 
                 <div className="modal-dialog modal-xl">
@@ -41,18 +40,12 @@ const Finished = ({ projects }) => {
 
                       <div className="row img-row">
 
-                        {/* iteration */}
-                        {proj.pGallery.map(pImage => {
-
-                          return (
-                            <div className="col-lg-3 col-md-4 col-xs-6 thumb" key={pImage} onClick={(e) => e.preventDefault()}>
-                              <a href={pImage} className="fancybox" id="fancybox" rel="ligthbox">
-                                <img src={pImage} className="zoom img-fluid" alt="" />
-                              </a>
-                            </div>
-                          )
-
-                        })}
+                        {proj.pGallery.map(pImage =>
+                          <div className="col-lg-3 col-md-4 col-xs-6 thumb" key={pImage} onClick={(e) => e.preventDefault()}>
+                            <a href={pImage} className="fancybox" id="fancybox" rel="ligthbox">
+                              <img src={pImage} className="zoom img-fluid" alt="" />
+                            </a>
+                          </div>)}
 
                       </div>
 
@@ -72,7 +65,7 @@ const Finished = ({ projects }) => {
 
               </div>
 
-            </div>) : (""))}
+            </div> : null)}
     </div>)
 
 };
