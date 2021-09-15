@@ -20,7 +20,7 @@ const ViewBio = ({ setMembers, members }) => {
                 <div className="row">
 
                     <div className="col-12 col-sm-4 memberImg d-flex align-items-center justify-content-center">
-                        <img className="w-100" src={memberToView && memberToView.memberImage} alt={memberToView && memberToView.memberName} />
+                        <img className="w-100 mt-2 mt-lg-0" src={memberToView && memberToView.memberImage} alt={memberToView && memberToView.memberName} />
                     </div>
 
                     <div className="col-12 col-sm-8">

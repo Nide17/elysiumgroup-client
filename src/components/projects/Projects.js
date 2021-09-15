@@ -1,103 +1,54 @@
-import React from "react";
-import All from "./All";
-import Ongoing from "./Ongoing";
-import Finished from "./Finished";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { setProjects } from "../../redux/projects/projects.actions";
+import { typesOfProjects } from "./data";
+import AccordionItem from "./AccordionItem";
 
-const Projects = () => {
+const Projects = ({ projects, setProjects }) => {
 
-  return (
-    <section className="projects-section py-0 py-lg-4" id="projects">
-      <div className="projects-container container">
+    useEffect(() => { setProjects() });
 
-        <div className="row">
-          <div className="col-12">
-            <h2 className="text-center py-3 font-weight-bolder">Projects</h2>
-          </div>
-        </div>
+    const [clicked, setClicked] = useState("0");
+    const handleToggle = (index) => {
 
-        <div className="row">
-          <div className="col-12 col-sm-3 col-lg-2">
-            <div
-              className="nav flex-sm-column justify-content-around nav-pills"
-              id="v-pills-tab"
-              role="tablist"
-              aria-orientation="vertical"
-            >
-              <a
-                className="nav-link active btn-sm text-uppercase"
-                id="v-pills-home-tab"
-                data-toggle="pill"
-                href="#v-pills-home"
-                role="tab"
-                aria-controls="v-pills-home"
-                aria-selected="true"
-              >
-                All
-              </a>
+        if (clicked === index) {
+            return setClicked("0");
+        }
+        setClicked(index);
+    }
 
-              <a
-                className="nav-link btn-sm text-uppercase"
-                id="v-pills-profile-tab"
-                data-toggle="pill"
-                href="#v-pills-profile"
-                role="tab"
-                aria-controls="v-pills-profile"
-                aria-selected="false"
-              >
-                Completed
-              </a>
+    return (
 
-              <a
-                className="nav-link btn-sm text-uppercase"
-                id="v-pills-messages-tab"
-                data-toggle="pill"
-                href="#v-pills-messages"
-                role="tab"
-                aria-controls="v-pills-messages"
-                aria-selected="false"
-              >
-                Ongoing
-              </a>
+        <section className="projects-section py-0 py-lg-4" id="projects">
+            <div className="projects-container container">
+
+                <div className="row">
+                    <div className="col-12">
+                        <h2 className="text-center py-3 font-weight-bolder">Projects</h2>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-12">
+                        <ul className="accordion pl-0">
+                            {typesOfProjects.map((typesOfProject, index) =>
+
+                            (<AccordionItem
+                                onToggle={() => handleToggle(index)}
+                                active={clicked === index}
+                                key={index}
+                                typesOfProject={typesOfProject}
+                                projects={projects} />))}
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div className="col-12 col-sm-9 col-lg-10">
-            <div className="tab-content" id="v-pills-tabContent">
-              {/* All projetcs */}
-              <div
-                className="tab-pane fade show active"
-                id="v-pills-home"
-                role="tabpanel"
-                aria-labelledby="v-pills-home-tab"
-              >
-                <All />
-              </div>
-
-              {/* completed */}
-              <div
-                className="tab-pane fade"
-                id="v-pills-profile"
-                role="tabpanel"
-                aria-labelledby="v-pills-profile-tab"
-              >
-                <Finished />
-              </div>
-
-              {/* Ongoing */}
-              <div
-                className="tab-pane fade"
-                id="v-pills-messages"
-                role="tabpanel"
-                aria-labelledby="v-pills-messages-tab"
-              >
-                <Ongoing />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
-export default Projects;
+const mapStateToProps = state => ({
+    projects: state.projectsReducer.dataProjects,
+})
+
+export default connect(mapStateToProps, { setProjects })(Projects);

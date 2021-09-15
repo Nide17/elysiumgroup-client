@@ -974,6 +974,34 @@ h1.elysium-title {
   line-height: .8;
 }
 
+.accordion_item .title {
+  border: 1px solid #f0ad4e;
+  padding: .3rem .8rem;
+  margin-top: .8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* activate toggle */
+.accordion_item.active .title {
+  background-color: #0077b6;
+  color: #fff;
+}
+
+.answer_wrapper {
+  height: 0;
+  overflow: hidden;
+}
+
+.answer_wrapper {
+  /* ... */
+  transition: height ease 0.2s;
+}
+
+.answer_wrapper.open {
+  height: 100px;
+}
+
 /* LARGE SCREENS */
 @media (min-width: 1152px) {
 

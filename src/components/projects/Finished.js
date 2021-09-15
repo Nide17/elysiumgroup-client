@@ -1,23 +1,18 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { setProjects } from "../../redux/projects/projects.actions";
+import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 
-const Finished = ({ projects, setProjects }) => {
-  useEffect(() => {
-    // Inside this callback function we perform our side effects.
-    setProjects();
-  });
+const Finished = ({ projects }) => {
 
   return (
 
     <div className="row">
 
       {
-        projects.map((proj) =>
+        projects && projects.map((proj) =>
 
           proj.finished ? (
 
-            <div className="col-12 col-sm-6 col-lg-3 mb-3" key={proj.id}>
+            <div className="col-12 col-sm-6 col-lg-3 mb-3" key={uuidv4()}>
               <div className="card card-body bg-light" id={proj.pClient.split(' ').join('-').replace(/[^a-zA-Z0-9]/g, '-') + proj.id}>
                 <img
                   className="card-img-top img-thumbnail rounded"
@@ -81,16 +76,5 @@ const Finished = ({ projects, setProjects }) => {
     </div>)
 
 };
-const mapStateToProps = (state) => {
-  return {
-    projects: state.projectsReducer.dataProjects,
-  };
-};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setProjects: () => dispatch(setProjects()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Finished);
+export default Finished;
