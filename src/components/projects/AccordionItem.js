@@ -2,7 +2,6 @@ import React from "react";
 import All from "./All";
 import Ongoing from "./Ongoing";
 import Finished from "./Finished";
-import Pills from "./Pills";
 
 const AccordionItem = ({ typesOfProject, projects, active, onToggle }) => {
 
@@ -20,36 +19,38 @@ const AccordionItem = ({ typesOfProject, projects, active, onToggle }) => {
                 className="answer_wrapper row"
                 style={active ? { height: "100%" } : { height: "0px" }}>
 
-                <Pills />
+                <div className="col-12 col-sm-3 col-lg-2">
+
+                    <div className="nav flex-sm-column justify-content-around nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                        <a className="nav-link active btn-sm text-uppercase" id="v-pills-allProjects-tab" data-toggle="pill" href="#v-pills-allProjects" role="tab" aria-controls="v-pills-allProjects" aria-selected="true">
+                            All
+                        </a>
+
+                        <a className="nav-link btn-sm text-uppercase" id="v-pills-completed-tab" data-toggle="pill" href="#v-pills-completed" role="tab" aria-controls="v-pills-completed" aria-selected="false">
+                            Completed
+                        </a>
+
+                        <a className="nav-link btn-sm text-uppercase" id="v-pills-ongoing-tab" data-toggle="pill" href="#v-pills-ongoing" role="tab" aria-controls="v-pills-ongoing" aria-selected="false">
+                            Ongoing
+                        </a>
+                    </div>
+
+                </div>
+                
 
                 <div className="col-12 col-sm-9 col-lg-10">
                     <div className="tab-content" id="v-pills-tabContent">
-                        {/* All projetcs */}
-                        <div
-                            className="tab-pane fade show active"
-                            id="v-pills-home"
-                            role="tabpanel"
-                            aria-labelledby="v-pills-home-tab"
-                        >
+
+                        <div className="tab-pane fade show active" id="v-pills-allProjects" role="tabpanel" aria-labelledby="v-pills-allProjects-tab">
                             <All projects={proj && proj} />
                         </div>
 
-                        {/* completed */}
-                        <div
-                            className="tab-pane fade"
-                            id="v-pills-profile"
-                            role="tabpanel"
-                            aria-labelledby="v-pills-profile-tab"
-                        >
+                        <div className="tab-pane fade" id="v-pills-completed" role="tabpanel" aria-labelledby="v-pills-completed-tab" >
                             <Finished projects={proj && proj} />
                         </div>
 
-                        {/* Ongoing */}
-                        <div
-                            className="tab-pane fade"
-                            id="v-pills-messages"
-                            role="tabpanel"
-                            aria-labelledby="v-pills-messages-tab">
+                        <div className="tab-pane fade" id="v-pills-ongoing" role="tabpanel" aria-labelledby="v-pills-ongoing-tab">
                             <Ongoing projects={proj && proj} />
                         </div>
                     </div>

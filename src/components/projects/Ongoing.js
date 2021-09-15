@@ -29,7 +29,6 @@ const Ongoing = ({ projects }) => {
               </div>
             </div>
 
-            {/* MODAL */}
             <div className={`modal fade ongoing${proj.pClient.split(' ').join('-').replace(/[^a-zA-Z0-9]/g, '-') + proj.id}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 
               <div className="modal-dialog modal-xl">
@@ -39,7 +38,6 @@ const Ongoing = ({ projects }) => {
 
                     <div className="row img-row">
 
-                      {/* iteration */}
                       {proj.pGallery.map(pImage => {
 
                         return (
@@ -48,9 +46,7 @@ const Ongoing = ({ projects }) => {
                               <img src={pImage} className="zoom img-fluid" alt="" />
                             </a>
                           </div>
-                        )
-
-                      })}
+                        )})}
 
                     </div>
 
