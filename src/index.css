@@ -626,6 +626,12 @@ div.card-img-overlay:hover {
 .project-info h6 {
   font-weight: 900;
   font-size: .6rem;
+  height: 1.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project-info p {
@@ -975,10 +981,11 @@ h1.elysium-title {
 }
 
 .accordion_item {
-text-transform: uppercase;
+  text-transform: uppercase;
 }
+
 .accordion_item .title {
-  border: 1px solid #f0ad4e;
+  border: 2px solid #f0ad4e;
   padding: .3rem .8rem;
   margin-top: .8rem;
   display: flex;
@@ -998,7 +1005,6 @@ text-transform: uppercase;
 }
 
 .tabs_wrapper {
-  /* ... */
   transition: height ease 0.2s;
 }
 
@@ -1007,7 +1013,7 @@ text-transform: uppercase;
 }
 
 .accordion .nav-tabs {
-border-bottom: none;
+  border-bottom: none;
 }
 
 .accordion .nav-tabs .nav-item {
@@ -1020,7 +1026,7 @@ border-bottom: none;
 
 .accordion .nav-tabs .nav-item .nav-link,
 .accordion .nav-tabs .nav-link {
-  color: #009cde;
+  color: #000000;
   background-color: #fff;
   border-color: #f0ad4e;
 }
@@ -1028,7 +1034,7 @@ border-bottom: none;
 .accordion .nav-tabs .nav-item.show .nav-link,
 .accordion .nav-tabs .nav-link.active {
   color: #ffffff;
-  background-color: #009cde;
+  background-color: #0077b6;
   border-color: #f0ad4e;
 }
 
