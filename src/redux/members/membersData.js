@@ -3,6 +3,7 @@ import obedImg from '../../images/obed.jpg'
 import parmenideImg from '../../images/parmenide.jpg'
 import patienceImg from '../../images/patience.jpg'
 import ephremImg from '../../images/ephrem.jpg'
+import fabriceImg from '../../images/fabrice.jpg'
 
 const membersData = [
     {
@@ -34,6 +35,15 @@ const membersData = [
     },
     {
         id: 3,
+        memberName: 'Eng. KAREMERA Fabrice',
+        designation: 'Mechanical Engineer',
+        memberImage: fabriceImg,
+        memberEducation: "BSc. Mechanical Engineering",
+        memberPhone: '0789804518',
+        memberDescription: 'Eng. KAREMERA Fabrice is a Dedicated Mechanical Engineer with experience in project management, design, development, and quality assurance. Expert in CAD operation, and skilled producer of documentation and drawings associated with mechanical engineering. Recognized for a keen ability to improve design components, increase product and manufacturing efficiency, and decrease the constant need for re-engineering. Specializes in MEP, HVAC, Plumbing and Fire Fighting Systems in building services. This includes design, supervision, commissioning and coordination of works. Familiarity within the manufacturing sector, ability of conceiving, designing, and detailing complete models of industrial machines and systems.His initiation as Hands on Engineer and thorough grounding for the first two years has laid a solid foundation to his career.The stint opened the doors to understanding the expectations of the industrial sector and the rigors of the production environment.The importance of process compliance was dinned in from the early days.The virtues of working in teams, keeping costs down productivity improvement, value engineering and continuous quality improvement became constant companions in the enriching journey.'
+    },
+    {
+        id: 4,
         memberName: 'ISHIMWE Niyomwungeri Parmenide',
         designation: 'IT Officer',
         memberImage: parmenideImg,
