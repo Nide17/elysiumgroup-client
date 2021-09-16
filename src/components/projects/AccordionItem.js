@@ -1,13 +1,24 @@
-import React from "react";
+
+import React, { useState } from 'react';
 import All from "./All";
 import Ongoing from "./Ongoing";
 import Finished from "./Finished";
+
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
+import classnames from 'classnames';
 
 const AccordionItem = ({ typesOfProject, projects, active, onToggle }) => {
 
     const proj = projects.filter(proje => proje.pType === typesOfProject.projectType)
     const completedProj = projects.filter(proje => (proje.pType === typesOfProject.projectType && proje.finished))
     const ongoingProj = projects.filter(proje => (proje.pType === typesOfProject.projectType && !proje.finished))
+
+
+    const [activeTab, setActiveTab] = useState('1');
+
+    const toggle = tab => {
+        if (activeTab !== tab) setActiveTab(tab);
+    }
 
     return (
         <li className={`accordion_item ${active ? "active" : ""}`}>
@@ -18,47 +29,72 @@ const AccordionItem = ({ typesOfProject, projects, active, onToggle }) => {
             </div>
 
             <div
-                className="answer_wrapper row"
+                className="tabs_wrapper row mt-2 mt-lg-3"
                 style={active ? { height: "100%" } : { height: "0px" }}>
 
                 <div className="col-12 col-sm-3 col-lg-2">
 
-                    <div className="nav flex-sm-column justify-content-around nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <Nav tabs className="flex-column">
+                        <NavItem>
+                            <NavLink
+                                className={classnames({ active: activeTab === '1' })}
+                                onClick={() => { toggle('1'); }}
+                            >
+                                All
+                            </NavLink>
+                        </NavItem>
 
-                        <a className="nav-link active btn-sm text-uppercase" id="v-pills-allProjects-tab" data-toggle="pill" href="#v-pills-allProjects" role="tab" aria-controls="v-pills-allProjects" aria-selected="true">
-                            All
-                        </a>
+                        <NavItem>
+                            <NavLink
+                                className={classnames({ active: activeTab === '2' })}
+                                onClick={() => { toggle('2'); }}
+                            >
+                                Finished
+                            </NavLink>
+                        </NavItem>
 
-                        <a className="nav-link btn-sm text-uppercase" id="v-pills-completed-tab" data-toggle="pill" href="#v-pills-completed" role="tab" aria-controls="v-pills-completed" aria-selected="false">
-                            Completed
-                        </a>
+                        <NavItem>
+                            <NavLink
+                                className={classnames({ active: activeTab === '3' })}
+                                onClick={() => { toggle('3'); }}
+                            >
+                                Ongoing
+                            </NavLink>
+                        </NavItem>
 
-                        <a className="nav-link btn-sm text-uppercase" id="v-pills-ongoing-tab" data-toggle="pill" href="#v-pills-ongoing" role="tab" aria-controls="v-pills-ongoing" aria-selected="false">
-                            Ongoing
-                        </a>
-                    </div>
+                    </Nav>
 
                 </div>
-                
 
                 <div className="col-12 col-sm-9 col-lg-10">
-                    <div className="tab-content" id="v-pills-tabContent">
+                    <TabContent activeTab={activeTab}>
+                        <TabPane tabId="1">
+                            <Row>
+                                <Col sm="12">
+                                    <All projects={proj && proj} />
+                                </Col>
+                            </Row>
+                        </TabPane>
+                        <TabPane tabId="2">
+                            <Row>
+                                <Col sm="12">
+                                    <Finished projects={completedProj && completedProj} />
+                                </Col>
+                            </Row>
+                        </TabPane>
 
-                        <div className="tab-pane fade show active" id="v-pills-allProjects" role="tabpanel" aria-labelledby="v-pills-allProjects-tab">
-                            <All projects={proj && proj} />
-                        </div>
-
-                        <div className="tab-pane fade" id="v-pills-completed" role="tabpanel" aria-labelledby="v-pills-completed-tab" >
-                            <Finished projects={completedProj && completedProj} />
-                        </div>
-
-                        <div className="tab-pane fade" id="v-pills-ongoing" role="tabpanel" aria-labelledby="v-pills-ongoing-tab">
-                            <Ongoing projects={ongoingProj && ongoingProj} />
-                        </div>
-                    </div>
+                        <TabPane tabId="3">
+                            <Row>
+                                <Col sm="12">
+                                    <Ongoing projects={ongoingProj && ongoingProj} />
+                                </Col>
+                            </Row>
+                        </TabPane>
+                    </TabContent>
                 </div>
             </div>
         </li>
+
     );
 };
 

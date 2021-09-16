@@ -974,12 +974,16 @@ h1.elysium-title {
   line-height: .8;
 }
 
+.accordion_item {
+text-transform: uppercase;
+}
 .accordion_item .title {
   border: 1px solid #f0ad4e;
   padding: .3rem .8rem;
   margin-top: .8rem;
   display: flex;
   justify-content: space-between;
+  font-weight: 900;
 }
 
 /* activate toggle */
@@ -988,18 +992,44 @@ h1.elysium-title {
   color: #fff;
 }
 
-.answer_wrapper {
+.tabs_wrapper {
   height: 0;
   overflow: hidden;
 }
 
-.answer_wrapper {
+.tabs_wrapper {
   /* ... */
   transition: height ease 0.2s;
 }
 
-.answer_wrapper.open {
+.tabs_wrapper.open {
   height: 100px;
+}
+
+.accordion .nav-tabs {
+border-bottom: none;
+}
+
+.accordion .nav-tabs .nav-item {
+  margin: .3rem
+}
+
+.accordion .nav-tabs .nav-link {
+  padding: .2rem .5rem;
+}
+
+.accordion .nav-tabs .nav-item .nav-link,
+.accordion .nav-tabs .nav-link {
+  color: #009cde;
+  background-color: #fff;
+  border-color: #f0ad4e;
+}
+
+.accordion .nav-tabs .nav-item.show .nav-link,
+.accordion .nav-tabs .nav-link.active {
+  color: #ffffff;
+  background-color: #009cde;
+  border-color: #f0ad4e;
 }
 
 /* LARGE SCREENS */
