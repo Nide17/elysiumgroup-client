@@ -1698,4 +1698,11 @@ h1.elysium-title {
     font-size: .7rem;
     line-height: .6;
   }
+
+  img.zoom:hover {
+    -webkit-transform: scale(1.95);
+    -moz-transform: scale(1.95);
+    -o-transform: scale(1.95);
+    transform: scale(1.95);
+  }
 }
