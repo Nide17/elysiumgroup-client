@@ -1,12 +1,11 @@
-import architecture from '../../images/architecture2.jpg'
-import building from '../../images/building.jpg'
-import road2 from '../../images/road2.jpg'
-import siteprep from '../../images/siteprep.jpg'
-import electrical1 from '../../images/electrical1.jpg'
-import accounting from '../../images/accounting.jpg'
-import web1 from '../../images/web1.jpg'
-import plumbing from '../../images/plumbing.jpg'
-import building1 from '../../images/building.svg'
+import architecture from '../../images/civileng4.jpg'
+import building from '../../images/civileng.jpg'
+import road2 from '../../images/civileng1.jpg'
+import siteprep from '../../images/civileng2.jpg'
+import electrical1 from '../../images/mechanical.jpg'
+import accounting from '../../images/acc1.jpg'
+import web1 from '../../images/code.jpg'
+import plumbing from '../../images/civileng3.jpg'
 
 const sData = [
     {
@@ -88,7 +87,7 @@ const sData = [
     },
     {
         id: 11,
-        sName: 'ICT Consultancy and web Development Services',
+        sName: 'ICT Support, Software Development Services and Consultancy',
         sTitle: "web",
         sSrc: web1,
         sDetails: 'We design and develop beautiful websites for businesses, individuals and organizations at a reasonable prices. These websites help you to generate new clients easily. We also maintain your websites and additionally, we renew old websites as well as correcting websites developed with errors.'

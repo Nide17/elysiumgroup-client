@@ -934,6 +934,10 @@ h1.elysium-title {
   width: 4%;
 }
 
+.services-container .carousel-control-next {
+  right: 16px;
+}
+
 .carousel-control-prev {
   left: 0;
   opacity: .8;
