@@ -1721,4 +1721,17 @@ h1.elysium-title {
     -o-transform: scale(1.95);
     transform: scale(1.95);
   }
+
+  .services-section .list-group {
+    font-size: .7rem;
+  }
+
+  .services-section .carousel-caption {
+    display: block!important;
+  }
+
+  .services-container .carousel-control-next {
+    right: 0px;
+  }
+  
 }

@@ -55,9 +55,8 @@ const Services = ({ setServices, services }) => {
         </div>
 
         <div className="row d-flex align-items-center">
-          {/* {allServices} */}
 
-          <div className="col-12 col-sm-6 pr-1">
+          <div className="col-12 col-sm-6 pr-sm-1">
             <Carousel
               activeIndex={activeIndex}
               next={next}
@@ -70,11 +69,11 @@ const Services = ({ setServices, services }) => {
             </Carousel>
           </div>
 
-          <div className="col-12 col-sm-6 pl-1">
+          <div className="col-12 col-sm-6 pl-sm-1 mt-2 mt-sm-0">
 
             <ListGroup>
               {services && services.map((servic, index) =>
-                <ListGroupItem key={index} color="secondary" className="text-dark font-weight-bolder text-uppercase py-2">
+                <ListGroupItem key={index} color="secondary" className="text-dark font-weight-bolder text-uppercase py-1 py-sm-2">
                   {servic.sName}
                 </ListGroupItem>)}
             </ListGroup>
