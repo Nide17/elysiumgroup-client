@@ -1,9 +1,8 @@
-// import memberImg from '../../images/memberImage.png'
-import obedImg from '../../images/obed.jpg'
-import parmenideImg from '../../images/parmenide.jpg'
-import patienceImg from '../../images/patience.jpg'
-import ephremImg from '../../images/ephrem.jpg'
-import fabriceImg from '../../images/fabrice.jpg'
+import obedImg from '../../images/team/obed.jpg'
+import parmenideImg from '../../images/team/parmenide.jpg'
+import patienceImg from '../../images/team/patience.jpg'
+import ephremImg from '../../images/team/ephrem.jpg'
+import fabriceImg from '../../images/team/fabrice.jpg'
 
 const membersData = [
     {
