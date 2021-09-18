@@ -895,6 +895,14 @@ h1.elysium-title {
   margin: 0 auto;
 }
 
+.services-section .carousel-caption {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  left: 0;
+  width: 80%!important;
+}
+
 .carousel-indicators li {
   width: 15px;
   height: 15px;
