@@ -1,13 +1,9 @@
 import React from 'react';
-
 import architecture1 from '../../images/architecture4.jpg'
-import construction from '../../images/construction.jpg'
-import road from '../../images/road.jpg'
-import site from '../../images/site.jpg'
-import electrical from '../../images/electrical.jpg'
-import water from '../../images/water.jpg'
+import civil_engineering from '../../images/civil_engineering.jpg'
+import mechanical from '../../images/mechanical.jpg'
 import accountants from '../../images/accountants.jpg'
-import web4 from '../../images/web4.jpg'
+import ict_support from '../../images/ict_support.jpg'
 
 const SlideCarousel = () => {
 
@@ -34,74 +30,46 @@ const SlideCarousel = () => {
                                 <img className="d-block w-100 h-100" src={architecture1} alt="First slide" />
                                 <div className="carousel-caption d-md-block">
                                     <h4>Architecture & Design</h4>
-                                    <p><a href="#details">Beautiful designs from professionals</a></p>
-                                    <a href="/contact" className="btn mt-lg-4 contact-button">CONTACT US</a>
+                                    <p><a href="#details">Building Designs and Supervision from professionals</a></p>
+                                    <a href="/contact" className="btn mt-lg-4 contact-button">Contact Us</a>
                                 </div>
                             </div>
 
                             <div className="carousel-item">
-                                <img className="d-block w-100 h-100" src={construction} alt="Second slide" />
+                                <img className="d-block w-100 h-100" src={civil_engineering} alt="Second slide" />
                                 <div className="carousel-caption d-md-block">
-                                    <h4>Building & Construction</h4>
-                                    <p><a href="#details">Our engineers deliver excellent construction services</a></p>
-                                    <a href="/contact" className="btn mt-lg-4 contact-button">CONTACT US</a>
+                                    <h4>Civil Engineering</h4>
+                                    <p><a href="#details">Management of Civil Engineering Construction, Building Design and Supervision, Topographic Surveying and Design, Transportation Planning and Feasibility Study and so on ...</a></p>
+                                    <a href="/contact" className="btn mt-lg-4 contact-button">Contact Us</a>
                                 </div>
                             </div>
 
                             <div className="carousel-item">
-                                <img className="d-block w-100 h-100" src={road} alt="Third slide" />
+                                <img className="d-block w-100 h-100" src={mechanical} alt="Fifth slide" />
                                 <div className="carousel-caption d-md-block">
-                                    <h4>Roads & Railway Activities</h4>
-                                    <p><a href="#details">Need a road or Railway? CONTACT US.</a></p>
-                                    <a href="/contact" className="btn mt-lg-4 contact-button">CONTACT US</a>
-                                </div>
-                            </div>
-
-                            <div className="carousel-item">
-                                <img className="d-block w-100 h-100" src={site} alt="Fourth slide" />
-                                <div className="carousel-caption d-md-block">
-                                    <h4>Site Preparation Activities</h4>
-                                    <p><a href="#details">If you want to prepare your site, the solution is here.</a></p>
-                                    <a href="/contact" className="btn mt-lg-4 contact-button">CONTACT US</a>
-                                </div>
-                            </div>
-
-                            <div className="carousel-item">
-                                <img className="d-block w-100 h-100" src={electrical} alt="Fifth slide" />
-                                <div className="carousel-caption d-md-block">
-                                    <h4>Electrical & Power Activities</h4>
-                                    <p><a href="#details">We have excellent services related to the power and electrical engineering</a></p>
-                                    <a href="/contact" className="btn mt-lg-4 contact-button">CONTACT US</a>
-                                </div>
-                            </div>
-
-                            <div className="carousel-item">
-                                <img className="d-block w-100 h-100" src={water} alt="Sixth slide" />
-                                <div className="carousel-caption d-md-block">
-                                    <h4>Water & Plumbing Activities</h4>
-                                    <p><a href="#details">Award winning plumber and water engineers of us are waiting for you</a></p>
-                                    <a href="/contact" className="btn mt-lg-4 contact-button">CONTACT US</a>
+                                    <h4>Mechanical Engineering</h4>
+                                    <p><a href="#details">We have excellent services related to hydraulic and structural engineering design.</a></p>
+                                    <a href="/contact" className="btn mt-lg-4 contact-button">Contact Us</a>
                                 </div>
                             </div>
 
                             <div className="carousel-item">
                                 <img className="d-block w-100 h-100" src={accountants} alt="Seventh slide" />
                                 <div className="carousel-caption d-md-block">
-                                    <h4>Accounting & Consultancy</h4>
-                                    <p><a href="#details">Why can't you work with our accountants and tax advisers?</a></p>
-                                    <a href="/contact" className="btn mt-lg-4 contact-button">CONTACT US</a>
+                                    <h4>Accounting, Business, Bookkeeping & Consultancy</h4>
+                                    <p><a href="#details">Accounting, bookkeeping and auditing activities, tax consultancy & Business Development, Management and Market research and public opinion polling consultancy</a></p>
+                                    <a href="/contact" className="btn mt-lg-4 contact-button">Contact Us</a>
                                 </div>
                             </div>
 
                             <div className="carousel-item">
-                                <img className="d-block w-100 h-100" src={web4} alt="Seventh slide" />
+                                <img className="d-block w-100 h-100" src={ict_support} alt="Seventh slide" />
                                 <div className="carousel-caption d-md-block">
-                                    <h4>Web Development Services</h4>
-                                    <p><a href="#details">Want to put your business online? Welcome, we want to help you!</a></p>
-                                    <a href="/contact" className="btn mt-lg-4 contact-button">CONTACT US</a>
+                                    <h4>ICT Support, Software Development Services and Consultancy</h4>
+                                    <p><a href="#details">Want to put your business online? Welcome, we can help you!</a></p>
+                                    <a href="/contact" className="btn mt-lg-4 contact-button">Contact Us</a>
                                 </div>
                             </div>
-
                         </div>
 
                         <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
