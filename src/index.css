@@ -847,6 +847,8 @@ h1.elysium-title {
   animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-name: carouselImage;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
 }
 
 .services-section .card {
@@ -943,7 +945,7 @@ h1.elysium-title {
 }
 
 .services-container .carousel-control-next {
-  right: 16px;
+  right: 7px;
 }
 
 .carousel-control-prev {
