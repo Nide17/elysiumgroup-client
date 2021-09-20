@@ -30,7 +30,7 @@ const SlideCarousel = () => {
                                 <img className="d-block w-100 h-100" src={architecture1} alt="First slide" />
                                 <div className="carousel-caption d-md-block">
                                     <h4>Architecture & Design</h4>
-                                    <p><a href="#details">Building Designs and Supervision from professionals</a></p>
+                                    <p><a href="#details">We excel in building designs and supervision from professionals</a></p>
                                     <a href="/contact" className="btn mt-lg-4 contact-button">Contact Us</a>
                                 </div>
                             </div>
@@ -39,7 +39,8 @@ const SlideCarousel = () => {
                                 <img className="d-block w-100 h-100" src={civil_engineering} alt="Second slide" />
                                 <div className="carousel-caption d-md-block">
                                     <h4>Civil Engineering</h4>
-                                    <p><a href="#details">Management of Civil Engineering Construction, Building Design and Supervision, Topographic Surveying and Design, Transportation Planning and Feasibility Study and so on ...</a></p>
+                                    {/* <p><a href="#details">Management of Civil Engineering Construction, Building Design and Supervision, Topographic Surveying and Design, Transportation Planning and Feasibility Study and so on ...</a></p> */}
+                                    <p><a href="#details">In search of incredible engineering solutions? </a></p>
                                     <a href="/contact" className="btn mt-lg-4 contact-button">Contact Us</a>
                                 </div>
                             </div>
@@ -48,7 +49,7 @@ const SlideCarousel = () => {
                                 <img className="d-block w-100 h-100" src={mechanical} alt="Fifth slide" />
                                 <div className="carousel-caption d-md-block">
                                     <h4>Mechanical Engineering</h4>
-                                    <p><a href="#details">We have excellent services related to hydraulic and structural engineering design.</a></p>
+                                    <p><a href="#details">We have excellent services related to hydraulic and structural engineering design for you.</a></p>
                                     <a href="/contact" className="btn mt-lg-4 contact-button">Contact Us</a>
                                 </div>
                             </div>
@@ -66,7 +67,7 @@ const SlideCarousel = () => {
                                 <img className="d-block w-100 h-100" src={ict_support} alt="Seventh slide" />
                                 <div className="carousel-caption d-md-block">
                                     <h4>ICT Support, Software Development Services and Consultancy</h4>
-                                    <p><a href="#details">Want to put your business online? Welcome, we can help you!</a></p>
+                                    <p><a href="#details">Want to put your business online? We evengelize the power of advanced technology!</a></p>
                                     <a href="/contact" className="btn mt-lg-4 contact-button">Contact Us</a>
                                 </div>
                             </div>
