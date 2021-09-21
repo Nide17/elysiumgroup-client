@@ -640,9 +640,18 @@ div.card-img-overlay:hover {
 
 .project-info p {
   font-weight: 700;
-  font-size: .8rem;
+  font-size: .7rem;
+  height: 1.6rem;
   color: #e0b218;
   margin-bottom: 0;
+}
+
+.projects-container .btn-group-sm>.btn,
+.projects-container .btn-sm {
+  padding: .2rem .4rem;
+  font-size: .8rem;
+  line-height: 1;
+  border-radius: .2rem;
 }
 
 /* Gallery */
