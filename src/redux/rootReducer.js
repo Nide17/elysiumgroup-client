@@ -7,6 +7,7 @@ import projectsReducer from "./projects/projects.reducer";
 import appReducer from "./app/app.reducer";
 import membersReducer from "./members/members.reducer";
 import successReducer from "./success/success.reducer";
+import clientsReducer from "./clients/clients.reducer";
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   projectsReducer,
   appReducer,
   membersReducer,
-  successReducer
+  successReducer,
+  clientsReducer
 });
 
 export default rootReducer;

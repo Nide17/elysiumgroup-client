@@ -1,5 +1,5 @@
 import React from 'react';
-// import Clients from './Clients'
+import Clients from './Clients'
 
 const About = () => {
 
@@ -72,9 +72,9 @@ const About = () => {
                     </div>
                 </div>
 
-                {/* <div className="row">
+                <div className="row">
                     <div className="col-12 elysium-clients"><Clients /></div>
-                </div> */}
+                </div>
 
             </div>
 

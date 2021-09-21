@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
-import { setProjects } from "../../redux/projects/projects.actions";
+import { setClients } from "../../redux/clients/clients.actions";
 
-const Clients = ({ projects, setProjects }) => {
+const Clients = ({ clients, setClients }) => {
 
     useEffect(() => {
-        setProjects();
-    });
+        setClients();
+    }, [setClients]);
 
     return (
         <section className="clients-section" id="clients">
@@ -16,22 +16,23 @@ const Clients = ({ projects, setProjects }) => {
                         <h3>Notable Clients</h3>
                     </div>
 
-                    {projects && projects.map((proj) => {
+                    {clients && clients.map((client, index) => {
 
-                        const { id, pClient, pSrc, pKey } = proj;
+                        const { id, clientName, clientLogo } = client;
                         return (
                             <div className="col-12 col-md-4 col-xl-3 mb-3 col-7" key={id}>
-                                <div className="card card-body bg-light py-0" id={pKey}>
+                                <div className="card card-body bg-light py-0" id={index}>
 
                                     <div className="card-header">
                                         <small className="text-center text-uppercase">
-                                            {pClient}
+                                            {clientName}
                                         </small>
                                     </div>
                                     <img
-                                        className="card-img-top img-thumbnail rounded"
-                                        src={pSrc}
-                                        alt="Card image1 cap" />
+                                        className="card-img-top img-thumbnail rounded mx-auto"
+                                        src={clientLogo}
+                                        alt={clientName} style={{ height: "140px", width: "fit-content" }} />
+                                    <p></p>
                                 </div>
                             </div>)
                     })}
@@ -42,7 +43,7 @@ const Clients = ({ projects, setProjects }) => {
 }
 
 const mapStateToProps = state => ({
-    projects: state.projectsReducer.dataProjects
+    clients: state.clientsReducer.dataClients
 })
 
-export default connect(mapStateToProps, { setProjects })(Clients);
+export default connect(mapStateToProps, { setClients })(Clients);
