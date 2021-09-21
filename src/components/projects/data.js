@@ -15,4 +15,8 @@ export const typesOfProjects = [
         projectType: "Entertainment Projects",
         answer: "Blanditiis aliquid adipisci quisquam reiciendis voluptates itaque.",
     },
+    {
+        projectType: "Healthcare and Social Projects",
+        answer: "Blanditiis aliquid adipisci quisquam reiciendis voluptates itaque.",
+    }
 ];

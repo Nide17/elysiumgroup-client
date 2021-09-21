@@ -1,24 +1,52 @@
 // GALLERY
-import bikesha_bugesera1 from '../../images/gallery/bikesha_bugesera/bikesha_bugesera1.jpg'
-import bikesha_bugesera2 from '../../images/gallery/bikesha_bugesera/bikesha_bugesera2.jpg'
-import lizinde_kagarama1 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama1.jpg'
-import lizinde_kagarama2 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama2.jpg'
+import bikesha_bugesera1 from '../../images/gallery/bikesha_bugesera/bikesha_bugesera1.jpeg'
+import bikesha_bugesera2 from '../../images/gallery/bikesha_bugesera/bikesha_bugesera2.jpeg'
+import bikesha_bugesera3 from '../../images/gallery/bikesha_bugesera/bikesha_bugesera3.jpeg'
+import bikesha_bugesera4 from '../../images/gallery/bikesha_bugesera/bikesha_bugesera4.jpeg'
+import bikesha_bugesera5 from '../../images/gallery/bikesha_bugesera/bikesha_bugesera5.jpeg'
+import lizinde_kagarama1 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama1.jpeg'
+import lizinde_kagarama2 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama2.jpeg'
+import lizinde_kagarama3 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama3.jpeg'
+import lizinde_kagarama4 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama4.jpeg'
+import lizinde_kagarama5 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama5.jpeg'
+import lizinde_kagarama6 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama6.jpeg'
+import lizinde_kagarama7 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama7.jpeg'
+import lizinde_kagarama8 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama8.jpeg'
+import lizinde_kagarama9 from '../../images/gallery/lizinde_kagarama/lizinde_kagarama9.jpeg'
 import kalimunda_kagarama1 from '../../images/gallery/kalimunda_kagarama/kalimunda_kagarama1.jpg'
 import kalimunda_kagarama2 from '../../images/gallery/kalimunda_kagarama/kalimunda_kagarama2.jpg'
 import katusiime_ndera1 from '../../images/gallery/katusiime_ndera/katusiime_ndera1.jpg'
 import katusiime_ndera2 from '../../images/gallery/katusiime_ndera/katusiime_ndera2.jpg'
+import katusiime_ndera3 from '../../images/gallery/katusiime_ndera/katusiime_ndera3.jpg'
+import katusiime_ndera4 from '../../images/gallery/katusiime_ndera/katusiime_ndera4.jpg'
+import katusiime_ndera5 from '../../images/gallery/katusiime_ndera/katusiime_ndera5.jpg'
+import katusiime_ndera6 from '../../images/gallery/katusiime_ndera/katusiime_ndera6.jpg'
+import katusiime_ndera7 from '../../images/gallery/katusiime_ndera/katusiime_ndera7.jpg'
 import ebarchitects_kabeza20211 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20211.jpg'
 import ebarchitects_kabeza20212 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20212.jpg'
+import ebarchitects_kabeza20213 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20213.jpg'
+import ebarchitects_kabeza20214 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20214.jpg'
+import ebarchitects_kabeza20215 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20215.jpg'
+import ebarchitects_kabeza20216 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20216.jpg'
+import ebarchitects_kabeza20217 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20217.jpg'
+import ebarchitects_kabeza20218 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20218.jpg'
+import ebarchitects_kabeza20219 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza20219.jpg'
+import ebarchitects_kabeza202110 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza202110.jpg'
+import ebarchitects_kabeza202111 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza202111.jpg'
+import ebarchitects_kabeza202112 from '../../images/gallery/ebarchitects_kabeza2021/ebarchitects_kabeza202112.jpg'
 import zaakfield_kimihurura1 from '../../images/gallery/zaakfield_kimihurura/zaakfield_kimihurura1.jpg'
 import zaakfield_kimihurura2 from '../../images/gallery/zaakfield_kimihurura/zaakfield_kimihurura2.jpg'
 import zaakfield_kimihurura3 from '../../images/gallery/zaakfield_kimihurura/zaakfield_kimihurura3.jpg'
 import zaakfield_kimihurura4 from '../../images/gallery/zaakfield_kimihurura/zaakfield_kimihurura4.jpg'
 import zaakfield_kimihurura5 from '../../images/gallery/zaakfield_kimihurura/zaakfield_kimihurura5.jpg'
-import phd_ndera1 from '../../images/gallery/phd_ndera/phd_ndera1.jpg'
+import phd_bosco_ndera1 from '../../images/gallery/phd_ndera/phd_bosco_ndera1.jpg'
 import phd_kagarama1 from '../../images/gallery/phd_kagarama/phd_kagarama1.jpg'
 import phd_kagarama2 from '../../images/gallery/phd_kagarama/phd_kagarama2.jpg'
 import phd_gatenga1 from '../../images/gallery/phd_gatenga/phd_gatenga1.jpg'
 import phd_gatenga2 from '../../images/gallery/phd_gatenga/phd_gatenga2.jpg'
+import phd_gatenga3 from '../../images/gallery/phd_gatenga/phd_gatenga3.jpg'
+import phd_gatenga4 from '../../images/gallery/phd_gatenga/phd_gatenga4.jpg'
+import phd_gatenga5 from '../../images/gallery/phd_gatenga/phd_gatenga5.jpg'
 import axiom_kanombe1 from '../../images/gallery/axiom_kanombe/axiom_kanombe1.jpg'
 import axiom_kanombe2 from '../../images/gallery/axiom_kanombe/axiom_kanombe2.jpg'
 import kwihangana_ntarama1 from '../../images/gallery/kwihangana_ntarama/kwihangana_ntarama1.jpg'
@@ -33,6 +61,7 @@ import ebarchitects_catering1 from '../../images/gallery/ebarchitects_catering/e
 import ebarchitects_catering2 from '../../images/gallery/ebarchitects_catering/ebarchitects_catering2.jpg'
 import ebarchitects_kabeza20201 from '../../images/gallery/ebarchitects_kabeza2020/ebarchitects_kabeza20201.jpg'
 import ebarchitects_kabeza20202 from '../../images/gallery/ebarchitects_kabeza2020/ebarchitects_kabeza20202.jpg'
+import ebarchitects_kabeza20203 from '../../images/gallery/ebarchitects_kabeza2020/ebarchitects_kabeza20203.jpg'
 import nyirigira_kicukiro1 from '../../images/gallery/nyirigira_kicukiro/nyirigira_kicukiro1.jpg'
 import nyirigira_kicukiro2 from '../../images/gallery/nyirigira_kicukiro/nyirigira_kicukiro2.jpg'
 import nyirigira_kicukiro3 from '../../images/gallery/nyirigira_kicukiro/nyirigira_kicukiro3.jpg'
@@ -85,12 +114,35 @@ import thierry_kibagabaga8 from '../../images/gallery/thierry_kibagabaga/thierry
 import thierry_kibagabaga9 from '../../images/gallery/thierry_kibagabaga/thierry_kibagabaga9.jpg'
 import zind_rugarama1 from '../../images/gallery/zind_rugarama/zind_rugarama1.jpg'
 import zind_rugarama2 from '../../images/gallery/zind_rugarama/zind_rugarama2.jpg'
+import zind_rugarama3 from '../../images/gallery/zind_rugarama/zind_rugarama3.jpg'
+import zind_rugarama4 from '../../images/gallery/zind_rugarama/zind_rugarama4.jpg'
+import zind_rugarama5 from '../../images/gallery/zind_rugarama/zind_rugarama5.jpg'
+import zind_rugarama6 from '../../images/gallery/zind_rugarama/zind_rugarama6.jpg'
+import zind_rugarama7 from '../../images/gallery/zind_rugarama/zind_rugarama7.jpg'
+import zind_rugarama8 from '../../images/gallery/zind_rugarama/zind_rugarama8.jpg'
+import zind_rugarama9 from '../../images/gallery/zind_rugarama/zind_rugarama9.jpg'
+import zind_rugarama10 from '../../images/gallery/zind_rugarama/zind_rugarama10.jpg'
+import zind_rugarama11 from '../../images/gallery/zind_rugarama/zind_rugarama11.jpg'
+import zind_rugarama12 from '../../images/gallery/zind_rugarama/zind_rugarama12.jpg'
 import zind_nyamirambo1 from '../../images/gallery/zind_nyamirambo/zind_nyamirambo1.jpg'
-import zind_nyamirambo2 from '../../images/gallery/zind_nyamirambo/zind_nyamirambo2.jpg'
-import zind_karembure1 from '../../images/gallery/zind_karembure/zind_karembure1.jpg'
-import zind_karembure2 from '../../images/gallery/zind_karembure/zind_karembure2.jpg'
+import zind_nyamirambo2 from '../../images/gallery/zind_nyamirambo/zind_nyamirambo4.jpg'
+import zind_nyamirambo3 from '../../images/gallery/zind_nyamirambo/zind_nyamirambo3.jpg'
+import zind_nyamirambo4 from '../../images/gallery/zind_nyamirambo/zind_nyamirambo4.jpg'
 import zind_kanyinya1 from '../../images/gallery/zind_kanyinya/zind_kanyinya1.jpg'
 import zind_kanyinya2 from '../../images/gallery/zind_kanyinya/zind_kanyinya2.jpg'
+import zind_kanyinya3 from '../../images/gallery/zind_kanyinya/zind_kanyinya3.jpg'
+import zind_kanyinya4 from '../../images/gallery/zind_kanyinya/zind_kanyinya4.jpg'
+import zind_kanyinya5 from '../../images/gallery/zind_kanyinya/zind_kanyinya5.jpg'
+import zind_kanyinya6 from '../../images/gallery/zind_kanyinya/zind_kanyinya6.jpg'
+import zind_kanyinya7 from '../../images/gallery/zind_kanyinya/zind_kanyinya7.jpg'
+import zind_karembure1 from '../../images/gallery/zind_karembure/zind_karembure1.jpg'
+import zind_karembure2 from '../../images/gallery/zind_karembure/zind_karembure2.jpg'
+import zind_karembure3 from '../../images/gallery/zind_karembure/zind_karembure3.jpg'
+import zind_karembure4 from '../../images/gallery/zind_karembure/zind_karembure4.jpg'
+import zind_karembure5 from '../../images/gallery/zind_karembure/zind_karembure5.jpg'
+import zind_karembure6 from '../../images/gallery/zind_karembure/zind_karembure6.jpg'
+import zind_karembure7 from '../../images/gallery/zind_karembure/zind_karembure7.jpg'
+import zind_karembure8 from '../../images/gallery/zind_karembure/zind_karembure8.jpg'
 
 const projData = [
     {
@@ -102,7 +154,7 @@ const projData = [
         finished: true,
         pLocation: 'NYAMATA-BUGESERA',
         pDescription: '',
-        pGallery: [bikesha_bugesera1, bikesha_bugesera2]
+        pGallery: [bikesha_bugesera1, bikesha_bugesera2, bikesha_bugesera3, bikesha_bugesera4, bikesha_bugesera5]
     },
     {
         id: 1,
@@ -113,7 +165,7 @@ const projData = [
         finished: true,
         pLocation: 'KAGARAMA-KICUKIRO',
         pDescription: '',
-        pGallery: [lizinde_kagarama1, lizinde_kagarama2]
+        pGallery: [lizinde_kagarama1, lizinde_kagarama2, lizinde_kagarama3, lizinde_kagarama4, lizinde_kagarama5, lizinde_kagarama6, lizinde_kagarama7, lizinde_kagarama8, lizinde_kagarama9]
     },
     {
         id: 2,
@@ -135,7 +187,7 @@ const projData = [
         finished: true,
         pLocation: 'Ndera-Gasabo-Kigali',
         pDescription: '',
-        pGallery: [katusiime_ndera1, katusiime_ndera2]
+        pGallery: [katusiime_ndera1, katusiime_ndera2, katusiime_ndera3, katusiime_ndera4, katusiime_ndera5, katusiime_ndera6, katusiime_ndera7]
     },
     {
         id: 4,
@@ -146,7 +198,7 @@ const projData = [
         finished: true,
         pLocation: 'Kabeza-Kicukiro-Kigali',
         pDescription: '',
-        pGallery: [ebarchitects_kabeza20211, ebarchitects_kabeza20212]
+        pGallery: [ebarchitects_kabeza20211, ebarchitects_kabeza20212, ebarchitects_kabeza20213, ebarchitects_kabeza20214, ebarchitects_kabeza20215, ebarchitects_kabeza20216, ebarchitects_kabeza20217, ebarchitects_kabeza20218, ebarchitects_kabeza20219, ebarchitects_kabeza202110, ebarchitects_kabeza202111, ebarchitects_kabeza202112]
     },
     {
         id: 5,
@@ -168,7 +220,7 @@ const projData = [
         finished: true,
         pLocation: 'Ndera-Gasabo',
         pDescription: '',
-        pGallery: [phd_ndera1]
+        pGallery: [phd_bosco_ndera1]
     },
     {
         id: 7,
@@ -190,7 +242,7 @@ const projData = [
         finished: true,
         pLocation: 'Gatenga-Kicukiro',
         pDescription: '',
-        pGallery: [phd_gatenga1, phd_gatenga2]
+        pGallery: [phd_gatenga1, phd_gatenga2, phd_gatenga3, phd_gatenga4, phd_gatenga5]
     },
     {
         id: 9,
@@ -230,7 +282,7 @@ const projData = [
         pName: 'Structural Design Development of Kigali Catering Center',
         pClient: 'EB-ARCHITECTS',
         pDate: '2020',
-        pType: 'Commercial Projects',
+        pType: 'Healthcare and Social Projects',
         finished: true,
         pLocation: 'KAGARAMA-KICUKIRO-KIGALI',
         pDescription: '',
@@ -245,7 +297,7 @@ const projData = [
         finished: true,
         pLocation: 'Kabeza-Kicukiro',
         pDescription: '',
-        pGallery: [ebarchitects_kabeza20201, ebarchitects_kabeza20202]
+        pGallery: [ebarchitects_kabeza20201, ebarchitects_kabeza20202, ebarchitects_kabeza20203]
     },
     {
         id: 14,
@@ -355,7 +407,7 @@ const projData = [
         finished: true,
         pLocation: 'Rugarama-Kicukiro-Kigali',
         pDescription: '',
-        pGallery: [zind_rugarama1, zind_rugarama2]
+        pGallery: [zind_rugarama1, zind_rugarama2, zind_rugarama3, zind_rugarama4, zind_rugarama5, zind_rugarama6, zind_rugarama7, zind_rugarama8, zind_rugarama9, zind_rugarama10, zind_rugarama11, zind_rugarama12]
     },
     {
         id: 24,
@@ -366,7 +418,7 @@ const projData = [
         finished: true,
         pLocation: 'Nyamirambo-Nyarugenge-Kicukiro-Kigali',
         pDescription: '',
-        pGallery: [zind_nyamirambo1, zind_nyamirambo2]
+        pGallery: [zind_nyamirambo1, zind_nyamirambo2, zind_nyamirambo3, zind_nyamirambo4]
     },
     {
         id: 25,
@@ -377,7 +429,7 @@ const projData = [
         finished: true,
         pLocation: 'Karembure-Kicukiro-Kigali',
         pDescription: '',
-        pGallery: [zind_karembure1, zind_karembure2]
+        pGallery: [zind_karembure1, zind_karembure2, zind_karembure3, zind_karembure4, zind_karembure5, zind_karembure6, zind_karembure7, zind_karembure8]
     },
     {
         id: 26,
@@ -388,7 +440,7 @@ const projData = [
         finished: true,
         pLocation: 'Kanyinya-Nyarugenge-Kigali',
         pDescription: '',
-        pGallery: [zind_kanyinya1, zind_kanyinya2]
+        pGallery: [zind_kanyinya1, zind_kanyinya2, zind_kanyinya3, zind_kanyinya4, zind_kanyinya5, zind_kanyinya6, zind_kanyinya7]
     }]
 
 export default projData;
