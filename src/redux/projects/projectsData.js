@@ -359,7 +359,7 @@ const projData = [
         pName: 'Structural Design Development of Warehouse',
         pClient: 'RURANGWA Alexis',
         pDate: '2020',
-        pType: 'Residential Projects',
+        pType: 'Commercial Projects',
         finished: true,
         pLocation: 'Nyabugogo-Kigali',
         pDescription: '',
