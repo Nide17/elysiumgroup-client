@@ -654,6 +654,16 @@ div.card-img-overlay:hover {
   border-radius: .2rem;
 }
 
+.projects-container .bg-light {
+  background-color: #f0f1f1 !important;
+  border: none
+}
+
+.card {
+  background-color: #f0f1f1 !important;
+  border: 1px solid #f0f1f1 !important;
+}
+
 /* Gallery */
 .modal-content {
   background-color: #1d1d1d !important;

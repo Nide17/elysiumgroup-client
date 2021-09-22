@@ -39,7 +39,7 @@ const About = () => {
 
                 </div>
 
-                <div className="row mt-3">
+                <div className="row my-3">
                     <div className="col-12 col-sm-6">
                         <h4>Our Vision</h4>
                         <p>Our Vision is to be a competent international Consultancy Institution.</p>

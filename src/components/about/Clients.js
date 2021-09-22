@@ -12,7 +12,7 @@ const Clients = ({ clients, setClients }) => {
         <section className="clients-section" id="clients">
             <div className="clients-container">
                 <div className="row">
-                    <div className="col-12 elysium-title-wrapper">
+                    <div className="col-12 elysium-title-wrapper mb-3">
                         <h3>Notable Clients</h3>
                     </div>
 
@@ -20,18 +20,12 @@ const Clients = ({ clients, setClients }) => {
 
                         const { id, clientName, clientLogo } = client;
                         return (
-                            <div className="col-12 col-md-4 col-xl-3 mb-3 col-7" key={id}>
-                                <div className="card card-body bg-light py-0" id={index}>
-
-                                    <div className="card-header">
-                                        <small className="text-center text-uppercase">
-                                            {clientName}
-                                        </small>
-                                    </div>
+                            <div className="col-12 col-md-4 col-xl-2 m-2 p-0" key={id}>
+                                <div className="card card-body bg-light p-0" id={index}>
                                     <img
                                         className="card-img-top img-thumbnail rounded mx-auto"
                                         src={clientLogo}
-                                        alt={clientName} style={{ height: "140px", width: "fit-content" }} />
+                                        alt={clientName} style={{ height: "120px", width: "fit-content" }} />
                                     <p></p>
                                 </div>
                             </div>)
