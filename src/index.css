@@ -654,14 +654,19 @@ div.card-img-overlay:hover {
   border-radius: .2rem;
 }
 
-.projects-container .bg-light {
+.clients-container .bg-light {
   background-color: #f0f1f1 !important;
   border: none
 }
 
-.card {
+.clients-container .card {
   background-color: #f0f1f1 !important;
   border: 1px solid #f0f1f1 !important;
+}
+
+.clients-container .card img {
+  height: 120px;
+  width: fit-content;
 }
 
 /* Gallery */
@@ -1619,7 +1624,7 @@ h1.elysium-title {
   }
 
   .carousel-item .contact-button {
-    line-height: .7;
+    line-height: .5;
     font-size: .5rem;
   }
 
@@ -1757,6 +1762,11 @@ h1.elysium-title {
 
   .services-container .carousel-control-next {
     right: 0px;
+  }
+
+  .clients-container .card img {
+    width: 280px!important;
+    height: fit-content;
   }
 
 }

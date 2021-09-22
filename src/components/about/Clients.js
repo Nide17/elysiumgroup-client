@@ -25,7 +25,7 @@ const Clients = ({ clients, setClients }) => {
                                     <img
                                         className="card-img-top img-thumbnail rounded mx-auto"
                                         src={clientLogo}
-                                        alt={clientName} style={{ height: "120px", width: "fit-content" }} />
+                                        alt={clientName} />
                                     <p></p>
                                 </div>
                             </div>)
