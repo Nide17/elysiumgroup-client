@@ -35,7 +35,7 @@ const membersData = [
     {
         id: 3,
         memberName: 'Eng. KAREMERA Fabrice',
-        designation: 'Mechanical Engineer',
+        designation: 'Technical Director',
         memberImage: fabriceImg,
         memberEducation: "BSc. Mechanical Engineering",
         memberPhone: '0789804518',
@@ -44,7 +44,7 @@ const membersData = [
     {
         id: 4,
         memberName: 'ISHIMWE Niyomwungeri Parmenide',
-        designation: 'IT Officer',
+        designation: 'Technical Director',
         memberImage: parmenideImg,
         memberEducation: "BSc. Computer Science",
         memberPhone: '0788551997',
