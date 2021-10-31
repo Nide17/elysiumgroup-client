@@ -765,6 +765,10 @@ img.zoom:hover {
   padding-left: 0;
 }
 
+  .footer .footer-menu ul li a {
+    font-size: .88rem!important;
+  }
+
 .footer .map {
   box-shadow: 0 3px 5px -2px #000,
     -15px -3px 15px -10px rgb(22 193 59 / 7%);
@@ -1664,7 +1668,7 @@ h1.elysium-title {
   }
 
   .footer .footer-menu ul li a {
-    font-size: .8rem;
+    font-size: .8rem!important;
     line-height: .9;
     font-weight: 400;
   }
