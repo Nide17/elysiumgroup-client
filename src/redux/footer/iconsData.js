@@ -3,35 +3,35 @@ const dataIcons = [
         id: 0,
         name: "facebook",
         title: "Visit us on",
-        link: "https://www.facebook.com/nide.drogba.7",
+        link: "https://www.facebook.com/elysiumgroupltd",
         desc: "Elysium Group"
     },
     {
         id: 1,
         name: "instagram",
         title: "See us on",
-        link: "https://www.instagram.com/ishimwe_parmenide",
+        link: "https://www.instagram.com/elysium_group_ltd/",
         desc: "Elysium Group"
     },
     {
         id: 2,
         name: "twitter",
         title: "View us @",
-        link: "https://www.twitter.com/@ishimweparmenid",
+        link: "https://twitter.com/ElysiumGroupRw",
         desc: "Elysium Group"
     },
     {
         id: 3,
         name: "linkedin",
         title: "Find us on",
-        link: "https://www.linkedin.com/in/niyomwungeri-parmenide-ishimwe-1a5394123/",
+        link: "https://www.linkedin.com/in/elysium-group-limited-2a2798222/",
         desc: "Elysium Group"
     },
     {
         id: 4,
         name: "whatsapp",
         title: "Chat with us on",
-        link: "+250788889242",
+        link: "https://wa.me/250788889242",
         desc: "Elysium Group"
     }
 ]
