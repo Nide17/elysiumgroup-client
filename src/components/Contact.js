@@ -74,6 +74,7 @@ const Contact = ({ clearErrors, clearSuccess, errors, successful, sendMsg }) => 
                     <div className="col-12 elysium-title-wrapper">
                         <h1 className="elysium-title">ELYSIUM GROUP</h1>
                         <h3>Contact us</h3>
+                        <p>In Search of Incredible Engineering Solutions</p>
                     </div>
 
                     <div className="col-12 form-container">

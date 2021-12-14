@@ -143,6 +143,16 @@ import zind_karembure5 from '../../images/gallery/zind_karembure/zind_karembure5
 import zind_karembure6 from '../../images/gallery/zind_karembure/zind_karembure6.jpg'
 import zind_karembure7 from '../../images/gallery/zind_karembure/zind_karembure7.jpg'
 import zind_karembure8 from '../../images/gallery/zind_karembure/zind_karembure8.jpg'
+import station_nyarutarama1 from '../../images/gallery/station_nyarutarama/station_nyarutarama1.jpeg'
+import station_nyarutarama2 from '../../images/gallery/station_nyarutarama/station_nyarutarama2.jpeg'
+import station_nyarutarama3 from '../../images/gallery/station_nyarutarama/station_nyarutarama3.jpeg'
+import station_nyarutarama4 from '../../images/gallery/station_nyarutarama/station_nyarutarama4.jpeg'
+import station_nyarutarama5 from '../../images/gallery/station_nyarutarama/station_nyarutarama5.jpeg'
+import station_nyarutarama6 from '../../images/gallery/station_nyarutarama/station_nyarutarama6.jpeg'
+import station_nyarutarama7 from '../../images/gallery/station_nyarutarama/station_nyarutarama7.jpeg'
+import station_nyarutarama8 from '../../images/gallery/station_nyarutarama/station_nyarutarama8.jpeg'
+import station_nyarutarama9 from '../../images/gallery/station_nyarutarama/station_nyarutarama9.jpeg'
+import station_nyarutarama10 from '../../images/gallery/station_nyarutarama/station_nyarutarama10.jpeg'
 
 const projData = [
     {
@@ -441,6 +451,17 @@ const projData = [
         pLocation: 'Kanyinya-Nyarugenge-Kigali',
         pDescription: '',
         pGallery: [zind_kanyinya1, zind_kanyinya2, zind_kanyinya3, zind_kanyinya4, zind_kanyinya5, zind_kanyinya6, zind_kanyinya7]
+    },
+    {
+        id: 27,
+        pName: 'Construction of Petrol station offices',
+        pClient: 'Elysium Group',
+        pDate: '2021',
+        pType: 'Commercial Projects',
+        finished: false,
+        pLocation: 'Nyarutarama-Kigali',
+        pDescription: '',
+        pGallery: [station_nyarutarama1, station_nyarutarama2, station_nyarutarama3, station_nyarutarama4, station_nyarutarama5, station_nyarutarama6, station_nyarutarama7, station_nyarutarama8, station_nyarutarama9, station_nyarutarama10]
     }]
 
 export default projData;
