@@ -73,7 +73,7 @@ const Footer = (props) => {
             <div className="row copyright">
                 <div className="col-12">
                     <p className="text-center mb-0">
-                        <strong>© 2021 Elysium Group Ltd - All Rights Reserved</strong>
+                        <strong>© 2022 Elysium Group Ltd - All Rights Reserved</strong>
                     </p>
                 </div>
             </div>
