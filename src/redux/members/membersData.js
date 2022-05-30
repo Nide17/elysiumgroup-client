@@ -34,17 +34,26 @@ const membersData = [
     },
     {
         id: 3,
+        memberName: 'Eng. KAYITARE Christian',
+        designation: 'Architect',
+        memberImage: null,
+        memberEducation: "BSc. Architecture",
+        memberPhone: '0726094926',
+        memberDescription: 'Arch. KAYITARE CHristian.'
+    },
+    {
+        id: 4,
         memberName: 'Eng. KAREMERA Fabrice',
-        designation: 'Technical Director',
+        designation: 'MEP Engineer',
         memberImage: fabriceImg,
         memberEducation: "BSc. Mechanical Engineering",
         memberPhone: '0789804518',
         memberDescription: 'Eng. KAREMERA Fabrice is a Dedicated Mechanical Engineer with experience in project management, design, development, and quality assurance. Expert in CAD operation, and skilled producer of documentation and drawings associated with mechanical engineering. Recognized for a keen ability to improve design components, increase product and manufacturing efficiency, and decrease the constant need for re-engineering. Specializes in MEP, HVAC, Plumbing and Fire Fighting Systems in building services. This includes design, supervision, commissioning and coordination of works. Familiarity within the manufacturing sector, ability of conceiving, designing, and detailing complete models of industrial machines and systems.His initiation as Hands on Engineer and thorough grounding for the first two years has laid a solid foundation to his career.The stint opened the doors to understanding the expectations of the industrial sector and the rigors of the production environment.The importance of process compliance was dinned in from the early days.The virtues of working in teams, keeping costs down productivity improvement, value engineering and continuous quality improvement became constant companions in the enriching journey.'
     },
     {
-        id: 4,
+        id: 5,
         memberName: 'ISHIMWE Niyomwungeri Parmenide',
-        designation: 'Technical Director',
+        designation: 'IT Engineer',
         memberImage: parmenideImg,
         memberEducation: "BSc. Computer Science",
         memberPhone: '0788551997',

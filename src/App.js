@@ -1,32 +1,32 @@
-import React, { useEffect } from "react";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
-import About from "./components/about/About";
-import Team from "./components/team/Team.js";
-import ViewBio from "./components/team/ViewBio.js";
-import Contact from "./components/Contact";
-import Login from './components/admin/Login';
-import Register from './components/admin/Register';
-import Services from "./components/services/Services";
-import Projects from "./components/projects/Projects";
-import SlideCarousel from "./components/carousel/SlideCarousel";
+import React, { useEffect } from "react"
+import Header from "./components/header/Header"
+import Footer from "./components/footer/Footer"
+import About from "./components/about/About"
+import Team from "./components/team/Team.js"
+import ViewBio from "./components/team/ViewBio.js"
+import Contact from "./components/Contact"
+import Login from './components/admin/Login'
+import Register from './components/admin/Register'
+import Services from "./components/services/Services"
+import Projects from "./components/projects/Projects"
+import SlideCarousel from "./components/carousel/SlideCarousel"
 
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { connect } from "react-redux";
-import { openNav, showServices, showProjects, handleClose, setHeight } from "./redux/app/app.actions";
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { connect } from "react-redux"
+import { openNav, showServices, showProjects, handleClose, setHeight } from "./redux/app/app.actions"
 
 const App = (props) => {
 
   useEffect(() => {
-    props.setHeight(contH);
-  });
+    props.setHeight(contH)
+  })
 
-  const bodyElement = document.body;
+  const bodyElement = document.body
   props.menuOpen
     ? bodyElement.classList.add("menu-open")
-    : bodyElement.classList.remove("menu-open");
+    : bodyElement.classList.remove("menu-open")
 
-  let contH = document.querySelector("body").clientHeight;
+  let contH = document.querySelector("body").clientHeight
 
   return (
     <div id="content" className="App">
@@ -66,8 +66,8 @@ const App = (props) => {
         <Footer />
       </BrowserRouter>
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = (state) => {
   return {
@@ -75,26 +75,26 @@ const mapStateToProps = (state) => {
     isProjects: state.appReducer.isProjects,
     menuOpen: state.appReducer.menuOpen,
     contentHeight: state.appReducer.contentHeight,
-  };
-};
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
     openNav: () => dispatch(openNav()),
 
     showServices: (e) => {
-      e.preventDefault();
-      return dispatch(showServices());
+      e.preventDefault()
+      return dispatch(showServices())
     },
 
     showProjects: (e) => {
-      e.preventDefault();
-      return dispatch(showProjects());
+      e.preventDefault()
+      return dispatch(showProjects())
     },
 
     closeHandler: () => dispatch(handleClose()),
     setHeight: () => dispatch(setHeight()),
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)
