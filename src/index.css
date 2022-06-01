@@ -20,13 +20,13 @@ body {
   user-select: none;
 }
 
-.btn:focus {
-  box-shadow: none;
-}
-
-.btn-link.focus,
-.btn-link:focus {
-  text-decoration: none;
+/* reset-css file or css global file */
+*:hover,
+*:focus,
+*:active {
+  outline: none;
+  box-shadow: none !important;
+  -webkit-appearance: none;
 }
 
 .container {

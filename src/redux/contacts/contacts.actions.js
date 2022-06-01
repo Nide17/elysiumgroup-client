@@ -3,9 +3,11 @@ import axios from 'axios';
 import { tokenConfig } from '../auth/auth.actions'
 import { returnErrors } from "../error/error.actions";
 import { returnSuccess } from '../success/success.actions'
+import { apiURL } from '../config'
 
 const axiosInstance = axios.create({
-  baseURL: 'https://elysiumgroup-server.herokuapp.com',
+  // baseURL: 'https://elysiumgroup-server.herokuapp.com',
+  baseURL: apiURL
 });
 
 // dispatch(action)
@@ -36,8 +38,7 @@ export const sendMsg = (contactMsg) => async (dispatch) => {
         dispatch({
           type: ADD_CONTACT,
           payload: res.data
-        }),
-        alert('Sending ...'))
+        }))
       .then(res =>
         dispatch(returnSuccess('Message sent successfully!', 200, 'ADD_CONTACT')))
 

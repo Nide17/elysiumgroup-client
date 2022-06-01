@@ -1,6 +1,13 @@
 import axios from 'axios';
-import { returnErrors } from '../error/error.actions'
+import { returnErrors } from "../error/error.actions";
+import { returnSuccess } from '../success/success.actions'
 import { USER_LOADED, USER_LOADING, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS, REGISTER_SUCCESS, REGISTER_FAIL, GET_USERS, UPDATE_USER, DELETE_USER, UPDATE_USER_FAIL, DELETE_USER_FAIL, USERS_LOADING, RESET_PASSWORD, FORGOT_PASSWORD, UNEXISTING_EMAIL } from "./auth.types";
+import { apiURL } from '../config'
+
+const axiosInstance = axios.create({
+  // baseURL: 'https://elysiumgroup-server.herokuapp.com',
+  baseURL: apiURL
+});
 
 //HELPER FUNCTION TO GET THE TOKEN - SETUP CONFIG/headers and token
 export const tokenConfig = getState => {
@@ -23,12 +30,12 @@ export const tokenConfig = getState => {
 }
 
 // Check token & load user
-export const loadUser = () => (dispatch, getState) => {
+export const loadUser = () => async (dispatch, getState) => {
 
   // User loading
   dispatch({ type: USER_LOADING });
 
-  axios
+  await axiosInstance
     .get('/api/auth/user', tokenConfig(getState))
     .then(res => dispatch({
       type: USER_LOADED,
@@ -43,13 +50,12 @@ export const loadUser = () => (dispatch, getState) => {
     });
 }
 
-
 // View all users
 export const getUsers = (pageNo) => async (dispatch, getState) => {
   await dispatch(setUsersLoading());
 
   try {
-    await axios
+    await axiosInstance
       .get(`/api/users?pageNo=${pageNo}`, tokenConfig(getState))
       .then(res =>
         dispatch({
@@ -64,7 +70,7 @@ export const getUsers = (pageNo) => async (dispatch, getState) => {
 
 
 // Register User
-export const register = ({ name, email, password }) => dispatch => {
+export const register = ({ name, email, password }) => async dispatch => {
   // Headers
   const config = {
     headers: {
@@ -75,12 +81,15 @@ export const register = ({ name, email, password }) => dispatch => {
   // Request body
   const body = JSON.stringify({ name, email, password });
 
-  axios.post('/api/auth/register', body, config)
+  await axiosInstance
+    .post('/api/auth/register', body, config)
 
     .then(res => dispatch({
       type: REGISTER_SUCCESS,
       payload: res.data
     }))
+    .then(res =>
+      dispatch(returnSuccess('Account created! Go to Login', 200, 'REGISTER_SUCCESS')))
 
     .catch(err => {
       dispatch(returnErrors(err.response.data, err.response.status, 'REGISTER_FAIL'));
@@ -92,8 +101,7 @@ export const register = ({ name, email, password }) => dispatch => {
 
 
 // Login User
-export const login = ({ email, password }) =>
-  dispatch => {
+export const login = ({ email, password }) => async dispatch => {
     // Headers
     const config = {
       headers: {
@@ -104,7 +112,7 @@ export const login = ({ email, password }) =>
     // Request body
     const body = JSON.stringify({ email, password });
 
-    axios
+    await axiosInstance
       .post('/api/auth/login', body, config)
       .then(res =>
         dispatch({
@@ -135,7 +143,7 @@ export const logout = () => async dispatch => {
 export const updateUser = updatedUser => async (dispatch, getState) => {
 
   try {
-    await axios
+    await axiosInstance
       .put(`/api/users/${updatedUser.uId}`, updatedUser, tokenConfig(getState))
       .then(() =>
         dispatch({
@@ -155,7 +163,7 @@ export const sendResetLink = fEmail => async (dispatch) => {
 
   try {
 
-    await axios
+    await axiosInstance
       .post('/api/auth/forgot-password', fEmail)
       .then(() =>
         dispatch({
@@ -175,7 +183,7 @@ export const sendNewPassword = updatePsw => async (dispatch) => {
 
   try {
 
-    await axios
+    await axiosInstance
       .post('/api/auth/reset-password', updatePsw)
       .then(() =>
         dispatch({
@@ -194,7 +202,7 @@ export const deleteUser = id => async (dispatch, getState) => {
 
   try {
     if (window.confirm("This user will be deleted permanently!")) {
-      await axios
+      await axiosInstance
         .delete(`/api/users/${id}`, tokenConfig(getState))
         .then(() =>
           dispatch({

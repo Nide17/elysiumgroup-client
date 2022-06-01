@@ -1,104 +1,128 @@
-import React from 'react'
-import { Control, Form, Errors } from 'react-redux-form';
-import {Link} from 'react-router-dom'
+import React, { useState } from 'react'
+import { Row, Col, Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { login } from '../../redux/auth/auth.actions'
+import { clearErrors } from '../../redux/error/error.actions'
+import { clearSuccess } from '../../redux/success/success.actions'
 
-const required = (val) => val && val.length;
-const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+const Login = ({ clearErrors, clearSuccess, errors, successful, login, auth }) => {
 
-const handleSubmit = (values) => {
-    console.log('Current State is: ' + JSON.stringify(values));
+    if(auth.isAuthenticated){ window.location.href = "/"}
+    const [loginState, setLoginState] = useState({
+        // initialy doesn't show
+        email: '',
+        password: '',
+        msg: null
+    })
 
-    // this.props.postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message);
+    // Errors state on form
+    const [errorsState, setErrorsState] = useState([])
 
-    console.log(values);
+    // Alert
+    const [visible, setVisible] = useState(true);
+    const onDismiss = () => setVisible(false);
 
-    // this.props.resetFeedbackForm();
-}
+    const onChangeHandler = e => {
+        // Remove errors
+        setErrorsState([])
+        clearSuccess()
+        clearErrors()
+        setLoginState({ ...loginState, msg: null, [e.target.name]: e.target.value })
+    }
 
-const Login = () => {
+    const onSubmitHandler = e => {
+        e.preventDefault()
+        const { email, password } = loginState
+
+        // VALIDATE
+        if (email.length < 4 || password.length < 4) {
+            setErrorsState(['Insufficient info!']);
+            return
+        }
+
+        else if (errors.id === "LOGIN_FAIL") {
+            setErrorsState([errors.msg]);
+            return
+        }
+
+        // Create user object
+        const user = {
+            email,
+            password
+        }
+        login(user)
+
+        setLoginState({
+            email: '',
+            password: '',
+            msg: null
+        })
+    }
 
     return (
-        <section className="admin-section">
+        <Row className="vh-100 d-flex align-items-center">
 
-            <div className="container admin-container text-info">
+            <Col className="d-flex flex-column justify-content-center align-items-center">
 
-                <div className="row">
+                <div className="p-2 p-sm-5 border border-success rounded">
+                    <h4 className="px-5 mb-5 bg-success text-white text-center">
+                        Welcome to Elysium Group Ltd
+                    </h4>
 
-                    <div className="col-12 elysium-title-wrapper">
-                        <h3>Admin Login</h3>
-                    </div>
+                    {/* Error frontend*/}
+                    {errorsState.length > 0 ?
+                        errorsState.map(err =>
+                            <Alert isOpen={visible} toggle={onDismiss} color="danger" key={Math.floor(Math.random() * 1000)}>
+                                {err}
+                            </Alert>) :
+                        null}
 
-                    <div className="col-12 form-container">
+                    {/* Error backend */}
+                    {errors.id ?
+                        <Alert isOpen={visible} toggle={onDismiss} color='danger'>
+                            <small>{errors.msg && errors.msg.msg}</small>
+                        </Alert> :
+                        successful.id ?
+                            <Alert isOpen={visible} toggle={onDismiss} color='success'>
+                                <small>{successful.msg && successful.msg}</small>
+                            </Alert> : null
+                    }
 
-                        <Form id="adminForm" model="login" onSubmit={(values) => handleSubmit(values)}>
+                    <Form onSubmit={onSubmitHandler}>
+                        <FormGroup>
+                            <Label for="email">Email</Label>
+                            <Input type="email" name="email" placeholder="Email ..." className="mb-3" onChange={onChangeHandler} value={loginState.email} required />
 
-                            <div className="form-group row">
+                            <Label for="password">Password</Label>
+                            <Input type="password" name="password" placeholder="Password ..." className="mb-3" onChange={onChangeHandler} value={loginState.password}required />
 
-                                <label htmlFor="loginEmail" className="col-form-label col-md-3">Email</label>
+                            <Button color="warning" style={{ marginTop: '2rem' }} block>
+                                Login
+                            </Button>
+                        </FormGroup>
+                    </Form>
 
-                                <div className="col-md-9">
-
-                                    <Control.text model=".email" id="email" name="loginEmail" className="form-control text-primary" placeholder="Email" validators={{
-                                        required, validEmail
-                                    }} />
-
-                                    <Errors
-                                        className="text-danger"
-                                        model=".email"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required! ',
-                                            validEmail: 'Invalid Email Address'
-                                        }}
-                                    />
-
-                                </div>
-
-                            </div>
-
-                            <div className="form-group row">
-
-                                <label htmlFor="loginPassword" className="col-form-label col-md-3">Password</label>
-
-                                <div className="col-md-9">
-
-                                    <Control.password model=".password" id="password" name="loginPassword" className="form-control text-primary" placeholder="Password" validators={{
-                                        required
-                                    }} />
-
-                                    <Errors
-                                        className="text-danger"
-                                        model=".password"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required! '
-                                        }}
-                                    />
-
-                                </div>
-
-                            </div>
-
-                            <div className="form-group row">
-                                <div className="col-md-3"></div>
-                                <div className="col-md-9 login">
-                                    <button type="submit" className="btn btn-outline-info loginbtn">Login</button>
-                                </div>
-                            </div>
-
-                            <div className="form-group row">
-                                <div className="col-md-12 text-center redirection">
-                                    <p>Have no account yet? <Link to="/register">&nbsp;Register</Link></p>
-                                </div>
-                            </div>
-
-                        </Form>
-
+                    <div>
+                        <a href="forgot-password">
+                            <p className="p-2">Forgot password?</p>
+                        </a>
+                        <div className="d-flex">
+                            <p className="p-2">No account yet?
+                                &nbsp;<Link to="/register">Register</Link>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </Col>
+        </Row>
     )
 }
 
-export default Login
+// Map  state props
+const mapStateToProps = state => ({
+    errors: state.errorReducer,
+    successful: state.successReducer
+})
+
+export default connect(mapStateToProps, { login, clearErrors, clearSuccess })(Login)

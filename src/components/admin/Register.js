@@ -1,154 +1,130 @@
-import React from 'react'
-import { Control, Form, Errors } from 'react-redux-form';
+import React, { useState } from 'react'
+import { Row, Col, Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { register } from '../../redux/auth/auth.actions'
+import { clearErrors } from '../../redux/error/error.actions'
+import { clearSuccess } from '../../redux/success/success.actions'
 
-const required = (val) => val && val.length;
-const maxLength = (len) => (val) => !(val) || (val.length <= len);
-const minLength = (len) => (val) => val && (val.length >= len);
-const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+const Register = ({ clearErrors, clearSuccess, errors, successful, register }) => {
 
-const handleSubmit = (values) => {
-    console.log('Current State is: ' + JSON.stringify(values));
+    const [registerState, setRegisterState] = useState({
+        // initialy doesn't show
+        name: '',
+        email: '',
+        password: '',
+        msg: null
+    })
 
-    // this.props.postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message);
+    // Errors state on form
+    const [errorsState, setErrorsState] = useState([])
 
-    console.log(values);
+    // Alert
+    const [visible, setVisible] = useState(true);
+    const onDismiss = () => setVisible(false);
 
-    // this.props.resetFeedbackForm();
-}
+    const onChangeHandler = e => {
+        // Remove errors
+        setErrorsState([])
+        clearSuccess()
+        clearErrors()
+        setRegisterState({ ...registerState, msg: null, [e.target.name]: e.target.value })
+    }
 
-const Register = () => {
+    const onSubmitHandler = e => {
+        e.preventDefault()
+        const { name, email, password } = registerState
+
+        // VALIDATE
+        if (name.length < 4 || email.length < 4 || password.length < 4) {
+            setErrorsState(['Insufficient info!']);
+            return
+        }
+
+        else if (errors.id === "REGISTER_FAIL") {
+            setErrorsState([errors.msg]);
+            return
+        }
+
+        // Create user object
+        const user = {
+            name,
+            email,
+            password
+        }
+        register(user)
+
+        setRegisterState({
+            name: '',
+            email: '',
+            password: '',
+            msg: null
+        })
+    }
 
     return (
-        <section className="admin-section">
+        <Row className="vh-100 d-flex align-items-center">
 
-            <div className="container admin-container text-info">
+            <Col className="d-flex flex-column justify-content-center align-items-center">
 
-                <div className="row">
+                <div className="p-2 p-sm-5 border border-success rounded">
+                    <h4 className="px-5 mb-5 bg-success text-white text-center">
+                        Welcome to Elysium Group Ltd
+                    </h4>
 
-                    <div className="col-12 elysium-title-wrapper">
-                        <h3>Register</h3>
-                    </div>
+                    {/* Error frontend*/}
+                    {errorsState.length > 0 ?
+                        errorsState.map(err =>
+                            <Alert isOpen={visible} toggle={onDismiss} color="danger" key={Math.floor(Math.random() * 1000)}>
+                                {err}
+                            </Alert>) :
+                        null}
 
-                    <div className="col-12 form-container">
+                    {/* Error backend */}
+                    {errors.id ?
+                        <Alert isOpen={visible} toggle={onDismiss} color='danger'>
+                            <small>{errors.msg && errors.msg.msg}</small>
+                        </Alert> :
+                        successful.id ?
+                            <Alert isOpen={visible} toggle={onDismiss} color='success'>
+                                <small>{successful.msg && successful.msg}</small>
+                            </Alert> : null
+                    }
 
-                        <Form id="registerForm" model="register" onSubmit={(values) => handleSubmit(values)}>
+                    <Form onSubmit={onSubmitHandler}>
+                        <FormGroup>
+                            <Label for="name">Name</Label>
+                            <Input type="name" name="name" placeholder="Name ..." className="mb-3" onChange={onChangeHandler} value={registerState.name} required />
 
-                            <div className="form-group row">
+                            <Label for="email">Email</Label>
+                            <Input type="email" name="email" placeholder="Email ..." className="mb-3" onChange={onChangeHandler} value={registerState.email} required />
 
-                                <label htmlFor="registerName" className="col-form-label col-md-3">Name</label>
+                            <Label for="password">Password</Label>
+                            <Input type="password" name="password" placeholder="Password ..." className="mb-3" onChange={onChangeHandler} value={registerState.password} required />
 
-                                <div className="col-md-9">
+                            <Button color="warning" style={{ marginTop: '2rem' }} block>
+                                Register
+                            </Button>
+                        </FormGroup>
+                    </Form>
 
-                                    <Control.text model=".name" id="name" name="registerName" className="form-control text-primary" placeholder="Name" validators={{
-                                        required, minLength: minLength(3), maxLength: maxLength(30)
-                                    }} />
-
-                                    <Errors
-                                        className="text-danger"
-                                        model=".name"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required! ',
-                                            minLength: 'Must be greater than 2 characters',
-                                            maxLength: 'Must be 20 characters or less'
-                                        }}
-                                    />
-
-                                </div>
-
-                            </div>
-
-                            <div className="form-group row">
-
-                                <label htmlFor="registerEmail" className="col-form-label col-md-3">Email</label>
-
-                                <div className="col-md-9">
-
-                                    <Control.text model=".email" id="email" name="registerEmail" className="form-control text-primary" placeholder="Email" validators={{
-                                        required, validEmail
-                                    }} />
-
-                                    <Errors
-                                        className="text-danger"
-                                        model=".email"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required! ',
-                                            validEmail: 'Invalid Email Address'
-                                        }}
-                                    />
-
-                                </div>
-
-                            </div>
-
-                            <div className="form-group row">
-
-                                <label htmlFor="registerPassword" className="col-form-label col-md-3">Password</label>
-
-                                <div className="col-md-9">
-
-                                    <Control.password model=".password" id="password" name="registerPassword" className="form-control text-primary" placeholder="Password" validators={{
-                                        required
-                                    }} />
-
-                                    <Errors
-                                        className="text-danger"
-                                        model=".password"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required! ',
-                                        }}
-                                    />
-
-                                </div>
-
-                            </div>
-
-                            <div className="form-group row">
-
-                                <label htmlFor="registerPassword1" className="col-form-label col-md-3">Verify</label>
-
-                                <div className="col-md-9">
-
-                                    <Control.password model=".password1" id="password" name="registerPassword1" className="form-control text-primary" placeholder="Re-enter password" validators={{
-                                        required
-                                    }} />
-
-                                    <Errors
-                                        className="text-danger"
-                                        model=".password1"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required! '
-                                        }}
-                                    />
-
-                                </div>
-
-                            </div>
-
-                            <div className="form-group row">
-                                <div className="col-md-3"></div>
-                                <div className="col-md-9 login">
-                                    <button type="submit" className="btn btn-outline-info loginbtn">Register</button>
-                                </div>
-                            </div>
-
-                            <div className="form-group row">
-                                <div className="col-md-12 text-center redirection">
-                                    <p>Already registered? <Link to="/login">&nbsp;Login</Link></p>
-                                </div>
-                            </div>
-
-                        </Form>
-
+                    <div>
+                        <div className="d-flex">
+                            <p className="p-2">Have account?
+                                &nbsp;<Link to="/login">Login</Link>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </Col>
+        </Row>
     )
 }
 
-export default Register
+// Map  state props
+const mapStateToProps = state => ({
+    errors: state.errorReducer,
+    successful: state.successReducer
+})
+
+export default connect(mapStateToProps, { register, clearErrors, clearSuccess })(Register)

@@ -78,145 +78,153 @@ const Header = (props) => {
         );
     });
 
-    return (
-        <header className={headerClassName}>
-            <div>
-                <div className="header-container container">
 
-                    <div className="contain-btn">
-                        <button className="btn-menu small-button" type="button" onClick={props.menuOpened}>
-                            Menu
-                        </button>
-                    </div>
+    if (location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/forgot-password') 
+    { return null }
+    else 
+    {
 
-                    <div className="logo-container text-center d-flex justify-content-center">
-                        <a href="/" className="logo-text logo-url">
-                            Elysium Group
-                        </a>
-                        <div className="elysgp">
-                            <p className="eg-title">ELYSIUM GROUP</p>
-                            <p className="eg-moto">SYNERGY&nbsp;<span>|</span>&nbsp;INNOVATION&nbsp;<span>|</span>&nbsp;EXCELLENCE</p>
+        return (
+            <header className={headerClassName}>
+                <div>
+                    <div className="header-container container">
+
+                        <div className="contain-btn">
+                            <button className="btn-menu small-button" type="button" onClick={props.menuOpened}>
+                                Menu
+                            </button>
                         </div>
-                    </div>
 
-                    <nav id="mySidenav" className={classNameNav} style={{ height: props.openMenu ? props.contentHeight : '' }}>
-                        <ul className="menu-list">
-                            <li>
-                                <a href="/" 
-                                className="main-link" 
-                                    style={{ borderBottom: location.pathname === "/" ? "2px solid #f0ad4e" : null}}>
-                                    Home
-                                </a>
-                            </li>
+                        <div className="logo-container text-center d-flex justify-content-center">
+                            <a href="/" className="logo-text logo-url">
+                                Elysium Group
+                            </a>
+                            <div className="elysgp">
+                                <p className="eg-title">ELYSIUM GROUP</p>
+                                <p className="eg-moto">SYNERGY&nbsp;<span>|</span>&nbsp;INNOVATION&nbsp;<span>|</span>&nbsp;EXCELLENCE</p>
+                            </div>
+                        </div>
 
-                            <li>
-                                <a href="/about" 
-                                className="main-link"
-                                    style={{ borderBottom: location.pathname === "/about" ? "2px solid #f0ad4e" : null }}>
-                                    About Us
-                                </a>
-                            </li>
+                        <nav id="mySidenav" className={classNameNav} style={{ height: props.openMenu ? props.contentHeight : '' }}>
+                            <ul className="menu-list">
+                                <li>
+                                    <a href="/"
+                                        className="main-link"
+                                        style={{ borderBottom: location.pathname === "/" ? "2px solid #f0ad4e" : null }}>
+                                        Home
+                                    </a>
+                                </li>
 
-                            <li>
-                                <a href="/services"
-                                className={menuServicesLinkClassName} 
-                                    style={{ borderBottom: location.pathname === "/services" ? "2px solid #f0ad4e" : null }}>
-                                    Expertise
-                                </a>
+                                <li>
+                                    <a href="/about"
+                                        className="main-link"
+                                        style={{ borderBottom: location.pathname === "/about" ? "2px solid #f0ad4e" : null }}>
+                                        About Us
+                                    </a>
+                                </li>
 
-                                <div className="submenu-wrapper" id="submenu-Services" style={{
-                                    display:
-                                        props.isServices ? 'block' : 'none'
-                                }}>
+                                <li>
+                                    <a href="/services"
+                                        className={menuServicesLinkClassName}
+                                        style={{ borderBottom: location.pathname === "/services" ? "2px solid #f0ad4e" : null }}>
+                                        Expertise
+                                    </a>
 
-                                    <div className="container">
+                                    <div className="submenu-wrapper" id="submenu-Services" style={{
+                                        display:
+                                            props.isServices ? 'block' : 'none'
+                                    }}>
 
-                                        <div className="header-section__subnav">
-                                            <span className="closer-mobile">
-                                                <button href="/services" className="closer" onClick={props.showServices}>
-                                                    {/* header__subnav-control */}
-                                                    Expertise</button>
-                                            </span>
+                                        <div className="container">
 
-                                            <div className="submenu-cols">
-                                                {allServices}
+                                            <div className="header-section__subnav">
+                                                <span className="closer-mobile">
+                                                    <button href="/services" className="closer" onClick={props.showServices}>
+                                                        {/* header__subnav-control */}
+                                                        Expertise</button>
+                                                </span>
+
+                                                <div className="submenu-cols">
+                                                    {allServices}
+                                                </div>
+
+                                                <span className="closer-desktop">
+                                                    <button href="/#" title="Close" className="closer" onClick={props.closeHandler}>
+                                                        Close</button>
+                                                </span>
+
                                             </div>
-
-                                            <span className="closer-desktop">
-                                                <button href="/#" title="Close" className="closer" onClick={props.closeHandler}>
-                                                    Close</button>
-                                            </span>
-
                                         </div>
                                     </div>
-                                </div>
 
-                            </li>
+                                </li>
 
-                            <li>
-                                <a href="/projects"
-                                className={menuProjectsLinkClassName} 
-                                    style={{ borderBottom: location.pathname === "/projects" ? "2px solid #f0ad4e" : null }}>
-                                    Portfolio
-                                </a>
+                                <li>
+                                    <a href="/projects"
+                                        className={menuProjectsLinkClassName}
+                                        style={{ borderBottom: location.pathname === "/projects" ? "2px solid #f0ad4e" : null }}>
+                                        Portfolio
+                                    </a>
 
-                                <div className="submenu-wrapper" id="submenu-Projects" style={{
-                                    display:
-                                        props.isProjects ? 'block' : 'none'
-                                }}>
+                                    <div className="submenu-wrapper" id="submenu-Projects" style={{
+                                        display:
+                                            props.isProjects ? 'block' : 'none'
+                                    }}>
 
-                                    <div className="container">
+                                        <div className="container">
 
-                                        <div className="header-section__subnav">
-                                            <span className="closer-mobile">
-                                                <button href="/projects" className="closer" onClick={props.showProjects}>
-                                                    Portfolio
-                                                </button>
-                                            </span>
+                                            <div className="header-section__subnav">
+                                                <span className="closer-mobile">
+                                                    <button href="/projects" className="closer" onClick={props.showProjects}>
+                                                        Portfolio
+                                                    </button>
+                                                </span>
 
-                                            <div className="submenu-cols">
-                                                {allProjects}
+                                                <div className="submenu-cols">
+                                                    {allProjects}
+                                                </div>
+
+                                                <span className="closer-desktop"><button href="/#" className="closer" title="Close" onClick={props.closeHandler}>Close</button></span>
+
                                             </div>
-
-                                            <span className="closer-desktop"><button href="/#" className="closer" title="Close" onClick={props.closeHandler}>Close</button></span>
-
                                         </div>
                                     </div>
-                                </div>
 
-                            </li>
+                                </li>
 
-                            <li>
-                                <a href="/team"
-                                    className={menuProjectsLinkClassName}
-                                    style={{ borderBottom: location.pathname === "/team" ? "2px solid #f0ad4e" : null }}>
-                                    Our Team
-                                </a>
-                            </li>
+                                <li>
+                                    <a href="/team"
+                                        className={menuProjectsLinkClassName}
+                                        style={{ borderBottom: location.pathname === "/team" ? "2px solid #f0ad4e" : null }}>
+                                        Our Team
+                                    </a>
+                                </li>
 
-                            <li>
-                                <a href="/contact" 
-                                className="main-link"
-                                    style={{ borderBottom: location.pathname === "/contact" ? "2px solid #f0ad4e" : null }}>
-                                    Contact Us
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                                <li>
+                                    <a href="/contact"
+                                        className="main-link"
+                                        style={{ borderBottom: location.pathname === "/contact" ? "2px solid #f0ad4e" : null }}>
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
 
-                    <div className="three-dots d-none" data-toggle="modal" data-target="/#Modal">
-                        <div className="dot"></div>
-                        <div className="dot"></div>
-                        <div className="dot"></div>
+                        <div className="three-dots d-none" data-toggle="modal" data-target="/#Modal">
+                            <div className="dot"></div>
+                            <div className="dot"></div>
+                            <div className="dot"></div>
+                        </div>
+
+                        {/* <!-- Modal --> */}
+                        <Model />
+
                     </div>
-
-                    {/* <!-- Modal --> */}
-                    <Model />
-
                 </div>
-            </div>
-        </header>
-    );
+            </header>
+        );
+    }
+
 }
 
 
@@ -232,6 +240,6 @@ const mapDispatchToProps = (dispatch) => {
         setServices: () => dispatch(setServices()),
         setProjects: () => dispatch(setProjects()),
     };
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

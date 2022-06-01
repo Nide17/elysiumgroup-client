@@ -1,5 +1,5 @@
 import obedImg from '../../images/team/obed.jpg'
-import parmenideImg from '../../images/team/parmenide.jpg'
+import parmenideImg from '../../images/team/parmenide.JPG'
 import patienceImg from '../../images/team/patience.jpg'
 import ephremImg from '../../images/team/ephrem.jpg'
 import fabriceImg from '../../images/team/fabrice.jpg'

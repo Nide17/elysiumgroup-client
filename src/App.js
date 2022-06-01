@@ -6,16 +6,23 @@ import Team from "./components/team/Team.js"
 import ViewBio from "./components/team/ViewBio.js"
 import Contact from "./components/Contact"
 import Login from './components/admin/Login'
+import ForgotPassword from './components/admin/ForgotPassword'
 import Register from './components/admin/Register'
 import Services from "./components/services/Services"
 import Projects from "./components/projects/Projects"
 import SlideCarousel from "./components/carousel/SlideCarousel"
 
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import { connect } from "react-redux"
+import { connect } from 'react-redux'
+import store from './redux/store'
 import { openNav, showServices, showProjects, handleClose, setHeight } from "./redux/app/app.actions"
+import { loadUser } from './redux/auth/auth.actions'
 
 const App = (props) => {
+
+  useEffect(() => {
+    store.dispatch(loadUser())
+  }, []);
 
   useEffect(() => {
     props.setHeight(contH)
@@ -31,8 +38,10 @@ const App = (props) => {
   return (
     <div id="content" className="App">
       <BrowserRouter>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" render={() => <Login auth={props.auth} />} />
+        <Route exact path="/register" render={() => <Register auth={props.auth} />}/>
+        <Route exact path="/forgot-password" component={ForgotPassword} />
+
         <Header
           openMenu={props.menuOpen}
           contentHeight={contH}
@@ -75,6 +84,7 @@ const mapStateToProps = (state) => {
     isProjects: state.appReducer.isProjects,
     menuOpen: state.appReducer.menuOpen,
     contentHeight: state.appReducer.contentHeight,
+    auth: state.authReducer,
   }
 }
 
