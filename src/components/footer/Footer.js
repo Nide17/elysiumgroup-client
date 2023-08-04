@@ -47,7 +47,7 @@ const Footer = (props) => {
                             <ul>
                                 <li><i className="fa fa-phone fa-lg"></i>&nbsp;(+250)788623823</li>
                                 <li><i className="fa fa-envelope fa-md"></i>&nbsp;<small>elysiumgroupltd19@gmail.com</small></li>
-                                <li><i className="fa fa-map-marker"></i>&nbsp;<small>KK 40 St, Kigali</small></li>
+                                <li><i className="fa fa-map-marker"></i>&nbsp;<small>Sonatube, Kicukiro, Kigali</small></li>
                             </ul>
                         </div>
 
@@ -79,7 +79,7 @@ const Footer = (props) => {
                 <div className="row copyright">
                     <div className="col-12">
                         <p className="text-center mb-0">
-                            <strong>© 2022 Elysium Group Ltd - All Rights Reserved</strong>
+                            <strong>© 2023 Elysium Group Ltd - All Rights Reserved</strong>
                         </p>
                     </div>
                 </div>
