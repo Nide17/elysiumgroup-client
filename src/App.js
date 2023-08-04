@@ -16,13 +16,13 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { connect } from 'react-redux'
 import store from './redux/store'
 import { openNav, showServices, showProjects, handleClose, setHeight } from "./redux/app/app.actions"
-import { loadUser } from './redux/auth/auth.actions'
+// import { loadUser } from './redux/auth/auth.actions'
 
 const App = (props) => {
 
-  useEffect(() => {
-    store.dispatch(loadUser())
-  }, []);
+  // useEffect(() => {
+  //   store.dispatch(loadUser())
+  // }, []);
 
   useEffect(() => {
     props.setHeight(contH)
@@ -38,9 +38,9 @@ const App = (props) => {
   return (
     <div id="content" className="App">
       <BrowserRouter>
-        <Route exact path="/login" render={() => <Login auth={props.auth} />} />
-        <Route exact path="/register" render={() => <Register auth={props.auth} />}/>
-        <Route exact path="/forgot-password" component={ForgotPassword} />
+        {/* <Route exact path="/login" render={() => <Login auth={props.auth} />} /> */}
+        {/* <Route exact path="/register" render={() => <Register auth={props.auth} />}/> */}
+        {/* <Route exact path="/forgot-password" component={ForgotPassword} /> */}
 
         <Header
           openMenu={props.menuOpen}

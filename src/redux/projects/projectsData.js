@@ -153,6 +153,40 @@ import station_nyarutarama7 from '../../images/gallery/station_nyarutarama/stati
 import station_nyarutarama8 from '../../images/gallery/station_nyarutarama/station_nyarutarama8.jpeg'
 import station_nyarutarama9 from '../../images/gallery/station_nyarutarama/station_nyarutarama9.jpeg'
 import station_nyarutarama10 from '../../images/gallery/station_nyarutarama/station_nyarutarama10.jpeg'
+import gatsibo_model_village1 from '../../images/gallery/gatsibo_model_village/gatsibo_model_village1.jpg'
+import gatsibo_model_village2 from '../../images/gallery/gatsibo_model_village/gatsibo_model_village2.jpg'
+import gatsibo_model_village3 from '../../images/gallery/gatsibo_model_village/gatsibo_model_village3.jpg'
+import gatsibo_model_village4 from '../../images/gallery/gatsibo_model_village/gatsibo_model_village4.jpg'
+import gatsibo_model_village5 from '../../images/gallery/gatsibo_model_village/gatsibo_model_village5.jpg'
+import geotechnical_investigation_see_far1 from '../../images/gallery/geotechnical_investigation_see_far/geotechnical_investigation_see_far1.jpeg'
+import geotechnical_investigation_see_far2 from '../../images/gallery/geotechnical_investigation_see_far/geotechnical_investigation_see_far2.jpeg'
+import geotechnical_investigation_see_far3 from '../../images/gallery/geotechnical_investigation_see_far/geotechnical_investigation_see_far3.jpeg'
+import geotechnical_investigation_see_far4 from '../../images/gallery/geotechnical_investigation_see_far/geotechnical_investigation_see_far4.jpeg'
+import muse_nyarubondo_mwogo_road1 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road1.jpg'
+import muse_nyarubondo_mwogo_road2 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road2.jpg'
+import muse_nyarubondo_mwogo_road3 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road3.jpg'
+import muse_nyarubondo_mwogo_road4 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road4.jpg'
+import muse_nyarubondo_mwogo_road5 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road5.jpg'
+import muse_nyarubondo_mwogo_road6 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road6.jpg'
+import muse_nyarubondo_mwogo_road7 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road7.jpg'
+import muse_nyarubondo_mwogo_road8 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road8.jpg'
+import muse_nyarubondo_mwogo_road9 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road9.jpg'
+import muse_nyarubondo_mwogo_road10 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road10.jpg'
+import muse_nyarubondo_mwogo_road11 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road11.jpg'
+import muse_nyarubondo_mwogo_road12 from '../../images/gallery/muse_nyarubondo_mwogo_road/muse_nyarubondo_mwogo_road12.jpg'
+import kaduha_mugano_mushubi_road1 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road1.jpg'
+import kaduha_mugano_mushubi_road2 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road2.jpg'
+import kaduha_mugano_mushubi_road3 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road3.jpg'
+import kaduha_mugano_mushubi_road4 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road4.jpg'
+import kaduha_mugano_mushubi_road5 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road5.jpg'
+import kaduha_mugano_mushubi_road6 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road6.jpg'
+import kaduha_mugano_mushubi_road7 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road7.jpg'
+import kaduha_mugano_mushubi_road8 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road8.jpg'
+import kaduha_mugano_mushubi_road9 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road9.jpg'
+import kaduha_mugano_mushubi_road10 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road10.jpg'
+import kaduha_mugano_mushubi_road11 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road11.jpg'
+import kaduha_mugano_mushubi_road12 from '../../images/gallery/kaduha_mugano_mushubi_road/kaduha_mugano_mushubi_road12.jpg'
+
 
 const projData = [
     {
@@ -454,7 +488,7 @@ const projData = [
     },
     {
         id: 27,
-        pName: 'Construction of Petrol station offices',
+        pName: 'Construction of Petrol Station offices',
         pClient: 'Elysium Group',
         pDate: '2021',
         pType: 'Commercial Projects',
@@ -462,6 +496,50 @@ const projData = [
         pLocation: 'Nyarutarama-Kigali',
         pDescription: '',
         pGallery: [station_nyarutarama1, station_nyarutarama2, station_nyarutarama3, station_nyarutarama4, station_nyarutarama5, station_nyarutarama6, station_nyarutarama7, station_nyarutarama8, station_nyarutarama9, station_nyarutarama10]
+    },
+    {
+        id: 28,
+        pName: 'Construction of Gatsibo Model Village',
+        pClient: 'Elysium Group',
+        pDate: '2023',
+        pType: 'Residential Projects',
+        finished: false,
+        pLocation: 'Gatsibo',
+        pDescription: '',
+        pGallery: [gatsibo_model_village1, gatsibo_model_village2, gatsibo_model_village3, gatsibo_model_village4, gatsibo_model_village5]
+    },
+    {
+        id: 29,
+        pName: 'Geotechnical Investigation for SEE FAR Affordable Housing (Phase II)',
+        pClient: 'Elysium Group',
+        pDate: '2023',
+        pType: 'Geotechnical Projects',
+        finished: false,
+        pLocation: 'Kabeza-Kigali',
+        pDescription: '',
+        pGallery: [geotechnical_investigation_see_far1, geotechnical_investigation_see_far2, geotechnical_investigation_see_far3, geotechnical_investigation_see_far4]
+    },
+    {
+        id: 30,
+        pName: 'Muse-Ryarubondo-Mwogo Road',
+        pClient: 'Elysium Group',
+        pDate: '2023',
+        pType: 'Road & Bridge Projects',
+        finished: false,
+        pLocation: 'Nyamagabe-South',
+        pDescription: '',
+        pGallery: [muse_nyarubondo_mwogo_road1, muse_nyarubondo_mwogo_road2, muse_nyarubondo_mwogo_road3, muse_nyarubondo_mwogo_road4, muse_nyarubondo_mwogo_road5, muse_nyarubondo_mwogo_road6, muse_nyarubondo_mwogo_road7, muse_nyarubondo_mwogo_road8, muse_nyarubondo_mwogo_road9, muse_nyarubondo_mwogo_road10, muse_nyarubondo_mwogo_road11, muse_nyarubondo_mwogo_road12]
+    },
+    {
+        id: 31,
+        pName: 'Kaduha-Mugano-Mushubi Road',
+        pClient: 'Elysium Group',
+        pDate: '2023',
+        pType: 'Road & Bridge Projects',
+        finished: false,
+        pLocation: 'Nyamagabe-South',
+        pDescription: '',
+        pGallery: [kaduha_mugano_mushubi_road1, kaduha_mugano_mushubi_road2, kaduha_mugano_mushubi_road3, kaduha_mugano_mushubi_road4, kaduha_mugano_mushubi_road5, kaduha_mugano_mushubi_road6, kaduha_mugano_mushubi_road7, kaduha_mugano_mushubi_road8, kaduha_mugano_mushubi_road9, kaduha_mugano_mushubi_road10, kaduha_mugano_mushubi_road11, kaduha_mugano_mushubi_road12]
     }]
 
 export default projData;

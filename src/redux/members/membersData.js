@@ -1,5 +1,5 @@
 import obedImg from '../../images/team/obed.jpg'
-import parmenideImg from '../../images/team/parmenide.JPG'
+import parmenideImg from '../../images/team/parmenide.jpg'
 import patienceImg from '../../images/team/patience.jpg'
 import ephremImg from '../../images/team/ephrem.jpg'
 import fabriceImg from '../../images/team/fabrice.jpg'
@@ -32,15 +32,15 @@ const membersData = [
         memberPhone: '0786689117',
         memberDescription: 'UWASE Patience is capable accountant, sales, logistic, store management and company\'s asset manager as well as a good dealer with Client and Suppliers of the company. Worked with various local companies as a professional accountant and administrator. She is a detail oriented, driven, regarded for leadership and specialized in all areas of finance. She has collaborative skills with experience working in a team environment, able to work effectively alongside individuals from diverse backgrounds. She is capable to make sure that all materials needed are delivered within the best of time according to the companies’ cash flow, ensuring the records are properly done for all deliveries and for the closing stock by preparing the reports needed periodically. She is always checking the accuracy in orders before contacting a supplier to ensure correct delivery. She always prioritizes a good performance of her tasks quickly while maintaining the expected quality. She holds a BBA degree majoring in accounting.'
     },
-    {
-        id: 3,
-        memberName: 'Eng. KAYITARE Christian',
-        designation: 'Architect',
-        memberImage: null,
-        memberEducation: "BSc. Architecture",
-        memberPhone: '0726094926',
-        memberDescription: 'Arch. KAYITARE CHristian.'
-    },
+    // {
+    //     id: 3,
+    //     memberName: 'Eng. KAYITARE Christian',
+    //     designation: 'Architect',
+    //     memberImage: null,
+    //     memberEducation: "BSc. Architecture",
+    //     memberPhone: '0726094926',
+    //     memberDescription: 'Arch. KAYITARE CHristian.'
+    // },
     {
         id: 4,
         memberName: 'Eng. KAREMERA Fabrice',
