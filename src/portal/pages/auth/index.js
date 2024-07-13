@@ -1,0 +1,5 @@
+export * from "@/portal/pages/auth/Login"
+export * from "@/portal/pages/auth/Signup"
+export * from "@/portal/pages/auth/VerifyOTP"
+export * from "@/portal/pages/auth/ForgotPassword"
+export * from "@/portal/pages/auth/ResetPassword"
