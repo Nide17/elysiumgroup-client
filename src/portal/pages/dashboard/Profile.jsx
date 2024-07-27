@@ -14,23 +14,68 @@ import { getUserChatList } from "@/redux/slices/messagesSlice";
 import { CreateEditDialog } from "@/portal/widgets/dialogs/CreateEditDialog"
 import { UploadImageDialog } from "@/portal/widgets/dialogs/UploadImageDialog"
 import { openDialog } from "@/redux/slices/appSlice";
+import img_thumbnail from "@/images/img_thumbnail.png";
 
 export function Profile() {
 
   const dispatch = useDispatch();
-  const projects = useSelector(state => state.projects);
+  const { featuredProjects } = useSelector(state => state.projects);
   const { chatList } = useSelector(state => state.messages);
   const { isLoading, user } = useSelector(state => state.users);
   const isDialogOpen = useSelector(state => state.app.isDialogOpen);
   const [isEditProfileOpen, setIsEditProfileOpen] = useState(false);
   const [isUploadImageOpen, setIsUploadImageOpen] = useState(false);
+  const [preloadedUserAvatar, setPreloadedUserAvatar] = useState(null);
+  const [preloadedProjectImages, setPreloadedProjectImages] = useState({});
+
   const navigate = useNavigate();
 
   useEffect(() => { dispatch(loadUser()) }, [dispatch]);
   useEffect(() => { user && user._id && dispatch(getFeaturedProjects(user._id)) }, [dispatch, user]);
   useEffect(() => { user && user._id && dispatch(getUserChatList(user._id)) }, [dispatch, user]);
 
-  const userAvatar = user && user.picture && user.picture.url ? user.picture.url : "/img/team-2.jpeg";
+  useEffect(() => { 
+    const preloadUserAvatar = async () => {
+      const response = user && user.picture && user.picture.url && await fetch(user.picture.url);
+
+      if (response && response.ok) {
+        const blob = await response.blob();
+        setPreloadedUserAvatar(URL.createObjectURL(blob));
+      }
+    };
+    preloadUserAvatar();
+  }, [user]);
+
+  useEffect(() => {
+    const preloadProjectImages = async () => {
+      const imagesToPreload = featuredProjects.map(project => ({
+        projectID: project._id,
+        imageUrl: project.pGallery.length > 0 && project.pGallery[0].url,
+      }));
+
+      const preloaded = await Promise.all(imagesToPreload.map(async ({ projectID, imageUrl }) => {
+        const response = imageUrl && await fetch(imageUrl);
+
+        if (response.ok) {
+          const blob = await response.blob();
+          return { projectID, blob };
+        }
+
+        return { projectID, blob: null };
+      }));
+
+      const preloadedImagesObject = {};
+      preloaded.forEach(({ projectID, blob }) => {
+        preloadedImagesObject[projectID] = blob && URL.createObjectURL(blob);
+      });
+
+      setPreloadedProjectImages(preloadedImagesObject);
+    };
+
+    preloadProjectImages();
+  }, [featuredProjects]);
+
+
   const userDepartment = user && user.department && user.department == "Unassigned" ? "No department  |  " : "  |  ";
 
   if (isLoading || !user) {
@@ -58,7 +103,7 @@ export function Profile() {
                 shadow-black/10 text-blue-500 rounded-lg cursor-pointer hover:shadow-lg"
               >
                 <Avatar
-                  src={userAvatar}
+                  src={preloadedUserAvatar || img_thumbnail}
                   alt="bruce-mars"
                   size="xl"
                   variant="rounded"
@@ -200,12 +245,10 @@ export function Profile() {
                     return null;
                   }
 
-                  const userImage = props.user.picture && props.user.picture.url ? props.user.picture.url : "/img/team-2.jpeg";
-
                   return (
                     <MessageCard
                       key={props.user._id}
-                      img={userImage}
+                      imageUrl={props.user.picture && props.user.picture.url}
                       name={props.user.name}
                       message={props.latestMessage.message}
                       action={
@@ -226,9 +269,7 @@ export function Profile() {
           </div>
 
           <div className="px-4 pb-4">
-
-            {
-              projects && projects.featuredProjects && projects.featuredProjects.length > 0 &&
+            { featuredProjects && featuredProjects.length > 0 &&
               <>
                 <Typography variant="h6" color="blue-gray" className="mb-2">
                   Projects
@@ -239,12 +280,13 @@ export function Profile() {
                 </Typography>
 
                 <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4">
-                  {projects.featuredProjects.map(
-                    ({ pGallery, pName, pDescription, status, route }) => (
+                
+                  {featuredProjects.map(({ _id, pName, pDescription, status, route }) => (
                       <Card key={pName} color="transparent" shadow={false}>
 
                         <CardHeader floated={false} color="gray" className="mx-0 mt-0 mb-4 h-64 xl:h-40">
-                          <img src={pGallery.length > 0 && pGallery[0].url} alt={pName} className="h-full w-full object-cover" />
+                        <img src={preloadedProjectImages[_id] || img_thumbnail}
+                        alt={pName} className="h-full w-full object-cover" />
                         </CardHeader>
 
                         <CardBody className="py-0 px-1">
@@ -267,17 +309,7 @@ export function Profile() {
                               view project
                             </Button>
                           </Link>
-
-                          <div>
-                            {pGallery.map(({ url, public_id }, key) => (
-                              <Tooltip key={public_id} content={public_id}>
-                                <Avatar src={url} alt={public_id} size="xs" variant="circular"
-                                  className={`cursor-pointer border-2 border-white ${key === 0 ? "" : "-ml-2.5"}`} />
-                              </Tooltip>
-                            ))}
-                          </div>
                         </CardFooter>
-
                       </Card>))}
                 </div>
               </>

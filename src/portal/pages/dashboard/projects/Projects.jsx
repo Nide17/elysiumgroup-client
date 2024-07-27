@@ -8,7 +8,7 @@ import { getProjects, deleteProject } from "@/redux/slices/projectsSlice";
 import { openDialog, closeDialog } from "@/redux/slices/appSlice";
 import { DeleteDialog } from '@/portal/widgets/dialogs/DeleteDialog';
 import Loading from '@/components/utils/Loading';
-import houseDefault from "@/images/house-default.jpg";
+import img_thumbnail from "@/images/img_thumbnail.png";
 
 export function Projects() {
 
@@ -40,11 +40,11 @@ export function Projects() {
 
       const imagesToPreload = projects.map(project => ({
         projectID: project._id,
-        imageUrl: project.pGallery.length > 0 ? project.pGallery[0].url : houseDefault,
+        imageUrl: project.pGallery.length > 0 && project.pGallery[0].url,
       }));
 
       const preloaded = await Promise.all(imagesToPreload.map(async ({ projectID, imageUrl }) => {
-        const response = await fetch(imageUrl);
+        const response = imageUrl && await fetch(imageUrl);
 
         if (response.ok) {
           const blob = await response.blob();
@@ -56,7 +56,7 @@ export function Projects() {
 
       const preloadedImagesObject = {};
       preloaded.forEach(({ projectID, blob }) => {
-        preloadedImagesObject[projectID] = blob ? URL.createObjectURL(blob) : houseDefault;
+        preloadedImagesObject[projectID] = blob && URL.createObjectURL(blob);
       });
 
       setPreloadedImages(preloadedImagesObject);
@@ -100,7 +100,7 @@ export function Projects() {
                     <tr key={_id}>
                       <td className={className}>
                         <div className="flex items-center gap-4">
-                          <Avatar src={preloadedImages[_id]}
+                          <Avatar src={preloadedImages[_id] ? preloadedImages[_id] : img_thumbnail}
                           alt={pName ? pName : "Project Name"} size="sm" variant="rounded" />
                           <div>
                             <Typography variant="small" color="blue-gray" className="text-[10px] font-semibold">

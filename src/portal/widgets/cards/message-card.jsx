@@ -1,14 +1,30 @@
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Avatar, Typography } from "@material-tailwind/react";
+import img_thumbnail from "@/images/img_thumbnail.png";
 
-export function MessageCard({ img, name, message, action }) {
-  const imageUrl = img ? img : "/img/team-2.jpeg";
+export function MessageCard({ imageUrl, name, message, action }) {
+
+  const [preloadedImage, setPreloadedImage] = useState(null);
+
+  useEffect(() => {
+    const preloadImage = async () => {
+      const response = imageUrl && await fetch(imageUrl);
+
+      if (response && response.ok) {
+        const blob = await response.blob();
+        setPreloadedImage(URL.createObjectURL(blob));
+      }
+    };
+
+    preloadImage();
+  }, [imageUrl]);
 
   return (
     <div className="flex items-center justify-between gap-4">
       <div className="flex items-center gap-4">
         <Avatar
-          src={imageUrl}
+          src={preloadedImage || img_thumbnail}
           alt={name}
           variant="rounded"
           className="shadow-lg shadow-blue-gray-500/25"

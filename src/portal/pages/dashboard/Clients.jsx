@@ -9,7 +9,7 @@ import Loading from '@/components/utils/Loading';
 import { DeleteDialog } from '@/portal/widgets/dialogs/DeleteDialog';
 import { CreateEditDialog } from '@/portal/widgets/dialogs/CreateEditDialog';
 import { UploadImageDialog } from '@/portal/widgets/dialogs/UploadImageDialog';
-import houseDefault from "@/images/house-default.jpg";
+import img_thumbnail from "@/images/img_thumbnail.png";
 
 export function Clients() {
 
@@ -70,13 +70,13 @@ export function Clients() {
 
             const imagesToPreload = clients.map(client => ({
                 clientID: client._id,
-                imageUrl: client.clientLogo || houseDefault,
+                imageUrl: client.clientLogo && client.clientLogo.url,
             }));
 
             const preloaded = await Promise.all(imagesToPreload.map(async ({ clientID, imageUrl }) => {
-                const response = await fetch(imageUrl);
+                const response = imageUrl && await fetch(imageUrl);
 
-                if (response.ok) {
+                if (response && response.ok) {
                     const blob = await response.blob();
                     return { clientID, blob };
                 }
@@ -86,7 +86,7 @@ export function Clients() {
 
             const preloadedImagesObject = {};
             preloaded.forEach(({ clientID, blob }) => {
-                preloadedImagesObject[clientID] = blob ? URL.createObjectURL(blob) : houseDefault;
+                preloadedImagesObject[clientID] = blob && URL.createObjectURL(blob)
             });
 
             setPreloadedImages(preloadedImagesObject);
@@ -133,7 +133,7 @@ export function Clients() {
 
                                             <td className={className}>
                                                 <div className="flex items-center gap-4">
-                                                    <Avatar src={preloadedImages[_id]}
+                                                    <Avatar src={preloadedImages[_id] ? preloadedImages[_id] : img_thumbnail}
                                                         alt={clientName ? clientName : "Client Name"} size="sm" variant="rounded" />
                                                     <div>
                                                         <Typography variant="small" color="blue-gray" className="text-[10px] font-semibold">

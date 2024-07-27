@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getUserChatList, markAsRead } from "@/redux/slices/messagesSlice";
+import { UserCircleIcon, UserGroupIcon, UsersIcon } from "@heroicons/react/24/solid"
 
 const ChatListItem = ({ name, latestMessage, unreadMessages, receiver, setReceiver }) => {
 
@@ -21,10 +22,13 @@ const ChatListItem = ({ name, latestMessage, unreadMessages, receiver, setReceiv
                 }
             }}>
 
-            <div className="w-6 h-6 lg:w-10 lg:h-10 bg-gray-300 rounded-full mr-2 lg:mr-3 flex items-center justify-center">
-                <img src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                    className={`w-6 h-6 lg:w-10 lg:h-10 rounded-full object-cover
-                    border-solid border-2 border-${color}-400`} alt="avatar" />
+            <div className="p-1 w-6 h-6 lg:w-10 lg:h-10 bg-gray-300 rounded-full mr-2 lg:mr-3 flex items-center justify-center">
+                {
+                    receiver && receiver.name ?
+                        <UserCircleIcon className={`w-4 h-4 lg:w-6 lg:h-6 text-${color}-500`} /> :
+                        receiver && receiver.roomName ? <UsersIcon className={`w-4 h-4 lg:w-6 lg:h-6 text-${color}-500`} /> :
+                            <UserGroupIcon className={`w-4 h-4 lg:w-6 lg:h-6 text-${color}-500`} />
+                }
             </div>
 
             <div className="flex-1">

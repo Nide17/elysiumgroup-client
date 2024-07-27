@@ -57,7 +57,7 @@ const Services = () => {
           {services.map((service) => {
 
             let slug = service.serviceName.toLowerCase().replace(/\s/g, '-')
-            const serviceImage = preloadedImages[service._id]?.src || houseDefault;
+            const serviceImage = preloadedImages[service._id] && preloadedImages[service._id].src ? preloadedImages[service._id].src : houseDefault;
 
             return (
               <Card className="h-[16.5rem] w-full md:w-1/2 lg:w-1/2 md:max-w-[45%] flex-row justify-center items-center m-2 md:m-4 border" key={service._id}>

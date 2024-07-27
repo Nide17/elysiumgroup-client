@@ -10,7 +10,7 @@ import Loading from '@/components/utils/Loading';
 import { DeleteDialog } from '@/portal/widgets/dialogs/DeleteDialog';
 import { CreateEditDialog } from '@/portal/widgets/dialogs/CreateEditDialog';
 import { UploadImageDialog } from '@/portal/widgets/dialogs/UploadImageDialog';
-import houseDefault from "@/images/house-default.jpg";
+import img_thumbnail from "@/images/img_thumbnail.png";
 
 export function Services() {
 
@@ -71,13 +71,13 @@ export function Services() {
 
             const imagesToPreload = services.map(service => ({
                 serviceID: service._id,
-                imageUrl: service.serviceImage || houseDefault,
+                imageUrl: service.serviceImage,
             }));
 
             const preloaded = await Promise.all(imagesToPreload.map(async ({ serviceID, imageUrl }) => {
-                const response = await fetch(imageUrl);
+                const response = imageUrl && await fetch(imageUrl);
 
-                if (response.ok) {
+                if (response && response.ok) {
                     const blob = await response.blob();
                     return { serviceID, blob };
                 }
@@ -87,7 +87,7 @@ export function Services() {
 
             const preloadedImagesObject = {};
             preloaded.forEach(({ serviceID, blob }) => {
-                preloadedImagesObject[serviceID] = blob ? URL.createObjectURL(blob) : houseDefault;
+                preloadedImagesObject[serviceID] = blob && URL.createObjectURL(blob);
             });
 
             setPreloadedImages(preloadedImagesObject);
@@ -102,7 +102,8 @@ export function Services() {
 
                 <CardHeader variant="gradient" color="gray" className="mb-8 p-6 flex flex-row justify-between">
                     <Typography variant="h6" color="white">Services</Typography>
-                    <IconButton color="blue" className="p-2 cursor-pointer hover:bg-[#F0AD4E] rounded-full" onClick={() => openCreateEditDialog(currentService)}>
+                    <IconButton color="blue" className="p-2 cursor-pointer hover:bg-[#F0AD4E] rounded-full"
+                        onClick={() => openCreateEditDialog(currentService)}>
                         <PlusIcon className="h-3 w-3 text-white font-bold" />
                     </IconButton>
                 </CardHeader>
@@ -134,7 +135,7 @@ export function Services() {
 
                                             <td className={className}>
                                                 <div className="flex items-center gap-4">
-                                                    <Avatar src={preloadedImages[_id]}
+                                                    <Avatar src={preloadedImages[_id] ? preloadedImages[_id] : img_thumbnail}
                                                         alt={serviceName ? serviceName : "Service Name"} size="sm" variant="rounded" />
                                                     <div>
                                                         <Typography variant="small" color="blue-gray" className="text-[10px] font-semibold">

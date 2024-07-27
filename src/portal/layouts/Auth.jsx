@@ -8,7 +8,6 @@ import { loadUser } from "@/redux/slices/usersSlice"
 export function Auth() {
 
   const { isLoading, user, } = useSelector(state => state.users);
-  console.log('user', user)
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

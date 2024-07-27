@@ -10,7 +10,7 @@ lerna-debug.log*
 node_modules
 */node_modules
 node_modules/*
-next_todo.txt
+*.txt
 *.zip
 
 dist
