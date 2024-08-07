@@ -1,5 +1,5 @@
-import { HomeIcon, UserCircleIcon, QueueListIcon, UserGroupIcon, UsersIcon, PuzzlePieceIcon, EnvelopeOpenIcon, Squares2X2Icon, ChatBubbleLeftRightIcon } from "@heroicons/react/24/solid"
-import { Home, Profile, Services, ProjectTypes, Projects, AddProjectForm, EditProjectForm, ImagesUploader, Clients, Contacts, Users, EditUserForm, Chat } from "./pages/dashboard"
+import { HomeIcon, UserCircleIcon, QueueListIcon, UserGroupIcon, UsersIcon, PuzzlePieceIcon, EnvelopeOpenIcon, Squares2X2Icon, ChatBubbleLeftRightIcon, CameraIcon } from "@heroicons/react/24/solid"
+import { Home, Profile, Services, ProjectTypes, Projects, AddProjectForm, EditProjectForm, ImagesUploader, Clients, HomeSlides, Contacts, Users, EditUserForm, Chat } from "./pages/dashboard"
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -55,6 +55,12 @@ export const routes = [
         name: "clients",
         path: "/clients",
         element: <Clients />,
+      },
+      {
+        icon: <CameraIcon {...icon} />,
+        name: "homeSlides",
+        path: "/homeSlides",
+        element: <HomeSlides />,
       },
       {
         icon: <EnvelopeOpenIcon {...icon} />,

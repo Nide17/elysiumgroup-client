@@ -50,7 +50,7 @@ const projectTypesSlice = createSlice({
         })
         builder.addCase(updatePType.fulfilled, (state, action) => {
             state.isLoading = false
-            state.pTypes = state.pTypes.map(pType => pType._id === action.payload._id ? action.payload : pType)
+            state.pTypes = state.pTypes.map(pType => action.payload && pType._id === action.payload._id ? action.payload : pType)
         })
         builder.addCase(deletePType.fulfilled, (state, action) => {
             state.isLoading = false

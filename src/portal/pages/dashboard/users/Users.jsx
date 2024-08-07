@@ -3,36 +3,36 @@ import { useDispatch, useSelector } from "react-redux";
 import { Card, CardHeader, CardBody, Typography, Avatar, IconButton } from "@material-tailwind/react";
 import { UsersIcon, TrashIcon, PencilSquareIcon } from "@heroicons/react/24/solid";
 import { parseISO, format } from 'date-fns';
-import { getUsers, deleteUser } from "@/redux/slices/usersSlice"
+import { getUsers, deleteUser } from "@/redux/slices/usersSlice";
 import { openDialog, closeDialog } from "@/redux/slices/appSlice";
 import Loading from '@/components/utils/Loading';
 import { DeleteDialog } from '@/portal/widgets/dialogs/DeleteDialog';
 import { useNavigate } from "react-router-dom";
 
 export function Users() {
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { isLoading, users, user } = useSelector(state => state.users);
     const [userToDelete, setUserToDelete] = useState(null);
-    useEffect(() => { user.role === 'admin' && dispatch(getUsers()) }, [dispatch]);
+
+    useEffect(() => {
+        if (user.role === 'admin') {
+            dispatch(getUsers());
+        }
+    }, [dispatch, user.role]);
 
     const openDeleteDialog = (_id, name) => {
-        if (_id === null) return;
         setUserToDelete({ _id, name });
         dispatch(openDialog());
     };
 
-    const handleDelete = (userID) => {
-        const result = dispatch(deleteUser(userID));
-
-        result.then((res) => {
-            if (res.payload) {
-                setUserToDelete(null);
-                dispatch(getUsers());
-            }
-            dispatch(closeDialog());
-        });
+    const handleDelete = async (userID) => {
+        const result = await dispatch(deleteUser(userID));
+        if (result.payload) {
+            setUserToDelete(null);
+            dispatch(getUsers());
+        }
+        dispatch(closeDialog());
     };
 
     if (user.role !== 'admin') return null;
@@ -54,81 +54,70 @@ export function Users() {
                         <table className="w-full min-w-[640px] table-auto">
                             <thead>
                                 <tr>
-                                    {["name", "email", "title", "department", "role", "status", "created on"].map((el, id) => (
+                                    {["name", "email", "title", "department", "role", "status", "created on"].map((header, id) => (
                                         <th key={id} className="border-b border-blue-gray-50 py-3 pl-2 pr-5 text-left">
                                             <Typography variant="small" className="text-[9px] font-bold uppercase text-blue-gray-400">
-                                                {el}
+                                                {header}
                                             </Typography>
                                         </th>
                                     ))}
                                 </tr>
                             </thead>
                             <tbody>
-                                {users && users.map(({ _id, name, email, title, department, role, active, picture, createdAt }, key) => {
-                                    const className = `py-3 px-2 ${key === users.length - 1 ? "" : "border-b border-blue-gray-50"}`;
-                                    const userPicture = picture && picture.url ? picture.url : "/img/team-2.jpeg";
-
+                                {users.map(({ _id, name, email, title, department, role, active, picture, createdAt }, index) => {
                                     if (role === user.role && _id === user._id) return null;
-                                    return (
-                                        <tr key={key}>
+                                    const className = `py-3 px-2 ${index === users.length - 1 ? "" : "border-b border-blue-gray-50"}`;
+                                    const userPicture = picture?.url || "/img/team-2.jpeg";
 
+                                    return (
+                                        <tr key={_id}>
                                             <td className={className}>
                                                 <div className="flex items-center gap-4">
-                                                    <Avatar src={userPicture} alt={name ? name : "User Name"} size="sm" variant="rounded" />
+                                                    <Avatar src={userPicture} alt={name || "User Name"} size="sm" variant="rounded" />
                                                     <div>
                                                         <Typography variant="small" color="blue-gray" className="text-[10px] font-semibold">
-                                                            {name ? name : "User Name"}
+                                                            {name || "User Name"}
                                                         </Typography>
                                                     </div>
                                                 </div>
                                             </td>
-
                                             <td className={className}>
                                                 <Typography variant="small" color="blue-gray" className="text-[10px] font-semibold">
-                                                    {email ? email : "User Email N/A"}
+                                                    {email || "User Email N/A"}
                                                 </Typography>
                                             </td>
-
                                             <td className={className}>
                                                 <Typography variant="small" color="blue-gray" className="text-[10px] font-semibold">
-                                                    {title ? title : "Title N/A"}
+                                                    {title || "Title N/A"}
                                                 </Typography>
                                             </td>
-
                                             <td className={className}>
                                                 <Typography variant="small" color="blue-gray" className="text-[10px] font-semibold">
-                                                    {department ? department : "Department N/A"}
+                                                    {department || "Department N/A"}
                                                 </Typography>
                                             </td>
-
                                             <td className={className}>
                                                 <Typography variant="small" color="blue-gray" className="text-[10px] font-semibold">
-                                                    {role ? role : "N/A"}
+                                                    {role || "N/A"}
                                                 </Typography>
                                             </td>
-
                                             <td className={className}>
                                                 <Typography variant="small" color="blue-gray" className="text-[10px] font-semibold">
                                                     {active ? "Active" : "Inactive"}
                                                 </Typography>
                                             </td>
-
                                             <td className={className}>
                                                 <Typography className="text-[9px] font-semibold text-blue-gray-600">
                                                     {createdAt ? format(parseISO(createdAt), "dd-MM-yyyy") : "00-00-0000"}
                                                 </Typography>
                                             </td>
-
                                             <td className={className} onClick={() => navigate(`/dashboard/users/edit-user/${_id}`)}>
-                                                <Typography as="a" href="#" className={`text-[9px] font-semibold text-blue-gray-600
-                                                    ${user.role === 'admin' ? 'visible' : 'hidden'}`}>
+                                                <Typography as="a" href="#" className={`text-[9px] font-semibold text-blue-gray-600 ${user.role === 'admin' ? 'visible' : 'hidden'}`}>
                                                     <PencilSquareIcon className="h-3 w-3 text-blue font-bold" color="blue" />
                                                 </Typography>
                                             </td>
-
                                             <td className={className} onClick={() => openDeleteDialog(_id, name)}>
-                                                <Typography as="a" href="#" className={`text-[9px] font-semibold text-blue-gray-600
-                                                    ${user.role === 'admin' ? 'visible' : 'hidden'}`}>
+                                                <Typography as="a" href="#" className={`text-[9px] font-semibold text-blue-gray-600 ${user.role === 'admin' ? 'visible' : 'hidden'}`}>
                                                     <TrashIcon className="h-3 w-3 text-red font-bold" color="red" />
                                                 </Typography>
                                             </td>
@@ -140,16 +129,16 @@ export function Users() {
                     )}
                 </CardBody>
             </Card>
-            <>
-                {userToDelete && userToDelete._id && (
-                    <DeleteDialog gotoUrl={null}
-                        action={() => handleDelete(userToDelete._id)}
-                        dialogTitle="Delete User"
-                        btnTitle="Delete"
-                        altBtnTitle="No, Thanks"
-                        message={`Would you like to delete "${userToDelete.name}" user?`} />
-                )}
-            </>
+            {userToDelete && userToDelete._id && (
+                <DeleteDialog
+                    gotoUrl={null}
+                    action={() => handleDelete(userToDelete._id)}
+                    dialogTitle="Delete User"
+                    btnTitle="Delete"
+                    altBtnTitle="No, Thanks"
+                    message={`Would you like to delete "${userToDelete.name}" user?`}
+                />
+            )}
         </div>
     );
 }

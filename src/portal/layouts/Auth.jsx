@@ -1,38 +1,33 @@
-import React, { useEffect, useState } from "react"
-import { Routes, Route, useNavigate } from "react-router-dom"
-import { Login, Signup, VerifyOTP, ForgotPassword, ResetPassword } from "@/portal/pages/auth"
+import React, { useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { Login, Signup, VerifyOTP, ForgotPassword, ResetPassword } from "@/portal/pages/auth";
 import Loading from '@/components/utils/Loading';
 import { useDispatch, useSelector } from "react-redux";
-import { loadUser } from "@/redux/slices/usersSlice"
+import { loadUser } from "@/redux/slices/usersSlice";
 
 export function Auth() {
-
-  const { isLoading, user, } = useSelector(state => state.users);
+  const { isLoading, user } = useSelector(state => state.users);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Add a new state to track if the auth check has completed
-  const [authCheckCompleted, setAuthCheckCompleted] = useState(false);
-
+  // Check user authentication and navigate if user is authenticated
   useEffect(() => {
-    dispatch(loadUser()).then(() => {
-      setAuthCheckCompleted(true)
-    });
-  }, [dispatch]);
+    const checkAuth = async () => {
+      await dispatch(loadUser());
+      if (!isLoading && user) {
+        navigate("/dashboard/home");
+      }
+    };
+    checkAuth();
+  }, [dispatch, isLoading, user, navigate]);
 
-  useEffect(() => {
-    if (!isLoading && authCheckCompleted && user) {
-      navigate("/dashboard/home");
-    }
-  }, [isLoading, navigate, authCheckCompleted]);
-
-  if (isLoading || !authCheckCompleted) {
+  // Show loading state while checking auth
+  if (isLoading) {
     return <Loading />;
   }
-  
+
   return (
     <div className="relative min-h-screen w-full">
-
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -41,9 +36,7 @@ export function Auth() {
         <Route path="/resetPassword" element={<ResetPassword />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-Auth.displayName = "/src/portal/layout/Auth.jsx"
-
-export default Auth
+Auth.displayName = "/src/portal/layout/Auth.jsx";

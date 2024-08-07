@@ -13,13 +13,13 @@ export const getMessages = createAsyncThunk("messages/getMessages", async (_, { 
 export const deleteMessage = createAsyncThunk("messages/deleteMessage", async (messageID, { getState, dispatch }) =>
     apiCallHelper(`/api/messages/${messageID}`, 'delete', null, getState, dispatch, 'deleteMessage'))
 
-export const updateMessage = createAsyncThunk("messages/updateMessage", async ({id, data}, { getState, dispatch }) =>
+export const updateMessage = createAsyncThunk("messages/updateMessage", async ({ id, data }, { getState, dispatch }) =>
     apiCallHelper(`/api/messages/${id}`, 'put', data, getState, dispatch, 'updateMessage'))
 
 export const createChat = createAsyncThunk("messages/createChat", async (msg, { getState, dispatch }) =>
     apiCallHelper(`/api/messages`, 'post', msg, getState, dispatch, 'createChat'))
 
-export const updateChat = createAsyncThunk("messages/updateChat", async ({id, data}, { getState, dispatch }) =>
+export const updateChat = createAsyncThunk("messages/updateChat", async ({ id, data }, { getState, dispatch }) =>
     apiCallHelper(`/api/messages/${id}`, 'put', data, getState, dispatch, 'updateChat'))
 
 export const deleteChat = createAsyncThunk("messages/deleteChat", async (chatID, { getState, dispatch }) =>
@@ -75,7 +75,8 @@ const messagesSlice = createSlice({
         })
         builder.addCase(updateChat.fulfilled, (state, action) => {
             state.isLoading = false
-            state.messages = state.messages.map(chat => chat._id === action.payload._id ? action.payload : chat)
+            state.messages = state.messages.map(chat => action.payload &&
+                chat._id === action.payload._id ? action.payload : chat)
         })
         builder.addCase(deleteChat.fulfilled, (state, action) => {
             state.isLoading = false

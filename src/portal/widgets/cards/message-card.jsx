@@ -52,7 +52,6 @@ MessageCard.defaultProps = {
 };
 
 MessageCard.propTypes = {
-  img: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   message: PropTypes.node.isRequired,
   action: PropTypes.node,

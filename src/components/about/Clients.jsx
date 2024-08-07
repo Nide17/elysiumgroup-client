@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux"
 import { Carousel, IconButton } from "@material-tailwind/react"
 import Loading from '../utils/Loading'
 import houseDefault from "@/images/house-default.jpg";
-import useCloudinaryImage from "../utils/useCloudinaryImage"
 
 const Clients = () => {
     const { clients, isLoading } = useSelector(state => state.clients)

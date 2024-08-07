@@ -8,8 +8,6 @@ import { useSelector } from "react-redux";
 export function StatisticsCard({ color, icon, title, value, footer, data }) {
 
   const user = useSelector(state => state.users.user);
-  console.log('user', user);
-
   const generateDownloadExcel = (data) => {
     const ws = utils.json_to_sheet(data);
     const wb = utils.book_new();

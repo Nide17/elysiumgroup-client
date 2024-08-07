@@ -33,7 +33,6 @@ export function Home() {
     dispatch(getClients());
     dispatch(getUsers());
     if (user) {
-      console.log('user', user)
       dispatch(getContacts());
     }
   }, [dispatch]);

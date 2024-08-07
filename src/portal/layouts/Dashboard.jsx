@@ -1,74 +1,64 @@
-import React, { useEffect, useState } from "react"
-import { Routes, Route, useNavigate } from "react-router-dom"
-import { Sidenav, DashboardNavbar, Configurator } from "@/portal/widgets/layout"
-import { useMaterialTailwindController } from "@/portal/context"
-import routes from "@/portal/routes"
-import { Toaster } from 'react-hot-toast'
-import Loading from '@/components/utils/Loading'
-import { useDispatch, useSelector } from "react-redux"
-import { loadUser, updateOnlineUsers } from "@/redux/slices/usersSlice"
+import React, { useEffect, useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { Sidenav, DashboardNavbar, Configurator } from "@/portal/widgets/layout";
+import { useMaterialTailwindController } from "@/portal/context";
+import routes from "@/portal/routes";
+import { Toaster } from 'react-hot-toast';
+import Loading from '@/components/utils/Loading';
+import { useDispatch, useSelector } from "react-redux";
+import { loadUser, updateOnlineUsers } from "@/redux/slices/usersSlice";
 import { socket } from "@/portal/socket";
 
 export function Dashboard() {
+  const [controller] = useMaterialTailwindController();
+  const { isLoading, user } = useSelector(state => state.users);
+  const { sidenavType } = controller;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const [controller] = useMaterialTailwindController()
-  const { isLoading, user } = useSelector(state => state.users)
-  const { sidenavType } = controller
+  // State to track if auth check is completed
+  const [authCheckCompleted, setAuthCheckCompleted] = useState(false);
 
-  const navigate = useNavigate()
-  const dispatchAuth = useDispatch()
-
-  // Add a new state to track if the auth check has completed
-  const [authCheckCompleted, setAuthCheckCompleted] = useState(false)
-
+  // Load user on mount
   useEffect(() => {
-    dispatchAuth(loadUser()).then(() => {
-      setAuthCheckCompleted(true)
-    });
-  }, [dispatchAuth])
+    dispatch(loadUser()).then(() => setAuthCheckCompleted(true));
+  }, [dispatch]);
 
+  // Redirect if not authenticated
   useEffect(() => {
     if (!isLoading && authCheckCompleted && !user) {
-      navigate("/auth/login")
+      navigate("/auth/login");
     }
-  }, [isLoading, navigate, authCheckCompleted])
+  }, [isLoading, navigate, authCheckCompleted, user]);
 
-  // Connect to the socket server once the user opens the chat page
+  // Manage socket connection
   useEffect(() => {
-    // Connect to the socket server and send the user ID to the server
     if (user) {
       socket.auth = { user };
       socket.connect();
-    }
 
-    // Log socket connection
-    socket.on('connect', () => {
-      console.log('Connected to socket server');
-    });
+      socket.on('connect', () => console.log('Connected to socket server'));
+      socket.on('disconnect', (reason) => console.log('Disconnected from socket server:', reason));
 
-    // Log socket disconnection
-    socket.on('disconnect', (reason) => {
-      console.log('Disconnected from socket server:', reason);
-    });
-
-    // Disconnect the socket when the user leaves the chat page
-    return () => {
-      socket.disconnect();
+      return () => {
+        socket.disconnect();
+      };
     }
   }, [user]);
 
+  // Update online users
   useEffect(() => {
     socket.on("onlineUsers", (oUsers) => {
-      dispatchAuth(updateOnlineUsers(oUsers));
+      dispatch(updateOnlineUsers(oUsers));
     });
 
     return () => {
       socket.off("onlineUsers");
     };
-  }, [updateOnlineUsers]);
+  }, [dispatch]);
 
   if (isLoading || !authCheckCompleted) {
-    return <Loading />
+    return <Loading />;
   }
 
   return (
@@ -76,22 +66,19 @@ export function Dashboard() {
       <Toaster position="top-right" reverseOrder={false} />
       <Sidenav routes={routes} brandImg={sidenavType === "dark" ? "/img/logo-ct.png" : "/img/logo-ct-dark.png"} />
       <div className="p-2 xl:p-4 xl:ml-80">
-
         <DashboardNavbar />
         <Configurator />
-
         <Routes>
-          {routes.map(({ layout, pages }) => layout === "dashboard" &&
+          {routes.map(({ layout, pages }) =>
+            layout === "dashboard" &&
             pages.map(({ path, element }) => (
-              <Route exact path={path} element={element} />
+              <Route key={path} path={path} element={element} />
             ))
           )}
         </Routes>
       </div>
     </div>
-  )
+  );
 }
 
-Dashboard.displayName = "/src/portal/layout/dashboard.jsx"
-
-export default Dashboard
+Dashboard.displayName = "/src/portal/layout/dashboard.jsx";

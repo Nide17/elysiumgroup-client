@@ -1,21 +1,20 @@
-import React from "react"
-import { Routes, Route, Outlet, Link } from "react-router-dom"
+import React from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
-import Header from "./components/header/Header"
-import Footer from "./components/footer/Footer"
-import HomeCarousel from "./components/carousel/HomeCarousel"
-import About from "./components/about/About"
-import Team from "./components/team/Team"
-import ViewBio from "./components/team/ViewBio"
-import Contact from "./components/contact/Contact"
-import Services from "./components/services/Services"
-import Service from "./components/services/Service"
-import Projects from "./components/projects/Projects"
-import Project from "./components/projects/Project"
-import { Dashboard, Auth } from "@/portal/layouts"
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import HomeCarousel from "./components/carousel/HomeCarousel";
+import About from "./components/about/About";
+import Team from "./components/team/Team";
+import ViewBio from "./components/team/ViewBio";
+import Contact from "./components/contact/Contact";
+import Services from "./components/services/Services";
+import Service from "./components/services/Service";
+import Projects from "./components/projects/Projects";
+import Project from "./components/projects/Project";
+import { Dashboard, Auth } from "@/portal/layouts";
 
 export default function App() {
-
   return (
     <div id="content" className="App flex flex-col min-h-screen">
       <Routes>
@@ -25,7 +24,7 @@ export default function App() {
           <Route path="projects/:id" element={<Project />} />
           <Route path="services" element={<Services />} />
           <Route path="services/:id" element={<Service />} />
-          <Route path="/about" element={<About />} />
+          <Route path="about" element={<About />} />
           <Route path="team" element={<Team />} />
           <Route path="view-bio/:id" element={<ViewBio />} />
           <Route path="contact" element={<Contact />} />
@@ -36,19 +35,18 @@ export default function App() {
         <Route path="/auth/*" element={<Auth />} />
       </Routes>
     </div>
-  )
+  );
 }
 
 const Layout = () => {
-
   return (
     <>
       <Header />
       <Outlet />
       <Footer />
     </>
-  )
-}
+  );
+};
 
 const NoMatch = () => {
   return (
@@ -58,5 +56,5 @@ const NoMatch = () => {
         <Link to="/">Go to the home page</Link>
       </p>
     </div>
-  )
-}
+  );
+};

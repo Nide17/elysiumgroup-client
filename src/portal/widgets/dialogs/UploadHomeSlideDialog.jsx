@@ -6,7 +6,22 @@ import { ArrowUpTrayIcon } from "@heroicons/react/24/solid";
 import { closeDialog } from "@/redux/slices/appSlice";
 import toast from 'react-hot-toast';
 
-export function UploadImageDialog({
+const ALLOWED_WIDTH = 996;
+const ALLOWED_HEIGHT = 498;
+
+const checkImageDimensions = (file, onSuccess, onError) => {
+    const img = new Image();
+    img.src = URL.createObjectURL(file);
+    img.onload = () => {
+        if (img.width === ALLOWED_WIDTH && img.height === ALLOWED_HEIGHT) {
+            onSuccess();
+        } else {
+            onError();
+        }
+    };
+};
+
+export function UploadHomeSlideDialog({
     dialogTitle,
     message,
     uploadAction,
@@ -21,14 +36,21 @@ export function UploadImageDialog({
     const [image, setImage] = useState(null);
     const [previewUrl, setPreviewUrl] = useState(null);
     const [uploading, setUploading] = useState(false);
+    const [isAllowedWidthLength, setIsAllowedWidthLength] = useState(false);
 
     const handleClose = () => dispatch(closeDialog());
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
+        setImage(file);
+        setPreviewUrl(URL.createObjectURL(file));
+
         if (file) {
-            setImage(file);
-            setPreviewUrl(URL.createObjectURL(file));
+            checkImageDimensions(
+                file,
+                () => setIsAllowedWidthLength(true),
+                () => setIsAllowedWidthLength(false)
+            );
         }
     };
 
@@ -44,6 +66,12 @@ export function UploadImageDialog({
             return;
         }
 
+        if (!isAllowedWidthLength) {
+            toast.error("Image width must be 996px and height must be 498px");
+            setUploading(false);
+            return;
+        }
+
         setUploading(true);
         const formData = new FormData();
         formData.append(uploadName, image);
@@ -54,12 +82,12 @@ export function UploadImageDialog({
                 setUploading(false);
                 setImage(null);
                 setPreviewUrl(null);
-                dispatch(closeDialog());
                 toast.success("Image uploaded successfully");
+                dispatch(closeDialog());
             }
         } catch (error) {
             setUploading(false);
-            toast.error("Failed to upload image");
+            toast.error("Error uploading image");
         }
     };
 
@@ -140,7 +168,7 @@ export function UploadImageDialog({
                                     )}
                                 </div>
 
-                                {uploading && <Progress value={uploading ? 99 : 0} className="my-4 mx-auto" />}
+                                {uploading && <Progress value={99} className="my-4 mx-auto" />}
                                 {uploading && <Spinner color="blue" className="my-4 mx-auto" />}
 
                                 <div className="bg-gray-50 px-3 py-3 sm:flex sm:flex-row justify-around sm:px-6">

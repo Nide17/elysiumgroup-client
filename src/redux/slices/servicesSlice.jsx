@@ -53,11 +53,13 @@ const servicesSlice = createSlice({
         })
         builder.addCase(addServiceImage.fulfilled, (state, action) => {
             state.isLoading = false
-            state.services = state.services.map(service => service._id === action.payload._id ? action.payload : service)
+            state.services = state.services.map(service => service._id === action.payload &&
+                action.payload._id ? action.payload : service)
         })
         builder.addCase(updateService.fulfilled, (state, action) => {
             state.isLoading = false
-            state.services = state.services.map(service => service._id === action.payload._id ? action.payload : service)
+            state.services = state.services.map(service => service._id === action.payload &&
+                action.payload._id ? action.payload : service)
         })
         builder.addCase(deleteService.fulfilled, (state, action) => {
             state.isLoading = false
@@ -65,13 +67,15 @@ const servicesSlice = createSlice({
         })
 
             // Pending actions
-            .addMatcher((action) => [getServices.pending, createService.pending, updateService.pending, deleteService.pending, addServiceImage.pending]
+            .addMatcher((action) => [getServices.pending, createService.pending, updateService.pending,
+            deleteService.pending, addServiceImage.pending]
                 .includes(action.type), (state, action) => {
                     state.isLoading = true
                 })
 
             // Rejected actions
-            .addMatcher((action) => [getServices.rejected, createService.rejected, updateService.rejected, deleteService.rejected, addServiceImage.rejected]
+            .addMatcher((action) => [getServices.rejected, createService.rejected, updateService.rejected,
+            deleteService.rejected, addServiceImage.rejected]
                 .includes(action.type), (state, action) => {
                     state.isLoading = false
                 })

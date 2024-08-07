@@ -11,7 +11,7 @@ import { ConfirmDialog } from '@/portal/widgets/dialogs/ConfirmDialog';
 export function AddProjectForm() {
 
     const { clients, isLoading } = useSelector(state => state.clients);
-    const { user } = useSelector(state => state.users)
+    const { user } = useSelector(state => state.users);
     const { pTypes } = useSelector(state => state.pTypes);
     const dispatch = useDispatch();
 
@@ -33,17 +33,24 @@ export function AddProjectForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const projectData = { pName, pDescription, pLocation, pClient, pType, pStartDate: pStartDate ? pStartDate : new Date(), status, createdBy: user && user._id };
+        const projectData = {
+            pName,
+            pDescription,
+            pLocation,
+            pClient,
+            pType,
+            pStartDate: pStartDate || new Date(),
+            status,
+            createdBy: user?._id
+        };
 
-        let data = dispatch(createProject(projectData));
-        data.then((res) => {
-            if (res.payload) {
-                dispatch(openDialog());
-                setProjectID(res.payload.project._id);
-            }
-        });
+        const result = await dispatch(createProject(projectData));
+        if (result.payload) {
+            dispatch(openDialog());
+            setProjectID(result.payload.project._id);
+        }
 
-        // clear form
+        // Clear form
         setPname('');
         setDescription('');
         setLocation('');
@@ -55,9 +62,15 @@ export function AddProjectForm() {
 
     return (
         <Card color="transparent" shadow={false}>
-
-            <ConfirmDialog gotoUrl={projectID ? `add-images/${projectID}` : null} action='' dialogTitle="Project Created" btnTitle="Add Images"
-                altBtnTitle="No, Thanks" message="Would you like to add images to this project?" cancelUrl='/dashboard/projects/#' />
+            <ConfirmDialog
+                gotoUrl={projectID ? `add-images/${projectID}` : null}
+                action=''
+                dialogTitle="Project Created"
+                btnTitle="Add Images"
+                altBtnTitle="No, Thanks"
+                message="Would you like to add images to this project?"
+                cancelUrl='/dashboard/projects/#'
+            />
 
             <Typography variant="h4" color="blue-gray">
                 Add a new project
@@ -67,7 +80,6 @@ export function AddProjectForm() {
             </Typography>
 
             <form className="mt-8 mb-2 w-full max-w-screen-lg" onSubmit={handleSubmit}>
-
                 <div className="my-4 flex flex-col gap-6">
                     <Typography variant="h6" color="blue-gray" className="-mb-3">
                         Project Name
@@ -114,15 +126,16 @@ export function AddProjectForm() {
                 </div>
 
                 <div className="my-4 flex flex-col gap-6">
-
-                    <Typography variant="h6" color="blue-gray" className="-mb-3">Project Client</Typography>
-
+                    <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        Project Client
+                    </Typography>
                     {!isLoading && clients ? (
                         <Select
                             placeholder="Select a client"
                             className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-                            labelProps={{ className: "before:content-none after:content-none", }}
-                            menuProps={{ className: "h-48" }}>
+                            labelProps={{ className: "before:content-none after:content-none" }}
+                            menuProps={{ className: "h-48" }}
+                        >
                             {clients.map(({ _id, clientName, clientLogo }) => (
                                 <Option key={_id} value={_id} onClick={() => setClient(_id)}>
                                     <div className="flex items-center gap-x-2">
@@ -141,20 +154,20 @@ export function AddProjectForm() {
                     <Typography variant="h6" color="blue-gray" className="-mb-3">
                         Project Start Date
                     </Typography>
-
                     <DatePicker date={pStartDate} setDate={setDate} />
                 </div>
 
                 <div className="my-4 flex flex-col gap-6">
-
-                    <Typography variant="h6" color="blue-gray" className="-mb-3">Project Type</Typography>
-
+                    <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        Project Type
+                    </Typography>
                     {pTypes ? (
                         <Select
                             placeholder="Select a type"
                             className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-                            labelProps={{ className: "before:content-none after:content-none", }}
-                            menuProps={{ className: "h-48" }}>
+                            labelProps={{ className: "before:content-none after:content-none" }}
+                            menuProps={{ className: "h-48" }}
+                        >
                             {pTypes.map(({ _id, typeName }) => (
                                 <Option key={_id} value={_id} onClick={() => setPType(_id)}>
                                     <div className="flex items-center gap-x-2">
@@ -169,14 +182,15 @@ export function AddProjectForm() {
                 </div>
 
                 <div className="my-4 flex flex-col gap-6">
-
-                    <Typography variant="h6" color="blue-gray" className="-mb-3">Project Status</Typography>
+                    <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        Project Status
+                    </Typography>
                     <Select
                         placeholder="Select a status"
                         className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{ className: "before:content-none after:content-none", }}
-                        menuProps={{ className: "h-48" }}>
-
+                        labelProps={{ className: "before:content-none after:content-none" }}
+                        menuProps={{ className: "h-48" }}
+                    >
                         {statuses.map((status, id) => (
                             <Option key={id} value={status} onClick={() => setStatus(status)}>
                                 <div className="flex items-center gap-x-2">
@@ -193,6 +207,6 @@ export function AddProjectForm() {
             </form>
         </Card>
     );
-};
+}
 
 export default AddProjectForm;
